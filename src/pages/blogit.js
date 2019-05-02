@@ -21,7 +21,7 @@ const BlogitPage = ({data}) => {
             <h1>Hi people</h1>
             <p>Welcome to your new Gatsby site.</p>
             <p>Now go build something great.</p>
-            <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+            <div style={{ maxWidth: `900px`, marginBottom: `1.45rem` }}>
                 {blogs.map(
                     (blog) => <div key={blog.id}><Link to={"/blogit/"+ blog.slug}>{blog.title}</Link> <br /></div>
                 )}

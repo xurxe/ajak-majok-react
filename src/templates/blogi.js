@@ -31,10 +31,10 @@ const BlogPage = ({data})=> {
                 {alsoPostedIn}
             </a>
 
-            <img src={image.file.url} alt={alt} />
+            <Img alt={alt} fluid={image.fluid}></Img>
 
             <p>
-                {Parser("Kuva: &copy; " + photographer)}
+                {photographer}
             </p>
 
             <div>
@@ -61,8 +61,15 @@ query($slug: String!){
                 url
                 fileName
           	}
-            fixed {
+            fluid {
+                base64
+                tracedSVG
+                aspectRatio
                 src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
             }
         }
         alt
