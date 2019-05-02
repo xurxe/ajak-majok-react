@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Parser from 'html-react-parser'
 
 
@@ -8,7 +9,9 @@ import Moment from 'react-moment'
 const BlogPage = ({data})=> {
     const {contentfulBlogPost} = data
 
-    const {title, date, alsoPostedIn, alsoPostedInUrl, photographer} = contentfulBlogPost
+    const {title, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer} = contentfulBlogPost
+
+    console.log(image.file.url);
 
     const content = contentfulBlogPost.content.childMarkdownRemark.html
  
@@ -28,6 +31,8 @@ const BlogPage = ({data})=> {
                 {alsoPostedIn}
             </a>
 
+            <img src={image.file.url} alt={alt} />
+
             <p>
                 {Parser("Kuva: &copy; " + photographer)}
             </p>
@@ -37,7 +42,7 @@ const BlogPage = ({data})=> {
             </div>
         </>
     )
-  }
+}
 
 export default BlogPage
 
@@ -51,10 +56,13 @@ query($slug: String!){
         alsoPostedIn
         alsoPostedInUrl
         image {
-            file {
+            id
+          	file {
                 url
                 fileName
-                contentType
+          	}
+            fixed {
+                src
             }
         }
         alt
