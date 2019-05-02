@@ -1,3 +1,6 @@
+// keep API keys and etc private
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -27,6 +30,21 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+
+    // paste this code after running yarn add gatsby-source-contentful
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        // refer to .env file
+        spaceId: process.env.spaceId,
+        accessToken: process.env.accessToken,
+      },
+    },
+    // paste this code after running yarn add gatsby-transformer-remark
+    {
+      resolve: `gatsby-transformer-remark`
+    },
+    
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
