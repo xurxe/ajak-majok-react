@@ -8,6 +8,7 @@ exports.createPages = ({ graphql, actions }) => {
                 edges {
                     node {
                         id
+                        title
                         slug
                     }
                 }
@@ -19,7 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
                 path: `/blogit/${node.slug}`,
                 component: path.resolve(`./src/templates/blogi.js`),
                 context: {
-                    slug: node.slug,
+                    slug: node.id,
                 },
             })
         })

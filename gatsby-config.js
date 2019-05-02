@@ -31,7 +31,7 @@ module.exports = {
       },
     },
 
-    // paste this code after running yarn add gatsby-source-contentful
+    // added by me
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -40,10 +40,13 @@ module.exports = {
         accessToken: process.env.accessToken,
       },
     },
-    // paste this code after running yarn add gatsby-transformer-remark
     {
       resolve: `gatsby-transformer-remark`
     },
+    {
+      resolve: `html-react-parser`
+    },
+
     
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
