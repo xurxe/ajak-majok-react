@@ -15,6 +15,8 @@ const BlogitPage = ({data}) => {
         slug: node.slug,
     }))
 
+    console.log(blogs[1]);
+
     return (
         <Layout>
             <SEO title="Blogit" keywords={[`gatsby`, `application`, `react`]} />
@@ -36,7 +38,7 @@ export default BlogitPage
 // got this code using http://localhost:8000/___graphql 
 export const query = graphql`
 query {
-    allContentfulBlogPost {
+    allContentfulBlogPost (sort: {fields: [date], order: DESC}) {
         edges {
             node {
                 id
