@@ -11,8 +11,6 @@ const BlogPage = ({data})=> {
 
     const {title, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer} = contentfulBlogPost
 
-    console.log(image.file.url);
-
     const content = contentfulBlogPost.content.childMarkdownRemark.html
  
     return (

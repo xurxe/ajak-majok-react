@@ -1,7 +1,32 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
+
+
+const Page = ({data}) => {
+    const {contentfulPage} = data;
+    return (
+        <Layout>
+            <h1>
+                {contentfulPage.longTitle}
+            </h1>
+        </Layout>
+    );
+};
+
+export default Page;
+
+export const query = graphql`
+query($slug: String!){ 
+	contentfulPage (id: { eq: $slug }){
+        id
+        longTitle
+    }
+}
+`
+
+/* import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogitPage = ({data}) => { 
@@ -20,14 +45,9 @@ const BlogitPage = ({data}) => {
     return (
         <Layout>
             <SEO title="Blogit" keywords={[`gatsby`, `application`, `react`]} />
-            <h1>Hi people</h1>
-            <p>Welcome to your new Gatsby site.</p>
-            <p>Now go build something great.</p>
-            <div style={{ maxWidth: `900px`, marginBottom: `1.45rem` }}>
-                {blogs.map(
-                    (blog) => <div key={blog.id}><Link to={"/blogit/"+ blog.slug}>{blog.title}</Link> <br /></div>
-                )}
-            </div>
+            {blogs.map(
+                (blog) => <div key={blog.id}><Link to={"/blogit/"+ blog.slug}>{blog.title}</Link> <br /></div>
+            )}
             <Link to="/page-2/">Go to page 2</Link>
         </Layout>
     )
@@ -49,3 +69,4 @@ query {
     }
 }
 `
+*/
