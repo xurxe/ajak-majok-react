@@ -1,42 +1,53 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-
+import Nav from '../components/Nav'
+import Header from '../components/Header'
+import BlogLink from '../components/BlogLink'
+import Testimonial from '../components/Testimonial'
 
 const Page = ({data}) => {
     const {contentfulPage} = data;
-    const {longTitle, layout, entries} = contentfulPage;  
+    const {shortTitle, longTitle, /* layout, */ entries} = contentfulPage;
 
-    console.log(longTitle, layout, entries[0].__typename);
+    if (shortTitle === 'blogit') {
+        return (
+            <div>
+                <Nav></Nav>
 
-    entries.map(
-        (entry) => {
-            if (entry.__typename === 'ContentfulBlogPost') {
-                console.log('hello')
-                return
-            }
-        }
-    )
+                <Header title={longTitle}></Header>
 
-/*     let entriesRendered;
-
-    if (entries.__typeName === "ContentfulBlogPost") {
-        entriesRendered = entries.map(
-            (entry) => <div key={entry.id}><Link to={"/blogit/"+ entry.slug}>{entry.title}</Link> <br /></div>
+                {entries.map(entry => 
+                    <BlogLink entry={entry} key={entry.id}></BlogLink>
+                )}
+            </div>
         )
-    } */
+    }
 
-    return (
-        <Layout>
-            <h1>
-                {contentfulPage.longTitle}
-            </h1>
+    else if (shortTitle === 'Ajakista') {
+        return (
+            <div>
+                <Nav></Nav>
 
-{/*             {console.log(entriesRendered)} */}
+                <Header title={longTitle}></Header>
 
-        </Layout>
-    );
+                {entries.map(entry => 
+                    <Testimonial entry={entry} key={entry.id}></Testimonial>
+                )}
+            </div>
+        )
+    }
+
+    else {
+        return (
+            <div>
+                <Nav></Nav>
+
+                <Header title={longTitle}></Header>
+
+            </div>
+        )
+    }
 };
 
 export default Page;
@@ -45,6 +56,7 @@ export const query = graphql`
 query($slug: String!){ 
 	contentfulPage (id: { eq: $slug }){
         id
+        shortTitle
         longTitle
         layout
         entries {
@@ -115,91 +127,3 @@ query($slug: String!){
     }
 }
 `
-
-/* import Layout from "../components/layout"
-import SEO from "../components/seo"
-
-const BlogitPage = ({data}) => { 
-    // get blogs from data
-    const {allContentfulBlogPost} = data;
-
-    // turn into array
-    const blogs = allContentfulBlogPost.edges.map(({node}) => ({
-        id: node.id,
-        title: node.title,
-        slug: node.slug,
-    }))
-
-    console.log(blogs[1]);
-
-    return (
-        <Layout>
-            <SEO title="Blogit" keywords={[`gatsby`, `application`, `react`]} />
-            {blogs.map(
-                (blog) => <div key={blog.id}><Link to={"/blogit/"+ blog.slug}>{blog.title}</Link> <br /></div>
-            )}
-            <Link to="/page-2/">Go to page 2</Link>
-        </Layout>
-    )
-}
-
-export default BlogitPage
-
-// got this code using http://localhost:8000/___graphql 
-export const query = graphql`
-query {
-    allContentfulBlogPost (sort: {fields: [date], order: DESC}) {
-        edges {
-            node {
-                id
-                title
-                slug
-            }
-        }
-    }
-}
-`
-*/
-
-
-/* {
-  contentfulPage {
-    id
-    longTitle
-    layout
-    entries {
-      __typename
-      ... on ContentfulText {
-        id
-        text {
-          id
-          childMarkdownRemark {
-            html
-          }
-        }
-        
-      }
-      
-      ... on ContentfulImage {
-        id
-        image {
-          id
-          fluid {
-            base64
-            tracedSVG
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
-          }
-        }
-        alt
-        photographer
-        shadow
-      }
-    
-    }
-  }
-} */

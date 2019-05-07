@@ -1,13 +1,28 @@
 import React from "react"
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Nav from '../components/Nav'
+import Header from '../components/Header'
 
 const IndexPage = ({data}) => {
-  return(
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-  </Layout>
-)}
+  const {contentfulIndex} = data;
+
+  return (
+    <div>
+      <Nav></Nav>
+
+      <Header title={contentfulIndex.longTitle}></Header>
+    </div>
+  )
+}
 
 export default IndexPage
+
+export const query = graphql`
+query {
+  contentfulIndex {
+    id
+    longTitle    
+  }
+}
+`
