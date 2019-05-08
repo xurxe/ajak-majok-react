@@ -37,32 +37,64 @@ const Nav = () => (
     render={data => {
         const {contentfulNavigationBar} = data;
         const {internalLinks, externalLinks} = contentfulNavigationBar;
-        return (
-            <div>
-                <ul>
+        const jsx = (
+            <nav>
+                <ul 
+                className={`NavDiv NavDiv___internalLinks`}>
+
                     {internalLinks.map(
-                        (link) => 
-                        <li key={link.id}>
-                            <Link to={'/' + link.slug}>
-                                {link.shortTitle}
-                            </Link>
-                        </li>
+                        (link) => (
+                            <li 
+                            key={link.id}
+                            className={`NavDiv-li`}
+                            >
+
+                                <Link 
+                                to={'/' + link.slug}
+                                className={`NavDiv-a`}
+                                >
+
+                                    {link.shortTitle}
+
+                                </Link>
+
+                            </li>
+                        )
                     )}
+
                 </ul>
 
-                <ul>
+                <ul 
+                className={`NavDiv NavDiv___externalLinks`}
+                >
+
                     {externalLinks.map(
-                        (link) => 
-                        <li key={link.id}>
-                            <a key={link.id} href={link.url}>
-                                {link.name}
-                            </a>
-                        </li>
+                        (link) => (
+                            <li 
+                            key={link.id}
+                            className={`NavDiv-li`}
+                            >
+
+                                <a 
+                                key={link.id} 
+                                href={link.url}
+                                className={`NavDiv-a`}
+                                >
+
+                                    {link.name}
+
+                                </a>
+
+                            </li>
+                        )
                     )}
+
                 </ul>
 
-            </div>
-        )
+            </nav>
+        );
+
+        return jsx;
     }}
     />
 )

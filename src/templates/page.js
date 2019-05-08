@@ -1,53 +1,32 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Nav from '../components/Nav'
-import Header from '../components/Header'
-import BlogLink from '../components/BlogLink'
-import Testimonial from '../components/Testimonial'
+import Nav from '../components/Nav';
+import Header from '../components/Header';
+import Main from '../components/Main'
+import EntryDiv from '../components/EntryDiv'
+
 
 const Page = ({data}) => {
     const {contentfulPage} = data;
-    const {shortTitle, longTitle, /* layout, */ entries} = contentfulPage;
+    const {longTitle, layout, entries} = contentfulPage;
 
-    if (shortTitle === 'blogit') {
-        return (
-            <div>
-                <Nav></Nav>
+    const jsx = (
+        <div>
+            <Nav></Nav>
 
-                <Header title={longTitle}></Header>
+            <Header title={longTitle}></Header>
 
-                {entries.map(entry => 
-                    <BlogLink entry={entry} key={entry.id}></BlogLink>
+            <Main layout={layout}>
+                {entries && entries.map(entry => 
+                    <EntryDiv entry={entry} key={entry.id}></EntryDiv>
                 )}
-            </div>
-        )
-    }
+            </Main>
 
-    else if (shortTitle === 'Ajakista') {
-        return (
-            <div>
-                <Nav></Nav>
+        </div>
+    );
 
-                <Header title={longTitle}></Header>
-
-                {entries.map(entry => 
-                    <Testimonial entry={entry} key={entry.id}></Testimonial>
-                )}
-            </div>
-        )
-    }
-
-    else {
-        return (
-            <div>
-                <Nav></Nav>
-
-                <Header title={longTitle}></Header>
-
-            </div>
-        )
-    }
+    return jsx;
 };
 
 export default Page;
@@ -122,6 +101,20 @@ query($slug: String!){
                 id
                 title
                 slug
+                image {
+                    id
+                    fluid {
+                        base64
+                        tracedSVG
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                alt
             }
         }
     }
