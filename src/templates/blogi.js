@@ -3,11 +3,13 @@ import { graphql } from 'gatsby';
 import Parser from 'html-react-parser';
 import Moment from 'react-moment';
 
+import BodyDiv from '../components/BodyDiv'
 import Nav from '../components/Nav';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Image from '../components/Image';
 import PhotographerP from '../components/PhotographerP';
+import Footer from '../components/Footer';
 
 const BlogPage = ({data})=> {
     const {contentfulBlogPost} = data;
@@ -15,7 +17,7 @@ const BlogPage = ({data})=> {
     const text = contentfulBlogPost.content.childMarkdownRemark.html;
  
     return (
-        <div className='BodyDiv'>
+        <BodyDiv>
 
             <Nav></Nav>
 
@@ -63,7 +65,9 @@ const BlogPage = ({data})=> {
 
             </Main>     
 
-        </div>
+            <Footer></Footer>
+
+        </BodyDiv>
     )
 };
 

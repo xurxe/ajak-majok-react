@@ -1,10 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import BodyDiv from '../components/BodyDiv'
 import Nav from '../components/Nav';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import EntryDiv from '../components/EntryDiv';
+import Footer from '../components/Footer'
 
 
 const Page = ({data}) => {
@@ -12,7 +14,9 @@ const Page = ({data}) => {
     const {longTitle, layout, entries} = contentfulPage;
 
     const jsx = (
-        <div className='BodyDiv'>
+
+        <BodyDiv>
+
             <Nav></Nav>
 
             <Header 
@@ -32,7 +36,9 @@ const Page = ({data}) => {
 
             </Main>
 
-        </div>
+            <Footer></Footer>
+            
+        </BodyDiv>
     );
 
     return jsx;

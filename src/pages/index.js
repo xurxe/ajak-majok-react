@@ -1,18 +1,20 @@
 import React from "react";
 import { graphql } from 'gatsby';
 
+import BodyDiv from '../components/BodyDiv'
 import Nav from '../components/Nav';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import EntryDiv from '../components/EntryDiv';
+import Footer from '../components/Footer';
 
 const IndexPage = ({data}) => {
     const {contentfulIndex} = data;
     const {longTitle, layout, entries} = contentfulIndex;
 
     const jsx = (
-        <div 
-        className='BodyDiv'>
+        <BodyDiv>
+
             <Nav></Nav>
 
             <Header 
@@ -32,7 +34,9 @@ const IndexPage = ({data}) => {
 
             </Main>
 
-        </div>
+            <Footer></Footer>
+
+        </BodyDiv>
     );
 
     return jsx;
