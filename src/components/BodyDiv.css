@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Arvo', serif;
+    color: #2a143d;
+    font-size: 16px;
+}
+
+.BodyDiv {
+    background: white;
+}

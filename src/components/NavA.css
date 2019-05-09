@@ -1,0 +1,58 @@
+.NavA {
+    color: white;
+    padding: 0 0.1rem 0.3rem 0.1rem;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+    transition: 0.1s;
+}
+
+@media only screen and (max-width: 800px) {
+    .NavA {
+        padding: 0 0 1.5rem 0;
+    }
+}
+
+.NavA:hover {
+    color: #FFE964;
+}
+
+.NavA:focus {
+    color: #FFE964;
+    outline: none;
+}
+
+.NavA___active {
+    color: #FFE964;
+    border-bottom: 1px solid #FFE964;
+}
+
+.NavA___index {
+    font-size: 1.5em;
+    margin-right: 1rem;
+}
+
+.NavA___page {
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.NavA___electionLink {
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.NavA___socialMediaLink {
+    font-size: 1.5em;
+    margin-left: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .NavA___active {
+        border-bottom: none;
+    }
+}

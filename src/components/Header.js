@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Header.css'
+
 const Header = ({title, modifier, children}) => {
     
     const jsx = (
@@ -8,7 +10,7 @@ const Header = ({title, modifier, children}) => {
         >
 
             <h1 
-            className={`Header_h1___${modifier}`}
+            className={`Header_h1 Header_h1___${modifier}`}
             >
 
                 {title}

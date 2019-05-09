@@ -1,0 +1,73 @@
+.Nav {
+    background-color: #8f44cc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.Nav_div {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+}
+
+.Nav_div--hidden {
+    display: none;
+}
+
+.Nav_p {
+    display: none;
+}
+
+.Nav_button {
+    display: none;
+}
+
+.Nav_button:hover {
+    color: #FFE964;
+}
+
+.Nav_button:focus {
+    color: #FFE964;
+    outline: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .Nav {
+        display: grid;
+        grid-row-gap: 1.5rem;
+        grid-template-columns: auto auto;
+        grid-auto-flow: row;
+        padding: 1.5rem;
+    }
+
+    .Nav_div {
+        align-items: baseline;
+        flex-direction: column;
+    }
+
+    .Nav_p {
+        color: white;
+        display: block;
+        font-family: 'Bungee', sans-serif;
+        font-size: 1.5rem;
+    }
+
+    .Nav_button {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 1.5rem;
+        text-align: right;
+    }
+
+    .Nav_div___externalLinks {
+        align-items: flex-end;
+    }
+}

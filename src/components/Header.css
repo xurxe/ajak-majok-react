@@ -1,0 +1,42 @@
+.Header {
+    padding-top: 10rem;
+    text-align: center;
+}
+
+.Header_h1 {
+    color: #8f44cc;
+    font-weight: normal;
+}
+
+.Header_h1___index {
+    font-family: 'Bungee Inline', sans-serif;
+    font-size: 10.5vw;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+}
+
+.Header_h1___page {
+    font-family: 'Bungee', sans-serif;
+    font-size: 6vw;
+}
+
+.Header_h1___blogi {
+    font-family: 'Unna', serif;
+    font-size: 4vw;
+    padding: 0.5em 0;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .Header_h1___blogi {
+        font-size: calc(29px + 7 * (100vw - 600px) / 300);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Header_h1___blogi {
+        font-size: 29px;
+    }
+}

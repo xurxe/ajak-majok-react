@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Footer = ({layout, children}) => {
+const Footer = ({children}) => {
 
     const jsx = (
 
-        <footer className='Footer'>
+        <footer 
+        className='Footer'
+        >
 
+            {children}
+            
         </footer>
     );
 

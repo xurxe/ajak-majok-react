@@ -1,5 +1,15 @@
 import React from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import ReactDOM from 'react-dom';
+import { StaticQuery, graphql } from 'gatsby';
+
+import './Nav.css';
+
+import NavA from './NavA';
+
+const handleClick = (e) => {
+    const node = ReactDOM.findDOMNode(e.target);
+    console.log(node)
+}
 
 
 const Nav = () => (
@@ -12,6 +22,8 @@ const Nav = () => (
                 internalLinks {
                     ... on ContentfulIndex {
                         id
+                        longTitle
+                        iconFontAwesome
                     }
                     ... on ContentfulPage {
                         id
@@ -29,6 +41,7 @@ const Nav = () => (
                         id
                         name
                         url
+                        iconFontAwesome
                     }
                 }
             }
@@ -39,57 +52,51 @@ const Nav = () => (
         const {internalLinks, externalLinks} = contentfulNavigationBar;
         const jsx = (
             <nav className='Nav'>
-                <ul 
-                className={`Nav_ul Nav_ul___internalLinks`}>
+
+                <p className='Nav_p'>
+                    Ajak Majok
+                </p>
+
+                <button 
+                className='Nav_button'
+                onClick={handleClick}
+                >
+                    <i className="fas fa-bars"></i>
+
+                </button>
+
+                <div 
+                className={`Nav_div Nav_div___internalLinks`}>
 
                     {internalLinks.map(
                         (link) => (
-                            <li 
+
+                            <NavA 
                             key={link.id}
-                            className={`Nav_li`}
-                            >
+                            link={link}
+                            ></NavA>
 
-                                <Link 
-                                to={'/' + link.slug}
-                                className={`Nav_a`}
-                                >
-
-                                    {link.shortTitle}
-
-                                </Link>
-
-                            </li>
                         )
                     )}
 
-                </ul>
+                </div>
 
-                <ul 
-                className={`Nav_ul Nav_ul___externalLinks`}
+                <div 
+                className={`Nav_div Nav_div___externalLinks`}
                 >
 
                     {externalLinks.map(
                         (link) => (
-                            <li 
+
+                            <NavA 
                             key={link.id}
-                            className={`Nav_li`}
-                            >
+                            link={link}
+                            ></NavA>
 
-                                <a 
-                                key={link.id} 
-                                href={link.url}
-                                className={`Nav_a`}
-                                >
-
-                                    {link.name}
-
-                                </a>
-
-                            </li>
                         )
                     )}
 
-                </ul>
+                </div>
 
             </nav>
         );
