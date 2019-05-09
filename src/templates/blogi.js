@@ -1,46 +1,73 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import Parser from 'html-react-parser'
-import Moment from 'react-moment'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Parser from 'html-react-parser';
+import Moment from 'react-moment';
+
+import Nav from '../components/Nav';
+import Header from '../components/Header';
+import Main from '../components/Main';
+import Image from '../components/Image';
+import PhotographerP from '../components/PhotographerP';
 
 const BlogPage = ({data})=> {
-    const {contentfulBlogPost} = data
-
-    const {title, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer} = contentfulBlogPost
-
-    const content = contentfulBlogPost.content.childMarkdownRemark.html
+    const {contentfulBlogPost} = data;
+    const {title, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer} = contentfulBlogPost;
+    const text = contentfulBlogPost.content.childMarkdownRemark.html;
  
     return (
-        <>
-            <h2>
-                {title}
-            </h2>
+        <div className='BodyDiv'>
 
-            <Moment format="DD.MM.YYYY">
-                {date}
-            </Moment>
+            <Nav></Nav>
 
-            <br />
+            <Header 
+            title={title} 
+            modifier='blogi'>
 
-            <a href={alsoPostedInUrl}>
-                {alsoPostedIn}
-            </a>
+                <Moment 
+                format="DD.MM.YYYY" 
+                className='Header_time___blogi'>
 
-            <Img alt={alt} fluid={image.fluid}></Img>
+                    {date}
 
-            <p>
-                {photographer}
-            </p>
+                </Moment>
 
-            <div>
-                {Parser(content)}
-            </div>
-        </>
+                <br />
+
+                <a 
+                href={alsoPostedInUrl}
+                className='Header_a___blogi'
+                >
+
+                    {alsoPostedIn}
+
+                </a>
+
+            </Header>
+
+            <Main 
+            layout='column'>
+
+                <Image 
+                alt={alt} 
+                image={image}
+                color='yellow'
+                ></Image>
+
+                <PhotographerP
+                photographer={photographer}
+                ></PhotographerP>
+
+                <div>
+                    {Parser(text)}
+                </div>
+
+            </Main>     
+
+        </div>
     )
-}
+};
 
-export default BlogPage
+export default BlogPage;
 
 export const query = graphql`
 query($slug: String!){ 
@@ -78,4 +105,4 @@ query($slug: String!){
         }
     }
 }
-`
+`;

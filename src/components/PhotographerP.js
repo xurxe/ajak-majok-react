@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const PhotographerP = ({photographer}) => {
     
     const jsx = (
         <p 
-        className='p-photographer'>
+        className='PhotographerP'>
 
             {photographer}
 

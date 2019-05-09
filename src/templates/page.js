@@ -3,8 +3,8 @@ import { graphql } from 'gatsby';
 
 import Nav from '../components/Nav';
 import Header from '../components/Header';
-import Main from '../components/Main'
-import EntryDiv from '../components/EntryDiv'
+import Main from '../components/Main';
+import EntryDiv from '../components/EntryDiv';
 
 
 const Page = ({data}) => {
@@ -12,15 +12,24 @@ const Page = ({data}) => {
     const {longTitle, layout, entries} = contentfulPage;
 
     const jsx = (
-        <div>
+        <div className='BodyDiv'>
             <Nav></Nav>
 
-            <Header title={longTitle}></Header>
+            <Header 
+            title={longTitle} 
+            modifier='page'
+            ></Header>
 
-            <Main layout={layout}>
+            <Main 
+            layout={layout}>
+
                 {entries && entries.map(entry => 
-                    <EntryDiv entry={entry} key={entry.id}></EntryDiv>
+                    <EntryDiv 
+                    entry={entry} 
+                    key={entry.id}
+                    ></EntryDiv>
                 )}
+
             </Main>
 
         </div>
@@ -119,4 +128,4 @@ query($slug: String!){
         }
     }
 }
-`
+`;

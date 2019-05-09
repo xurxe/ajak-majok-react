@@ -1,5 +1,5 @@
-import React from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import React from 'react';
+import { StaticQuery, graphql, Link } from 'gatsby';
 
 
 const Nav = () => (
@@ -38,20 +38,20 @@ const Nav = () => (
         const {contentfulNavigationBar} = data;
         const {internalLinks, externalLinks} = contentfulNavigationBar;
         const jsx = (
-            <nav>
+            <nav className='Nav'>
                 <ul 
-                className={`NavDiv NavDiv___internalLinks`}>
+                className={`Nav_ul Nav_ul___internalLinks`}>
 
                     {internalLinks.map(
                         (link) => (
                             <li 
                             key={link.id}
-                            className={`NavDiv-li`}
+                            className={`Nav_li`}
                             >
 
                                 <Link 
                                 to={'/' + link.slug}
-                                className={`NavDiv-a`}
+                                className={`Nav_a`}
                                 >
 
                                     {link.shortTitle}
@@ -65,20 +65,20 @@ const Nav = () => (
                 </ul>
 
                 <ul 
-                className={`NavDiv NavDiv___externalLinks`}
+                className={`Nav_ul Nav_ul___externalLinks`}
                 >
 
                     {externalLinks.map(
                         (link) => (
                             <li 
                             key={link.id}
-                            className={`NavDiv-li`}
+                            className={`Nav_li`}
                             >
 
                                 <a 
                                 key={link.id} 
                                 href={link.url}
-                                className={`NavDiv-a`}
+                                className={`Nav_a`}
                                 >
 
                                     {link.name}
@@ -97,6 +97,6 @@ const Nav = () => (
         return jsx;
     }}
     />
-)
+);
 
 export default Nav;

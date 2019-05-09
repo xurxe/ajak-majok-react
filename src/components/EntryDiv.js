@@ -1,21 +1,19 @@
-import React from 'react'
-import Parser from 'html-react-parser'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react';
+import Parser, { domToReact } from 'html-react-parser';
+import { Link } from 'gatsby';
 
-import PhotographerP from './PhotographerP'
+import Image from './Image';
+import PhotographerP from './PhotographerP';
 
 const EntryDiv = ({entry}) => {
 
     const sliceIndex = ('Contentful').length;
-
     const entryType = (
         (entry.__typename)
         .slice(sliceIndex, sliceIndex + 1)
         .toLowerCase()
-        .concat((entry.__typename)
-        .slice(sliceIndex + 1))
-    )
+        .concat((entry.__typename).slice(sliceIndex + 1))
+    );
 
     let jsx;
 
@@ -35,17 +33,18 @@ const EntryDiv = ({entry}) => {
 
     else if (entry.__typename === 'ContentfulImage'){
         const {image, alt, photographer, shadow} = entry;
+        const color = (shadow.toLowerCase());
     
         jsx = (
             <div 
             className={`EntryDiv EntryDiv___${entryType}`}
             >
 
-                <Img 
+                <Image 
                 alt={alt} 
-                fluid={image.fluid}
-                className={`EntryDiv_img___${shadow}Shadow`}
-                ></Img>
+                image={image}
+                color={color}
+                ></Image>
     
                 <PhotographerP
                 photographer={photographer}
@@ -62,14 +61,14 @@ const EntryDiv = ({entry}) => {
             <div 
             className={`EntryDiv EntryDiv___${entryType}`}>
 
-                <Img 
+                <Image 
                 alt={alt} 
-                fluid={image.fluid}
-                className={`EntryDiv_img___yellowShadow`}
-                ></Img>
+                image={image}
+                color='yellow'
+                ></Image>
 
                 <p 
-                className='EntryDiv_p___name'
+                className='EntryDiv_nameP'
                 >
 
                     {name} 
@@ -77,14 +76,37 @@ const EntryDiv = ({entry}) => {
                 </p>
     
                 <p 
-                className='EntryDiv_p___occupation'
+                className='EntryDiv_occupationP'
                 >
 
                     ({occupation})
 
                 </p>
+
+                <div
+                className='EntryDiv_quoteDiv'>
+                    {Parser(
+                        quote.childMarkdownRemark.html, { 
+                            replace: (domNode) => {
+                                if (domNode.name === 'p') {
+
+                                    jsx = (
+                                        <p 
+                                        className='EntryDiv_quoteP'
+                                        >
+
+                                            {domToReact(domNode.children)}
+
+                                        </p>
+                                    );
+
+                                    return jsx;
+                                }
+                            }
+                        }
+                    )}
+                </div>
     
-                {Parser(quote.childMarkdownRemark.html)}
             </div>
         );
     }
@@ -102,11 +124,11 @@ const EntryDiv = ({entry}) => {
                 className={`EntryDiv_a___${entryType}`}
                 >
 
-                    <Img 
-                    alt={alt} 
-                    fluid={image.fluid}
-                    className={`EntryDiv_img___purpleShadow`}
-                    ></Img>
+                <Image 
+                alt={alt} 
+                image={image}
+                color='purple'
+                ></Image>
 
                     {title}
 

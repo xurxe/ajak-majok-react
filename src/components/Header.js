@@ -1,11 +1,23 @@
-import React from 'react'
+import React from 'react';
 
-const Header = ({title}) => {
+const Header = ({title, modifier, children}) => {
     
     const jsx = (
-        <h1>
-            {title}
-        </h1>
+        <header 
+        className={`Header Header___${modifier}`}
+        >
+
+            <h1 
+            className={`Header_h1___${modifier}`}
+            >
+
+                {title}
+
+            </h1>
+
+            {children || null}
+
+        </header>
     );
 
     return jsx;
