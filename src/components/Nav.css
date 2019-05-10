@@ -1,30 +1,82 @@
+/* Block: nav + modifiers ******************************* */
+
 .Nav {
     background-color: #8f44cc;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
     position: fixed;
     width: 100%;
     z-index: 100;
+    padding: 1.5rem;
 }
 
-.Nav_div {
+.Nav___desktop {
     align-items: baseline;
     display: flex;
+    height: 5rem;
     flex-direction: row;
+    justify-content: space-between;
 }
 
-.Nav_div___hidden {
-    display: none;
+.Nav___mobile {
+    display: grid;
+    grid-row-gap: 1.5rem;
+    grid-template-columns: auto auto;
+    grid-auto-flow: row;
 }
+
+.Nav___mobile___tucked {
+    height: 5rem;
+    transition: height 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    -webkit-transition: height 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.Nav___mobile___untucked {
+    height: 100vh;
+    transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+
+/* Element: p + modifiers ******************************** */
 
 .Nav_p {
+    color: white;
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.5rem; 
+}
+
+.Nav_p___desktop {
     display: none;
 }
 
+.Nav_p___mobile {
+    display: block;
+}
+
+.Nav_p___visible {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Nav_p___invisible {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+/* Element: button + modifiers **************************** */
+
 .Nav_button {
-    display: none;
+    align-self: start;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    justify-self: end;
+    text-align: right;
 }
 
 .Nav_button:hover {
@@ -36,38 +88,59 @@
     outline: none;
 }
 
-@media only screen and (max-width: 800px) {
-    .Nav {
-        display: grid;
-        grid-row-gap: 1.5rem;
-        grid-template-columns: auto auto;
-        grid-auto-flow: row;
-        padding: 1.5rem;
-    }
+.Nav_button___desktop {
+    display: none;
+}
 
-    .Nav_div {
-        align-items: baseline;
-        flex-direction: column;
-    }
+.Nav_button___mobile {
+    display: block;
+}
 
-    .Nav_p {
-        color: white;
-        display: block;
-        font-family: 'Bungee', sans-serif;
-        font-size: 1.5rem;
-    }
+.Nav_button___visible {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
 
-    .Nav_button {
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        display: block;
-        font-size: 1.5rem;
-        text-align: right;
-    }
+.Nav_button___invisible {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
 
-    .Nav_div___externalLinks {
-        align-items: flex-end;
-    }
+
+
+/* Element: div + modifiers ******************************* */
+
+.Nav_div {
+    align-items: baseline;
+    display: flex;
+}
+
+.Nav_div___desktop {
+    flex-direction: row;
+}
+
+.Nav_div___tucked {
+    display: none;
+}
+
+.Nav_div___untucked {
+    flex-direction: column;
+}
+
+.Nav_div___right {
+    align-items: flex-end;
+}
+
+.Nav_div___visible {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Nav_div___invisible {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }

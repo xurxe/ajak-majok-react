@@ -10,46 +10,190 @@ class Nav extends Component {
 
     constructor() {
         super();
+
         this.state = {
-            small: false,
-            hidden: false,
-            hiddenClass: '',
+            mobile: false,
+            tucked: true,
+            classNameNav: `
+            Nav
+            Nav___desktop
+            `,
+            classNameNavP: `
+            Nav_p 
+            Nav_p___desktop 
+            Nav_p___visible
+            `,
+            classNameNavButton: `
+            Nav_button 
+            Nav_button___desktop 
+            Nav_button___visible
+            `,
+            classNameNavDiv: `
+            Nav_div 
+            Nav_div___desktop
+            Nav_div___visible
+            `,
         };
     };
 
     handleWindowResize = () => {
-        if (window.matchMedia('(max-width: 800px)').matches) {
+        if (!this.state.mobile && window.matchMedia('(max-width: 800px)').matches) {
             this.setState(() => ({
-                small: true,
-                hidden: true,
-                hiddenClass: 'Nav_div___hidden',
-            }))
+                mobile: true,
+                classNameNavP: `
+                Nav_p 
+                Nav_p___desktop 
+                Nav_p___invisible
+                `,
+                classNameNavButton: `
+                Nav_button 
+                Nav_button___desktop 
+                Nav_button___invisible
+                `,
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___desktop 
+                Nav_div___invisible
+                `,
+            }));
+
+            setTimeout(() => {
+                this.setState(() => ({
+                    classNameNav: `
+                    Nav 
+                    Nav___mobile 
+                    Nav___mobile___tucked`
+                    ,
+                    classNameNavP: `
+                    Nav_p 
+                    Nav_p___mobile 
+                    Nav_p___invisible`
+                    ,
+                    classNameNavButton: `
+                    Nav_button 
+                    Nav_button___mobile 
+                    Nav_p___invisible`
+                    ,
+                    classNameNavDiv: `
+                    Nav_div 
+                    Nav_div___tucked`
+                    ,
+                }))
+            }, 500);
+
+            setTimeout(() => {
+                this.setState(() => ({
+                    classNameNavP: `
+                    Nav_p 
+                    Nav_p___mobile 
+                    Nav_p___visible`
+                    ,
+                    classNameNavButton: `
+                    Nav_button 
+                    Nav_button___mobile 
+                    Nav_button___visible`
+                    ,
+                }))
+            }, 550);
         }
 
-        else {
+        else if (this.state.mobile && !window.matchMedia('(max-width: 800px)').matches) {
             this.setState(() => ({
-                small: false, 
-                hidden: false,
-                hiddenClass: ''
-            }))
+                mobile: false, 
+                tucked: true,
+                classNameNavP: `
+                Nav_p 
+                Nav_p___invisible`
+                ,
+                classNameNavButton: `
+                Nav_button 
+                Nav_button___invisible`
+                ,
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___untucked 
+                Nav_div___invisible`
+                ,
+            }));
+
+            setTimeout(() => {
+                this.setState(() => ({
+                    classNameNav: `
+                    Nav 
+                    Nav___desktop`
+                    ,
+                    classNameNavP: `
+                    Nav_p 
+                    Nav_p___desktop`
+                    ,
+                    classNameNavButton: `
+                    Nav_button 
+                    Nav_button___desktop`
+                    ,
+                    classNameNavDiv: `
+                    Nav_div 
+                    Nav_div___desktop
+                    Nav_div___visible`
+                    ,
+                }))
+            }, 500);
         };
-    }
+    };
 
     handleClick = () => {
+
+        console.log(this.state.tucked)
         this.setState((prevState) => (
-            {hidden: !prevState.hidden}
+            {tucked: !prevState.tucked}
         ));
 
-        if (this.setState.hidden) {
+        if (this.state.tucked) {
             this.setState(() => (
-                {hiddenClass: 'Nav_div___hidden'}
+                {classNameNav: `
+                Nav Nav___mobile 
+                Nav___mobile___tucked`
+                ,
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___untucked 
+                Nav_div___invisible`
+            }
             ));
+            
+            setTimeout(() => {
+                this.setState(() => ({
+                    classNameNavDiv: `
+                    Nav_div 
+                    Nav_div___untucked 
+                    Nav_div___tucked`
+                    ,
+                }))
+            }, 300);
         }
 
         else {
             this.setState(() => (
-                {hiddenClass: ''}
-            ));
+                {classNameNav: `
+                Nav 
+                Nav___mobile 
+                Nav___mobile___untucked`
+                ,
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___untucked 
+                Nav_div___invisible`
+            }
+            ))
+
+            setTimeout(() => {
+                this.setState(() => ({
+                    classNameNavDiv: `
+                    Nav_div 
+                    Nav_div___untucked 
+                    Nav_div___untucked
+                    `,
+                }))
+            }, 300);
         };
     };
 
@@ -93,7 +237,7 @@ class Nav extends Component {
             render={data => {
                 const { contentfulNavigationBar } = data;
                 const { internalLinks, externalLinks } = contentfulNavigationBar;
-                const { hiddenClass } = this.state;
+                const { classNameNav, classNameNavP, classNameNavButton, classNameNavDiv } = this.state;
 
                 const jsx = (
 
@@ -101,19 +245,21 @@ class Nav extends Component {
                     handleWidth
                     onResize={this.handleWindowResize}
                     refreshMode='throttle'
-                    refreshOptions={{
-                        leading: true, 
-                        trailing: false 
-                    }}
+                    refreshRate={100}
                     >
-                        <nav className='Nav'>
+                    
+                        <nav 
+                        className={classNameNav}
+                        >
             
-                            <p className='Nav_p'>
+                            <p 
+                            className={classNameNavP}
+                            >
                                 Ajak Majok
                             </p>
             
                             <button 
-                            className='Nav_button'
+                            className={classNameNavButton}
                             onClick={this.handleClick}
                             >
                                 <i className="fas fa-bars"></i>
@@ -121,7 +267,7 @@ class Nav extends Component {
                             </button>
             
                             <div 
-                            className={`Nav_div Nav_div___internalLinks ${hiddenClass}`}>
+                            className={classNameNavDiv}>
             
                                 {internalLinks.map(
                                     (link) => (
@@ -137,7 +283,7 @@ class Nav extends Component {
                             </div>
             
                             <div 
-                            className={`Nav_div Nav_div___externalLinks ${hiddenClass}`}
+                            className={`${classNameNavDiv} Nav_div___right`}
                             >
             
                                 {externalLinks.map(
