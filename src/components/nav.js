@@ -12,7 +12,7 @@ class Nav extends Component {
         super();
 
         this.state = {
-            mobile: false,
+            desktop: true,
             tucked: true,
             classNameNav: `
             Nav
@@ -36,164 +36,203 @@ class Nav extends Component {
         };
     };
 
-    handleWindowResize = () => {
-        if (!this.state.mobile && window.matchMedia('(max-width: 800px)').matches) {
+    changeDesktopToTucked = () => {
+        this.setState(() => ({
+            desktop: false,
+            classNameNavP: `
+            Nav_p 
+            Nav_p___desktop 
+            Nav_p___invisible
+            `,
+            classNameNavButton: `
+            Nav_button 
+            Nav_button___desktop 
+            Nav_button___invisible
+            `,
+            classNameNavDiv: `
+            Nav_div 
+            Nav_div___desktop 
+            Nav_div___invisible
+            `,
+        }));
+
+        setTimeout(() => {
             this.setState(() => ({
-                mobile: true,
+                classNameNav: `
+                Nav 
+                Nav___mobile 
+                Nav___mobile___tucked`
+                ,
                 classNameNavP: `
                 Nav_p 
-                Nav_p___desktop 
-                Nav_p___invisible
-                `,
-                classNameNavButton: `
-                Nav_button 
-                Nav_button___desktop 
-                Nav_button___invisible
-                `,
-                classNameNavDiv: `
-                Nav_div 
-                Nav_div___desktop 
-                Nav_div___invisible
-                `,
-            }));
-
-            setTimeout(() => {
-                this.setState(() => ({
-                    classNameNav: `
-                    Nav 
-                    Nav___mobile 
-                    Nav___mobile___tucked`
-                    ,
-                    classNameNavP: `
-                    Nav_p 
-                    Nav_p___mobile 
-                    Nav_p___invisible`
-                    ,
-                    classNameNavButton: `
-                    Nav_button 
-                    Nav_button___mobile 
-                    Nav_p___invisible`
-                    ,
-                    classNameNavDiv: `
-                    Nav_div 
-                    Nav_div___tucked`
-                    ,
-                }))
-            }, 500);
-
-            setTimeout(() => {
-                this.setState(() => ({
-                    classNameNavP: `
-                    Nav_p 
-                    Nav_p___mobile 
-                    Nav_p___visible`
-                    ,
-                    classNameNavButton: `
-                    Nav_button 
-                    Nav_button___mobile 
-                    Nav_button___visible`
-                    ,
-                }))
-            }, 550);
-        }
-
-        else if (this.state.mobile && !window.matchMedia('(max-width: 800px)').matches) {
-            this.setState(() => ({
-                mobile: false, 
-                tucked: true,
-                classNameNavP: `
-                Nav_p 
+                Nav_p___mobile 
                 Nav_p___invisible`
                 ,
                 classNameNavButton: `
                 Nav_button 
-                Nav_button___invisible`
+                Nav_button___mobile 
+                Nav_p___invisible`
                 ,
                 classNameNavDiv: `
                 Nav_div 
-                Nav_div___untucked 
-                Nav_div___invisible`
+                Nav_div___tucked`
                 ,
-            }));
+            }))
+        }, 500);
 
+        setTimeout(() => {
+            this.setState(() => ({
+                classNameNavP: `
+                Nav_p 
+                Nav_p___mobile 
+                Nav_p___visible`
+                ,
+                classNameNavButton: `
+                Nav_button 
+                Nav_button___mobile 
+                Nav_button___visible`
+                ,
+            }))
+        }, 550);
+
+        return;
+    };
+
+    changeTuckedToDesktop = () => {
+        this.setState(() => ({
+            desktop: true, 
+            tucked: true,
+            classNameNavP: `
+            Nav_p 
+            Nav_p___invisible`
+            ,
+            classNameNavButton: `
+            Nav_button 
+            Nav_button___invisible`
+            ,
+            classNameNavDiv: `
+            Nav_div 
+            Nav_div___untucked 
+            Nav_div___invisible`
+            ,
+        }));
+
+        setTimeout(() => {
+            this.setState(() => ({
+                classNameNav: `
+                Nav 
+                Nav___desktop`
+                ,
+                classNameNavP: `
+                Nav_p 
+                Nav_p___desktop`
+                ,
+                classNameNavButton: `
+                Nav_button 
+                Nav_button___desktop`
+                ,
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___desktop
+                Nav_div___visible`
+                ,
+            }))
+        }, 500);
+
+        return;
+    };
+
+    untuck = () => {
+        this.setState(() => ({
+            tucked: false,
+            classNameNav: `
+            Nav 
+            Nav___mobile 
+            Nav___mobile___untucked`
+            ,
+            classNameNavDiv: `
+            Nav_div 
+            Nav_div___untucked 
+            Nav_div___invisible`
+        }
+        ))
+
+        setTimeout(() => {
+            this.setState(() => ({
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___untucked 
+                Nav_div___untucked
+                `,
+            }))
+        }, 300);
+
+        return;
+    };
+
+    tuck = () => {
+        this.setState(() => ({
+            tucked: true,
+            classNameNav: `
+            Nav Nav___mobile 
+            Nav___mobile___tucked`
+            ,
+            classNameNavDiv: `
+            Nav_div 
+            Nav_div___untucked 
+            Nav_div___invisible`
+        }
+        ));
+        
+        setTimeout(() => {
+            this.setState(() => ({
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___untucked 
+                Nav_div___tucked`
+                ,
+            }))
+        }, 300);
+
+        return;
+    };
+
+    handleWindowResize = () => {
+        if (
+            this.state.desktop
+            && window.matchMedia('(max-width: 800px)').matches
+        ) {
+            this.changeDesktopToTucked();
+        }
+
+        else if (
+            !this.state.desktop 
+            && this.state.tucked
+            && !window.matchMedia('(max-width: 800px)').matches
+        ) {
+            this.changeTuckedToDesktop();
+        }
+
+        else if (
+            !this.state.desktop 
+            && !this.state.tucked
+            && !window.matchMedia('(max-width: 800px)').matches
+        ) {
+            this.tuck();
             setTimeout(() => {
-                this.setState(() => ({
-                    classNameNav: `
-                    Nav 
-                    Nav___desktop`
-                    ,
-                    classNameNavP: `
-                    Nav_p 
-                    Nav_p___desktop`
-                    ,
-                    classNameNavButton: `
-                    Nav_button 
-                    Nav_button___desktop`
-                    ,
-                    classNameNavDiv: `
-                    Nav_div 
-                    Nav_div___desktop
-                    Nav_div___visible`
-                    ,
-                }))
-            }, 500);
+                this.changeTuckedToDesktop();
+            }, 1000);
         };
     };
 
     handleClick = () => {
 
-        console.log(this.state.tucked)
-        this.setState((prevState) => (
-            {tucked: !prevState.tucked}
-        ));
-
         if (this.state.tucked) {
-            this.setState(() => (
-                {classNameNav: `
-                Nav Nav___mobile 
-                Nav___mobile___tucked`
-                ,
-                classNameNavDiv: `
-                Nav_div 
-                Nav_div___untucked 
-                Nav_div___invisible`
-            }
-            ));
-            
-            setTimeout(() => {
-                this.setState(() => ({
-                    classNameNavDiv: `
-                    Nav_div 
-                    Nav_div___untucked 
-                    Nav_div___tucked`
-                    ,
-                }))
-            }, 300);
+            this.untuck();
         }
 
         else {
-            this.setState(() => (
-                {classNameNav: `
-                Nav 
-                Nav___mobile 
-                Nav___mobile___untucked`
-                ,
-                classNameNavDiv: `
-                Nav_div 
-                Nav_div___untucked 
-                Nav_div___invisible`
-            }
-            ))
-
-            setTimeout(() => {
-                this.setState(() => ({
-                    classNameNavDiv: `
-                    Nav_div 
-                    Nav_div___untucked 
-                    Nav_div___untucked
-                    `,
-                }))
-            }, 300);
+            this.tuck();
         };
     };
 
