@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import ReactResizeDetector from 'react-resize-detector';
+
 
 import './Nav.css';
 
@@ -7,34 +9,53 @@ import NavA from './NavA';
 
 class Nav extends Component {
 
-    state = {
-        hidden: true,
+    constructor() {
+        super();
+        this.state = {
+            windowWidth: window.innerWidth,
+            hidden: true,
+        }
+    }
+
+
+    handleWindowResize = () => {
+        this.setState((() => ({windowWidth: window.innerWidth})));
+        console.log(this.state.windowWidth)
     }
 
     handleClick = () => {
-        this.setState((prevState => ({hidden: !prevState.hidden})));
-        console.log(this.state.hidden)
+        this.setState(((prevState) => ({hidden: !prevState.hidden})));
     };
 
     render() {
 
-        if (this.state.hidden === true) {
+        if (this.state.windowWidth < 800 && this.state.hidden) {
             return (
-                <nav className='Nav'>
-    
-                    <p className='Nav_p'>
-                        Ajak Majok
-                    </p>
-    
-                    <button 
-                    className='Nav_button'
-                    onClick={this.handleClick}
-                    >
-                        <i className="fas fa-bars"></i>
-    
-                    </button>
-    
-                </nav>
+
+                <ReactResizeDetector 
+                handleWidth 
+                onResize={this.handleWindowResize}
+                refreshMode='throttle'
+                >
+                
+                    <nav className='Nav'>
+                        
+                        <p className='Nav_p'>
+                            Ajak Majok
+                        </p>
+
+                        <button 
+                        className='Nav_button'
+                        onClick={this.handleClick}
+                        >
+                            <i className="fas fa-bars"></i>
+
+                        </button>
+
+                    </nav>
+
+                </ReactResizeDetector>
+
             )
         }
 
