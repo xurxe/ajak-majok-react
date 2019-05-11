@@ -1,7 +1,7 @@
 import React from 'react';
 import './PhotographerP.css'
 
-const PhotographerP = ({photographer}) => {
+const PhotographerP = ({ photographer }) => {
     
     const jsx = (
         <p 

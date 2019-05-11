@@ -1,35 +1,35 @@
 /* Block: nav + modifiers ******************************* */
 
 .Nav {
-    background-color: #8f44cc;
+    background-color: hsl(275, 60%, 55%);
+    padding: 1.5rem;
     position: fixed;
     width: 100%;
     z-index: 100;
-    padding: 1.5rem;
 }
 
 .Nav___desktop {
     align-items: baseline;
     display: flex;
-    height: 5rem;
     flex-direction: row;
+    height: 5rem;
     justify-content: space-between;
 }
 
 .Nav___mobile {
     display: grid;
+    grid-auto-flow: row;
     grid-row-gap: 1.5rem;
     grid-template-columns: auto auto;
-    grid-auto-flow: row;
 }
 
-.Nav___mobile___tucked {
+.Nav___tucked {
     height: 5rem;
     transition: height 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     -webkit-transition: height 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-.Nav___mobile___untucked {
+.Nav___untucked {
     height: 100vh;
     transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -57,12 +57,18 @@
     opacity: 1;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .Nav_p___invisible {
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 
@@ -80,11 +86,11 @@
 }
 
 .Nav_button:hover {
-    color: #FFE964;
+    color: hsl(50, 100%, 75%);
 }
 
 .Nav_button:focus {
-    color: #FFE964;
+    color: hsl(50, 100%, 75%);
     outline: none;
 }
 
@@ -100,12 +106,18 @@
     opacity: 1;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .Nav_button___invisible {
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 
@@ -137,10 +149,16 @@
     opacity: 1;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .Nav_div___invisible {
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }

@@ -1,5 +1,14 @@
+/* Block: navA + modifiers ******************************* */
+
 .NavA {
     color: white;
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    border-top: 1px solid hsla(50, 100%, 75%, 0);
+    border-bottom: 1px solid hsla(50, 100%, 75%, 0);
     padding: 0 0.1rem 0.3rem 0.1rem;
     text-decoration: none;
     text-rendering: optimizeLegibility;
@@ -7,7 +16,6 @@
     -moz-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -o-font-smoothing: antialiased;
-    transition: 0.1s;
 }
 
 @media only screen and (max-width: 800px) {
@@ -17,17 +25,33 @@
 }
 
 .NavA:hover {
-    color: #FFE964;
+    color: hsl(50, 100%, 75%);
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .NavA:focus {
-    color: #FFE964;
+    color: hsl(50, 100%, 75%);
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     outline: none;
 }
 
-.NavA___active {
+.NavA_page___active {
+    border-bottom: 1px solid hsla(50, 100%, 75%, 1);
     color: #FFE964;
-    border-bottom: 1px solid #FFE964;
+}
+
+@media only screen and (max-width: 800px) {
+    .NavA_page___active {
+        border-bottom: none;
+    }
 }
 
 .NavA___index {
@@ -52,7 +76,11 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .NavA___active {
-        border-bottom: none;
+    .NavA___electionLink {
+        padding: 0 0 1rem 0;
+    }
+
+    .NavA___socialMediaLink {
+        padding: 0 0 1rem 0;
     }
 }

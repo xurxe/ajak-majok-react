@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Parser from 'html-react-parser';
+import Parser, { domToReact } from 'html-react-parser';
 import Moment from 'react-moment';
 
 import BodyDiv from '../components/BodyDiv'
@@ -33,8 +33,6 @@ const BlogPage = ({data})=> {
 
                 </Moment>
 
-                <br />
-
                 <a 
                 href={alsoPostedInUrl}
                 className='Header_a___blogi'
@@ -59,8 +57,29 @@ const BlogPage = ({data})=> {
                 photographer={photographer}
                 ></PhotographerP>
 
-                <div>
-                    {Parser(text)}
+                <div
+                className='Main_blogDiv'
+                >
+                    {Parser(
+                        text, { 
+                            replace: (domNode) => {
+                                if (domNode.name === 'p') {
+
+                                    const jsx = (
+                                        <p 
+                                        className='Main_blogP'
+                                        >
+
+                                            {domToReact(domNode.children)}
+
+                                        </p>
+                                    );
+
+                                    return jsx;
+                                }
+                            }
+                        }
+                    )}  
                 </div>
 
             </Main>     

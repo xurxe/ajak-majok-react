@@ -48,6 +48,7 @@ export const query = graphql`
 query {
     contentfulIndex {
         id
+        layout
         longTitle    
     }
 }

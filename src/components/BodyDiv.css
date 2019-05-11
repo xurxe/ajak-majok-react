@@ -5,8 +5,8 @@
 }
 
 html {
+    color: hsl(275, 60%, 10%);
     font-family: 'Arvo', serif;
-    color: #2a143d;
     font-size: 16px;
 }
 

@@ -1,10 +1,28 @@
+/* Block: header ****************************************** */
+
 .Header {
-    padding-top: 10rem;
+    padding: 9rem 8vw 5rem;
     text-align: center;
 }
 
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .Header {
+        padding-left: calc(25px + (72 - 25) * (100vw - 600px) / (900 - 600));
+        padding-right: calc(25px + (72 - 25) * (100vw - 600px) / (900 - 600));        
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Header {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+/* Element: h1 + modifiers ********************************* */
+
 .Header_h1 {
-    color: #8f44cc;
+    color: hsl(275, 60%, 55%);
     font-weight: normal;
 }
 
@@ -26,7 +44,7 @@
 .Header_h1___blogi {
     font-family: 'Unna', serif;
     font-size: 4vw;
-    padding: 0.5em 0;
+    margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
@@ -39,4 +57,18 @@
     .Header_h1___blogi {
         font-size: 29px;
     }
+}
+
+/* Element: a + modifiers ********************************* */
+
+.Header_a___blogi {
+    color: hsl(275, 60%, 10%);
+    text-decoration: none;
+    padding-left: 1rem;
+}
+
+.Header_a___blogi:hover, .Header_a___blogi:focus {
+    color: hsl(275, 60%, 40%);
+    outline: none;
+    text-decoration: underline;
 }

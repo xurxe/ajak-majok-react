@@ -1,0 +1,11 @@
+.Image___yellowShadow {
+    border-radius: 4px;
+    box-shadow: -0.7rem 0.7rem hsl(50, 100%, 75%);
+    margin: 0 0 0.7rem 0.7rem;
+}
+
+.Image___purpleShadow {
+    border-radius: 4px;
+    box-shadow: -1.4rem 1.4rem #8f44cc;
+    margin: 0 0 1.4rem 1.4rem;
+}

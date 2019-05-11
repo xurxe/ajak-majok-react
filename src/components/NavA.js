@@ -40,8 +40,8 @@ const NavA = ({link}) => {
             <Link 
             to={'/' + link.slug}
             className={`NavA NavA___${linkType}`}
-            partiallyActive={true}
-            activeClassName={`NavA NavA___${linkType} NavA___active`}
+            greedyActive={true}
+            activeClassName={`NavA NavA___${linkType} NavA_page___active`}
             >
 
                 {link.shortTitle}
@@ -76,7 +76,7 @@ const NavA = ({link}) => {
             <a 
             href={link.url}
             target='_blank'
-            rel="noopener noreferrer"
+            rel='noopener noreferrer'
             className={`NavA NavA___${linkType}`}
             >
 

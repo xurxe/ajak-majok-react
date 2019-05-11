@@ -2,37 +2,59 @@ import React from 'react';
 import Parser, { domToReact } from 'html-react-parser';
 import { Link } from 'gatsby';
 
+import './EntryDiv.css'
+
 import Image from './Image';
 import PhotographerP from './PhotographerP';
 
-const EntryDiv = ({entry}) => {
+const EntryDiv = ({ entry }) => {
 
+    const { __typename } = entry;
     const sliceIndex = ('Contentful').length;
     const entryType = (
-        (entry.__typename)
+        (__typename)
         .slice(sliceIndex, sliceIndex + 1)
         .toLowerCase()
-        .concat((entry.__typename).slice(sliceIndex + 1))
+        .concat((__typename).slice(sliceIndex + 1))
     );
 
     let jsx;
 
-    if (entry.__typename === 'ContentfulText'){
-        const {text} = entry;
+    if (entryType === 'text'){
+        const { text } = entry;
     
         jsx = (
             <div 
             className={`EntryDiv EntryDiv___${entryType}`}
             >
 
-                {Parser(text.childMarkdownRemark.html)}
+                {Parser(
+                    text.childMarkdownRemark.html, { 
+                        replace: (domNode) => {
+                            if (domNode.name === 'p') {
+
+                                jsx = (
+                                    <p 
+                                    className='EntryDiv_textP'
+                                    >
+
+                                        {domToReact(domNode.children)}
+
+                                    </p>
+                                );
+
+                                return jsx;
+                            }
+                        }
+                    }
+                )}
 
             </div>
         );
     }
 
-    else if (entry.__typename === 'ContentfulImage'){
-        const {image, alt, photographer, shadow} = entry;
+    else if (entryType === 'image'){
+        const { image, alt, photographer, shadow } = entry;
         const color = (shadow.toLowerCase());
     
         jsx = (
@@ -54,8 +76,8 @@ const EntryDiv = ({entry}) => {
         );
     }
 
-    else if (entry.__typename === 'ContentfulTestimonial') {
-        const {name, occupation, quote, image, alt} = entry;
+    else if (entryType === 'testimonial') {
+        const { name, occupation, quote, image, alt } = entry;
     
         jsx = (
             <div 
@@ -111,8 +133,8 @@ const EntryDiv = ({entry}) => {
         );
     }
 
-    else if (entry.__typename === 'ContentfulBlogPost'){
-        const {slug, title, image, alt} = entry;
+    else if (entryType === 'blogPost'){
+        const { slug, title, image, alt } = entry;
     
         jsx = (
             <div 
@@ -121,16 +143,21 @@ const EntryDiv = ({entry}) => {
 
                 <Link 
                 to={'/blogit/'+ slug}
-                className={`EntryDiv_a___${entryType}`}
+                className='EntryDiv_blogLink'
                 >
 
                 <Image 
                 alt={alt} 
                 image={image}
                 color='purple'
+                className='EntryDiv_blogImage'
                 ></Image>
 
-                    {title}
+                    <p
+                    className='EntryDiv_blogTitle'
+                    >
+                        {title}
+                    </p>
 
                 </Link>
 

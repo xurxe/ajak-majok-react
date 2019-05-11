@@ -1,0 +1,74 @@
+.EntryDiv {
+    margin-bottom: 2.5rem;
+}
+
+.EntryDiv_textP {
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.EntryDiv_nameP {
+    color: hsl(275, 60%, 40%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.EntryDiv_occupationP {
+    color: hsl(275, 60%, 40%);
+    font-weight: bold;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.EntryDiv_quoteP {
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+}
+
+.EntryDiv_blogLink {
+    outline: none;
+    text-decoration: none;
+}
+
+.EntryDiv_blogTitle {
+    background-color: none;
+    color: hsl(275, 60%, 10%);
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-property: background-color, color;
+    border-radius: 4px;
+    height: 10.5rem;
+    line-height: 1.5rem;
+    margin: -3rem -0.75rem 0 0.75rem;
+    padding: 4rem 1.5rem 0;
+}
+
+.EntryDiv___blogPost:hover .EntryDiv_blogTitle {
+    background-color: hsl(50, 100%, 75%);
+    color: black;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-property: background-color, color;
+    text-decoration: underline;
+}
+
+.EntryDiv_blogLink:focus .EntryDiv_blogTitle {
+    background-color: hsl(50, 100%, 75%);
+    color: black;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-property: background-color, color;
+    text-decoration: underline;
+}

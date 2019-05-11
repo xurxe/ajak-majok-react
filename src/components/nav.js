@@ -61,23 +61,23 @@ class Nav extends Component {
                 classNameNav: `
                 Nav 
                 Nav___mobile 
-                Nav___mobile___tucked`
-                ,
+                Nav___tucked
+                `,
                 classNameNavP: `
                 Nav_p 
                 Nav_p___mobile 
-                Nav_p___invisible`
-                ,
+                Nav_p___invisible
+                `,
                 classNameNavButton: `
                 Nav_button 
                 Nav_button___mobile 
-                Nav_p___invisible`
-                ,
+                Nav_p___invisible
+                `,
                 classNameNavDiv: `
                 Nav_div 
-                Nav_div___tucked`
-                ,
-            }))
+                Nav_div___tucked
+                `,
+            }));
         }, 500);
 
         setTimeout(() => {
@@ -85,14 +85,14 @@ class Nav extends Component {
                 classNameNavP: `
                 Nav_p 
                 Nav_p___mobile 
-                Nav_p___visible`
-                ,
+                Nav_p___visible
+                `,
                 classNameNavButton: `
                 Nav_button 
                 Nav_button___mobile 
-                Nav_button___visible`
-                ,
-            }))
+                Nav_button___visible
+                `,
+            }));
         }, 550);
 
         return;
@@ -104,39 +104,39 @@ class Nav extends Component {
             tucked: true,
             classNameNavP: `
             Nav_p 
-            Nav_p___invisible`
-            ,
+            Nav_p___invisible
+            `,
             classNameNavButton: `
             Nav_button 
-            Nav_button___invisible`
-            ,
+            Nav_button___invisible
+            `,
             classNameNavDiv: `
             Nav_div 
             Nav_div___untucked 
-            Nav_div___invisible`
-            ,
+            Nav_div___invisible
+            `,
         }));
 
         setTimeout(() => {
             this.setState(() => ({
                 classNameNav: `
                 Nav 
-                Nav___desktop`
-                ,
+                Nav___desktop
+                `,
                 classNameNavP: `
                 Nav_p 
-                Nav_p___desktop`
-                ,
+                Nav_p___desktop
+                `,
                 classNameNavButton: `
                 Nav_button 
-                Nav_button___desktop`
-                ,
+                Nav_button___desktop
+                `,
                 classNameNavDiv: `
                 Nav_div 
                 Nav_div___desktop
-                Nav_div___visible`
-                ,
-            }))
+                Nav_div___visible
+                `,
+            }));
         }, 500);
 
         return;
@@ -148,14 +148,14 @@ class Nav extends Component {
             classNameNav: `
             Nav 
             Nav___mobile 
-            Nav___mobile___untucked`
-            ,
+            Nav___untucked
+            `,
             classNameNavDiv: `
             Nav_div 
             Nav_div___untucked 
-            Nav_div___invisible`
-        }
-        ))
+            Nav_div___invisible
+            `,
+        }));
 
         setTimeout(() => {
             this.setState(() => ({
@@ -164,7 +164,7 @@ class Nav extends Component {
                 Nav_div___untucked 
                 Nav_div___untucked
                 `,
-            }))
+            }));
         }, 300);
 
         return;
@@ -174,24 +174,25 @@ class Nav extends Component {
         this.setState(() => ({
             tucked: true,
             classNameNav: `
-            Nav Nav___mobile 
-            Nav___mobile___tucked`
-            ,
+            Nav 
+            Nav___mobile 
+            Nav___tucked
+            `,
             classNameNavDiv: `
             Nav_div 
             Nav_div___untucked 
-            Nav_div___invisible`
-        }
-        ));
+            Nav_div___invisible
+            `,
+        }));
         
         setTimeout(() => {
             this.setState(() => ({
                 classNameNavDiv: `
                 Nav_div 
                 Nav_div___untucked 
-                Nav_div___tucked`
-                ,
-            }))
+                Nav_div___tucked
+                `,
+            }));
         }, 300);
 
         return;
@@ -219,6 +220,7 @@ class Nav extends Component {
             && !window.matchMedia('(max-width: 800px)').matches
         ) {
             this.tuck();
+
             setTimeout(() => {
                 this.changeTuckedToDesktop();
             }, 1000);
@@ -237,7 +239,6 @@ class Nav extends Component {
     };
 
     render() {
-
         return (
             <StaticQuery 
             query={
@@ -294,13 +295,16 @@ class Nav extends Component {
                             <p 
                             className={classNameNavP}
                             >
+                            
                                 Ajak Majok
+
                             </p>
             
                             <button 
                             className={classNameNavButton}
                             onClick={this.handleClick}
                             >
+
                                 <i className="fas fa-bars"></i>
             
                             </button>
