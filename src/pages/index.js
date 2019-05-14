@@ -89,6 +89,18 @@ query {
                     sizes
                 }
             }
+            logoHover {
+                id
+                fluid {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                }
+            }
             alt
             }
             ... on ContentfulText {

@@ -1,6 +1,14 @@
+/* Block: EntryDiv ***************************************** */
+
 .EntryDiv {
     margin-bottom: 2.5rem;
 }
+
+
+
+/* Block: EntryDiv + Modifier: text ************************* */
+
+/* Exceptional use of type selectors due to the technical limitations of html-react-parser */
 
 .EntryDiv___text h2 {
     color: #8f44cc;
@@ -16,46 +24,9 @@
     margin-bottom: 1rem;
 }
 
-.EntryDiv_nameP {
-    color: hsl(275, 60%, 40%);
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 1.5rem;
-    margin-bottom: 0.5rem;
-    margin-top: 2rem;
-}
 
-.EntryDiv_occupationP {
-    color: hsl(275, 60%, 40%);
-    font-weight: bold;
-    line-height: 1.5rem;
-    margin-bottom: 1rem;
-}
 
-.EntryDiv_quoteP {
-    margin-bottom: 1rem;
-    line-height: 1.5rem;
-}
-
-.EntryDiv_blogLink {
-    outline: none;
-    text-decoration: none;
-}
-
-.EntryDiv_blogTitle {
-    background-color: none;
-    color: hsl(275, 60%, 10%);
-    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    transition-property: background-color, color;
-    border-radius: 4px;
-    line-height: 1.5rem;
-    margin: -3rem -0.75rem 0 0.75rem;
-    padding: 4rem 1.5rem 1.25rem;
-}
+/* Block: EntryDiv + Modifier: blogPost ************************* */
 
 .EntryDiv___blogPost:hover .EntryDiv_blogTitle {
     background-color: hsl(50, 100%, 75%);
@@ -77,4 +48,49 @@
     -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     transition-property: background-color, color;
+}
+
+.EntryDiv_blogLink {
+    outline: none;
+    text-decoration: none;
+}
+
+.EntryDiv_blogTitle {
+    background-color: none;
+    border-radius: 4px;
+    color: hsl(275, 60%, 10%);
+    line-height: 1.5rem;
+    margin: -3rem -0.75rem 0 0.75rem;
+    padding: 4rem 1.5rem 1.25rem;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-property: background-color, color;
+}
+
+
+
+/* Block: EntryDiv + other elements ************************* */
+
+.EntryDiv_nameP {
+    color: hsl(275, 60%, 40%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.EntryDiv_occupationP {
+    color: hsl(275, 60%, 40%);
+    font-weight: bold;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.EntryDiv_quoteP {
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
 }

@@ -156,6 +156,7 @@ const EntryDiv = ({ entry }) => {
             url={url}
             logo={logo}
             alt={alt}
+            modifier='main'
             ></ClickableLogo>
         );
     }

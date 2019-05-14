@@ -1,0 +1,36 @@
+/* Block: FooterA ***************************************** */
+
+.FooterA {
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 0 0 1rem;
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+}
+
+.FooterA:hover {
+    color: hsl(50, 100%, 75%);
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.FooterA:focus {
+    color: hsl(50, 100%, 75%);
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    outline: none;
+}

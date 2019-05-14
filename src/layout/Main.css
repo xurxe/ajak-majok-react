@@ -1,3 +1,5 @@
+/* Block: Main + modifiers ****************************** */
+
 .Main___column {
     padding: 0 15vw 10vw;
 }
@@ -5,7 +7,7 @@
 @media only screen and (min-width: 500px) and (max-width: 800px) {
     .Main___column {
         padding-left: calc(25px + (135 - 25) * (100vw - 500px) / (800 - 500));
-        padding-right: calc(25px + (135 - 25) * (100vw - 500px) / (800 - 500));        
+        padding-right: calc(25px + (135 - 25) * (100vw - 500px) / (800 - 500));     
     }
 }
 
@@ -16,14 +18,15 @@
     }
 }
 
+
+
 .Main___grid {
     display: grid;
     grid-auto-flow: row;
     grid-column-gap: 3rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    padding-left: 8vw;
-    padding-right: 10vw;
+    padding: 0 10vw 10vw 8vw; 
     width: 100%;
 }
 
@@ -44,6 +47,10 @@
         padding-right: 35px;
     }
 }
+
+/* Element: blogDiv ********************************************* */
+
+/* Exceptional use of type selectors due to the technical limitations of html-react-parser */
 
 .Main_blogDiv {
     margin: 1rem 0;

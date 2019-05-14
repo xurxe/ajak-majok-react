@@ -1,16 +1,22 @@
-.ClickableLogo {
+/* Block: ClickableLogo + modifiers ********************* */
+
+.ClickableLogo___footer {
+    margin: 0 1rem 0 0;
+}
+
+.ClickableLogo___main {
     margin: 0 auto 5rem;
     width: 350px;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
-    .ClickableLogo {
+    .ClickableLogo___main {
         width: calc(200px + 150 * (100vw - 600px) / 300);
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .ClickableLogo {
+    .ClickableLogo___main {
         width: 200px;
     }
 }

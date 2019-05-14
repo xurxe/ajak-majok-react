@@ -5,8 +5,12 @@ import './Main.css'
 const Main = ({ layout, children }) => {
 
     const jsx = (
-        <main className={`Main Main___${(layout.toLowerCase())}`}>
+        <main 
+        className={`Main Main___${(layout.toLowerCase())}`}
+        >
+
             {children || null}
+            
         </main>
     );
 

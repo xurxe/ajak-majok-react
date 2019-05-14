@@ -1,3 +1,5 @@
+/* Block: Image + Modifiers ***************************** */
+
 .Image___yellowShadow {
     border-radius: 4px;
     box-shadow: -0.7rem 0.7rem hsl(50, 100%, 75%);
