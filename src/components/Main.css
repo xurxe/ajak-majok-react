@@ -2,14 +2,14 @@
     padding: 0 15vw 10vw;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+@media only screen and (min-width: 500px) and (max-width: 800px) {
     .Main___column {
-        padding-left: calc(25px + (135 - 25) * (100vw - 600px) / (900 - 600));
-        padding-right: calc(25px + (135 - 25) * (100vw - 600px) / (900 - 600));        
+        padding-left: calc(25px + (135 - 25) * (100vw - 500px) / (800 - 500));
+        padding-right: calc(25px + (135 - 25) * (100vw - 500px) / (800 - 500));        
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .Main___column {
         padding-left: 25px;
         padding-right: 25px;
@@ -27,16 +27,16 @@
     width: 100%;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+@media only screen and (min-width: 500px) and (max-width: 800px) {
     .Main___grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        padding-left: calc(25px + (72 - 25) * (100vw - 600px) / (900 - 600)); 
-        padding-right: calc(35px + (90 - 35) * (100vw - 600px) / (900 - 600));  
+        padding-left: calc(25px + (72 - 25) * (100vw - 500px) / (800 - 500)); 
+        padding-right: calc(35px + (90 - 35) * (100vw - 500px) / (800 - 500));  
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .Main___grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;

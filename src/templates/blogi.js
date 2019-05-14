@@ -11,10 +11,9 @@ import Image from '../components/Image';
 import PhotographerP from '../components/PhotographerP';
 import Footer from '../components/Footer';
 
-const BlogPage = ({data})=> {
-    const {contentfulBlogPost} = data;
-    const {title, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer} = contentfulBlogPost;
-    const text = contentfulBlogPost.content.childMarkdownRemark.html;
+const BlogPage = ({ data })=> {
+    const { contentfulBlogPost } = data;
+    const { title, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer } = contentfulBlogPost;
  
     return (
         <BodyDiv>
@@ -61,7 +60,7 @@ const BlogPage = ({data})=> {
                 className='Main_blogDiv'
                 >
                     {Parser(
-                        text, { 
+                        contentfulBlogPost.content.childMarkdownRemark.html, { 
                             replace: (domNode) => {
                                 if (domNode.name === 'p') {
 
@@ -109,7 +108,6 @@ query($slug: String!){
           	}
             fluid {
                 base64
-                tracedSVG
                 aspectRatio
                 src
                 srcSet

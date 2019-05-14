@@ -5,14 +5,18 @@
     text-align: center;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+.Header___index {
+    padding: 5rem 8vw 5rem;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
     .Header {
-        padding-left: calc(25px + (72 - 25) * (100vw - 600px) / (900 - 600));
-        padding-right: calc(25px + (72 - 25) * (100vw - 600px) / (900 - 600));        
+        padding-left: calc(25px + (72 - 25) * (100vw - 500px) / (800 - 500));
+        padding-right: calc(25px + (72 - 25) * (100vw - 500px) / (800 - 500));        
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .Header {
         padding-left: 25px;
         padding-right: 25px;
@@ -47,13 +51,13 @@
     margin-bottom: 2rem;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+@media only screen and (min-width: 500px) and (max-width: 800px) {
     .Header_h1___blogi {
-        font-size: calc(29px + 7 * (100vw - 600px) / 300);
+        font-size: calc(29px + 7 * (100vw - 500px) / 300);
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .Header_h1___blogi {
         font-size: 29px;
     }

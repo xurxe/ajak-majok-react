@@ -5,7 +5,7 @@ import Parser from 'html-react-parser';
 import './NavA.css';
 
 
-const NavA = ({link}) => {
+const NavA = ({ link }) => {
 
     const sliceIndex = ('Contentful').length;
     const linkType = (
@@ -40,7 +40,7 @@ const NavA = ({link}) => {
             <Link 
             to={'/' + link.slug}
             className={`NavA NavA___${linkType}`}
-            greedyActive={true}
+            partiallyActive={true}
             activeClassName={`NavA NavA___${linkType} NavA_page___active`}
             >
 

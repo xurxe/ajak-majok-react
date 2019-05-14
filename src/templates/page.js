@@ -71,7 +71,6 @@ query($slug: String!){
                     id
                     fluid {
                         base64
-                        tracedSVG
                         aspectRatio
                         src
                         srcSet
