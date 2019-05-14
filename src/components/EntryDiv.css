@@ -2,7 +2,16 @@
     margin-bottom: 2.5rem;
 }
 
-.EntryDiv_textP {
+.EntryDiv___text h2 {
+    color: #8f44cc;
+    font-family: 'Unna', serif;
+    font-size: 4vw;
+    font-style: normal;
+    font-weight: normal;
+    padding: 0.5em 0;
+}
+
+.EntryDiv___text p {
     line-height: 1.5rem;
     margin-bottom: 1rem;
 }

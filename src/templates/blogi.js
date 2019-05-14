@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Parser, { domToReact } from 'html-react-parser';
+import Parser from 'html-react-parser';
 import Moment from 'react-moment';
 
 import BodyDiv from '../components/BodyDiv'
@@ -59,26 +59,7 @@ const BlogPage = ({ data })=> {
                 <div
                 className='Main_blogDiv'
                 >
-                    {Parser(
-                        contentfulBlogPost.content.childMarkdownRemark.html, { 
-                            replace: (domNode) => {
-                                if (domNode.name === 'p') {
-
-                                    const jsx = (
-                                        <p 
-                                        className='Main_blogP'
-                                        >
-
-                                            {domToReact(domNode.children)}
-
-                                        </p>
-                                    );
-
-                                    return jsx;
-                                }
-                            }
-                        }
-                    )}  
+                    {Parser(contentfulBlogPost.content.childMarkdownRemark.html)}  
                 </div>
 
             </Main>     

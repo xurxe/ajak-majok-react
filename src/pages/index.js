@@ -59,11 +59,6 @@ query {
         longTitle
         coverPhoto {
             id
-            file {
-                url
-                fileName
-                contentType
-            }
             fluid {
                 base64
                 aspectRatio
@@ -73,7 +68,124 @@ query {
                 srcSetWebp
                 sizes
             }
-        } 
+        }
+        entries {
+            __typename
+            ... on ContentfulClickableLogo {
+            id
+            url
+            logo {
+                id
+                fluid {
+                    base64
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                }
+            }
+            alt
+            }
+            ... on ContentfulText {
+            id
+            text {
+                id
+                childMarkdownRemark {
+                    html
+                }
+            }
+            }
+            ... on ContentfulImageGrid {
+            id
+            image1 {
+                id
+                fluid {
+                    base64
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                }
+            }
+            image2 {
+                id
+                fluid {
+                    base64
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                }
+            }
+            image3 {
+                id
+                fluid {
+                    base64
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                }
+            }
+            image4 {
+                id
+                fluid {
+                    base64
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                }
+            }
+            image5 {
+                id
+                fluid {
+                    base64
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                }
+            }
+            image6 {
+                id
+                fluid {
+                    base64
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                }
+            }
+            alt1
+            alt2
+            alt3
+            alt4
+            alt5
+            alt6
+            }
+        }
     }
 }
 `;

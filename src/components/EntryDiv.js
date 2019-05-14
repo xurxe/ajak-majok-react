@@ -28,26 +28,7 @@ const EntryDiv = ({ entry }) => {
             className={`EntryDiv EntryDiv___${entryType}`}
             >
 
-                {Parser(
-                    text.childMarkdownRemark.html, { 
-                        replace: (domNode) => {
-                            if (domNode.name === 'p') {
-
-                                jsx = (
-                                    <p 
-                                    className='EntryDiv_textP'
-                                    >
-
-                                        {domToReact(domNode.children)}
-
-                                    </p>
-                                );
-
-                                return jsx;
-                            }
-                        }
-                    }
-                )}
+                {Parser(text.childMarkdownRemark.html)}
 
             </div>
         );
@@ -164,6 +145,15 @@ const EntryDiv = ({ entry }) => {
             </div>
         );
     }
+
+    else {
+
+        jsx = (
+            <div>
+                <p>[{entryType}]</p> <br />
+            </div>
+        );
+    };
 
     return jsx;
 };
