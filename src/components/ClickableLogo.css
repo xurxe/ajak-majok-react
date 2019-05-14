@@ -1,0 +1,16 @@
+.ClickableLogo {
+    margin: 0 auto 5rem;
+    width: 350px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .ClickableLogo {
+        width: calc(200px + 150 * (100vw - 600px) / 300);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ClickableLogo {
+        width: 200px;
+    }
+}

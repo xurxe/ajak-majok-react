@@ -63,6 +63,29 @@
     }
 }
 
+/* Element: h2 + modifiers ********************************* */
+
+.Header_h2 {
+    color: #8f44cc;
+    font-family: 'Unna', serif;
+    font-size: 4vw;
+    font-style: normal;
+    font-weight: normal;
+    padding: 0.5em 0;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .Header_h2 {
+        font-size: calc(29px + 7 * (100vw - 600px) / 300);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Header_h2 {
+        font-size: 29px;
+    }
+}
+
 /* Element: a + modifiers ********************************* */
 
 .Header_a___blogi {

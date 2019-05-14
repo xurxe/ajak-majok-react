@@ -6,6 +6,7 @@ import './EntryDiv.css'
 
 import Image from './Image';
 import PhotographerP from './PhotographerP';
+import ClickableLogo from './ClickableLogo';
 
 const EntryDiv = ({ entry }) => {
 
@@ -143,6 +144,18 @@ const EntryDiv = ({ entry }) => {
                 </Link>
 
             </div>
+        );
+    }
+
+    else if (entryType === 'clickableLogo'){
+        const { url, logo, alt } = entry;
+    
+        jsx = (
+            <ClickableLogo
+            url={url}
+            logo={logo}
+            alt={alt}
+            ></ClickableLogo>
         );
     }
 

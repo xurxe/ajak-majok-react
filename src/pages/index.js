@@ -12,7 +12,7 @@ import EntryDiv from '../components/EntryDiv';
 
 const IndexPage = ({ data }) => {
     const { contentfulIndex } = data;
-    const { longTitle, coverPhoto, layout, entries } = contentfulIndex;
+    const { longTitle, subtitle, coverPhoto, layout, entries } = contentfulIndex;
 
     const jsx = (
         <BodyDiv>
@@ -27,6 +27,7 @@ const IndexPage = ({ data }) => {
 
             <Header 
             title={longTitle}
+            subtitle={subtitle}
             modifier='index'
             ></Header>
 
@@ -58,6 +59,7 @@ query {
         id
         layout
         longTitle
+        subtitle
         coverPhoto {
             id
             fluid {
