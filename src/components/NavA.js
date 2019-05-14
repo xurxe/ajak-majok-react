@@ -4,7 +4,6 @@ import Parser from 'html-react-parser';
 
 import './NavA.css';
 
-
 const NavA = ({ link }) => {
 
     const sliceIndex = ('Contentful').length;

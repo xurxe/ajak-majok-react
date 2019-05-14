@@ -1,13 +1,14 @@
 import React from "react";
 import { graphql } from 'gatsby';
 
-import BodyDiv from '../components/BodyDiv'
-import Nav from '../components/Nav';
-import Header from '../components/Header';
-import Main from '../components/Main';
+import BodyDiv from '../layout/BodyDiv'
+import Nav from '../layout/Nav';
+import Header from '../layout/Header';
+import Main from '../layout/Main';
+import Footer from '../layout/Footer';
+
 import CoverPhoto from '../components/CoverPhoto';
 import EntryDiv from '../components/EntryDiv';
-import Footer from '../components/Footer';
 
 const IndexPage = ({ data }) => {
     const { contentfulIndex } = data;

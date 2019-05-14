@@ -4,7 +4,7 @@ import ReactResizeDetector from 'react-resize-detector';
 
 import './Nav.css';
 
-import NavA from './NavA';
+import NavA from '../components/NavA';
 
 class Nav extends Component {
 

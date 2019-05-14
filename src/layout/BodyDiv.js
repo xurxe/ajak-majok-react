@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 import './BodyDiv.css'
 
-const BodyDiv = ({children}) => {
+const BodyDiv = ({ children }) => {
 
     const jsx = (
         <div 

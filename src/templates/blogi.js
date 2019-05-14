@@ -3,13 +3,14 @@ import { graphql } from 'gatsby';
 import Parser from 'html-react-parser';
 import Moment from 'react-moment';
 
-import BodyDiv from '../components/BodyDiv'
-import Nav from '../components/Nav';
-import Header from '../components/Header';
-import Main from '../components/Main';
+import BodyDiv from '../layout/BodyDiv'
+import Nav from '../layout/Nav';
+import Header from '../layout/Header';
+import Main from '../layout/Main';
+import Footer from '../layout/Footer';
+
 import Image from '../components/Image';
 import PhotographerP from '../components/PhotographerP';
-import Footer from '../components/Footer';
 
 const BlogPage = ({ data })=> {
     const { contentfulBlogPost } = data;
