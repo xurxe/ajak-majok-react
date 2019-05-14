@@ -7,6 +7,7 @@ import './EntryDiv.css'
 import Image from './Image';
 import PhotographerP from './PhotographerP';
 import ClickableLogo from './ClickableLogo';
+import ImageGrid from './ImageGrid';
 
 const EntryDiv = ({ entry }) => {
 
@@ -156,6 +157,25 @@ const EntryDiv = ({ entry }) => {
             logo={logo}
             alt={alt}
             ></ClickableLogo>
+        );
+    }
+
+    else if (entryType === 'imageGrid'){
+        const { photographers,
+            image1, image2, image3, image4, image5, image6, 
+            alt1, alt2, alt3, alt4, alt5, alt6
+        } = entry;
+
+        const images = [image1, image2, image3, image4, image5, image6];
+        const alts = [alt1, alt2, alt3, alt4, alt5, alt6];
+    
+        jsx = (
+            <ImageGrid
+            photographers={photographers}
+            images={images}
+            alts={alts}
+            className={`EntryDiv EntryDiv___${entryType}`}
+            ></ImageGrid>
         );
     }
 

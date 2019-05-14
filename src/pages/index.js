@@ -81,7 +81,6 @@ query {
                 id
                 fluid {
                     base64
-                    tracedSVG
                     aspectRatio
                     src
                     srcSet
@@ -103,11 +102,11 @@ query {
             }
             ... on ContentfulImageGrid {
             id
+            photographers
             image1 {
                 id
                 fluid {
                     base64
-                    tracedSVG
                     aspectRatio
                     src
                     srcSet
@@ -120,7 +119,6 @@ query {
                 id
                 fluid {
                     base64
-                    tracedSVG
                     aspectRatio
                     src
                     srcSet
@@ -133,7 +131,6 @@ query {
                 id
                 fluid {
                     base64
-                    tracedSVG
                     aspectRatio
                     src
                     srcSet
@@ -146,7 +143,6 @@ query {
                 id
                 fluid {
                     base64
-                    tracedSVG
                     aspectRatio
                     src
                     srcSet
@@ -159,7 +155,6 @@ query {
                 id
                 fluid {
                     base64
-                    tracedSVG
                     aspectRatio
                     src
                     srcSet
@@ -172,7 +167,6 @@ query {
                 id
                 fluid {
                     base64
-                    tracedSVG
                     aspectRatio
                     src
                     srcSet

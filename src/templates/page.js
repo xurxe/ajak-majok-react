@@ -10,9 +10,9 @@ import Footer from '../layout/Footer'
 import EntryDiv from '../components/EntryDiv';
 
 
-const Page = ({data}) => {
-    const {contentfulPage} = data;
-    const {longTitle, layout, entries} = contentfulPage;
+const Page = ({ data }) => {
+    const { contentfulPage } = data;
+    const { longTitle, layout, entries } = contentfulPage;
 
     const jsx = (
 
@@ -93,7 +93,6 @@ query($slug: String!){
                     id
                     fluid {
                         base64
-                        tracedSVG
                         aspectRatio
                         src
                         srcSet
@@ -120,7 +119,6 @@ query($slug: String!){
                     id
                     fluid {
                         base64
-                        tracedSVG
                         aspectRatio
                         src
                         srcSet
