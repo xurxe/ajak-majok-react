@@ -15,7 +15,9 @@ const IndexPage = ({ data }) => {
     const { longTitle, subtitle, coverPhoto, layout, entries } = contentfulIndex;
 
     const jsx = (
-        <BodyDiv>
+        <BodyDiv
+        shortTitle=''
+        >
 
             <Nav></Nav>
 

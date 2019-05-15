@@ -12,11 +12,13 @@ import EntryDiv from '../components/EntryDiv';
 
 const Page = ({ data }) => {
     const { contentfulPage } = data;
-    const { longTitle, layout, entries } = contentfulPage;
+    const { slug, longTitle, layout, entries } = contentfulPage;
 
     const jsx = (
 
-        <BodyDiv>
+        <BodyDiv
+        slug={slug}
+        >
 
             <Nav></Nav>
 
@@ -52,6 +54,7 @@ query($slug: String!){
 	contentfulPage (id: { eq: $slug }){
         id
         shortTitle
+        slug
         longTitle
         layout
         entries {

@@ -3,9 +3,18 @@
     outline: none;
 }
 
-
 .ClickableLogo___footer {
     margin: 0 1rem 0 0;
+}
+
+.ClickableLogo_a {
+    position: relative;
+}
+
+.ClickableLogo___Hover {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .ClickableLogo___main {

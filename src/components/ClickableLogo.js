@@ -41,11 +41,12 @@ class ClickableLogo extends React.Component {
                 fadeIn={false}
                 className={`ClickableLogo ClickableLogo___${modifier}`}
                 ></Img>
+                
             </a>
         );
     
         return jsx;
-    }
+    };
 
 };
 

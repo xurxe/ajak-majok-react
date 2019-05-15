@@ -3,7 +3,26 @@ import Helmet from 'react-helmet';
 
 import './BodyDiv.css'
 
-const BodyDiv = ({ children }) => {
+const BodyDiv = ({ slug, children }) => {
+
+    let lang;
+
+    // this is necessary because we can't have more than 2 locals with the free version of Contentful
+    const determineLanguage = (slug) => {
+        if (slug === 'english') {
+            lang = 'en'
+        }
+    
+        else if (slug === ('svenska')) {
+            lang = 'sv'
+        }
+    
+        else {
+            lang = 'fi';
+        }
+
+        return lang;
+    };
 
     const jsx = (
         <div 
@@ -11,6 +30,8 @@ const BodyDiv = ({ children }) => {
         >
 
             <Helmet>
+
+            <html lang={determineLanguage(slug)}></html>
 
             <title>
                 Ajak Majok
@@ -31,7 +52,7 @@ const BodyDiv = ({ children }) => {
 
             <p id='top'></p>
 
-            { children }
+            {children}
 
         </div>
 

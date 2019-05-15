@@ -17,7 +17,9 @@ const BlogPage = ({ data })=> {
     const { title, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer } = contentfulBlogPost;
  
     return (
-        <BodyDiv>
+        <BodyDiv
+        shortTitle=''
+        >
 
             <Nav></Nav>
 
