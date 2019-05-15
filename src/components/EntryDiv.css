@@ -78,10 +78,6 @@
     text-align: center;
 }
 
-.EntryDiv_contactMessage {
-    padding-bottom: 2rem;
-}
-
 .EntryDiv_address {
     font-style: normal;
 }
@@ -106,7 +102,7 @@
 
 
 
-/* Block: EntryDiv + Modifier: testimonial + Elements ************ */
+/* Block: EntryDiv + other elements ************ */
 
 .EntryDiv_nameP {
     color: hsl(275, 60%, 40%);
@@ -127,4 +123,8 @@
 .EntryDiv_quoteP {
     margin-bottom: 1rem;
     line-height: 1.5rem;
+}
+
+.EntryDiv_singleLineP {
+    text-align: center;
 }

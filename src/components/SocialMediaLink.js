@@ -3,8 +3,9 @@ import Parser from 'html-react-parser';
 
 import './SocialMediaLink.css';
 
-const SocialMediaLink = ({ url, iconFontAwesome }) => {
+const SocialMediaLink = ({ link }) => {
 
+    const { url, iconFontAwesome } = link;
     const jsx = (
 
         <a 

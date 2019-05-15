@@ -185,20 +185,34 @@ const EntryDiv = ({ entry }) => {
         );
     };
 
+    const renderSingleLine = () => {
+        const { line } = entry;
+
+        jsx = (
+            <div 
+            className={`EntryDiv EntryDiv___${entryType}`}
+            >
+
+            <p
+            className='EntryDiv_singleLineP'
+            >
+            
+                {line}
+            
+            </p>
+
+            </div>
+        );
+    }
+
     const renderEmail = () => {
-        const { message, email } = entry;
+        const { email } = entry;
 
         jsx = (
             <div
             className={`EntryDiv EntryDiv___${entryType}`}
             >
-                <p
-                className='EntryDiv_contactMessage'
-                >
 
-                    {message}
-                
-                </p>
                 <address
                 className='EntryDiv_address' 
                 >
@@ -263,6 +277,10 @@ const EntryDiv = ({ entry }) => {
 
     else if (entryType === 'blogPost'){
         renderBlogPost();
+    }
+
+    else if (entryType === 'singleLine') {
+        renderSingleLine();
     }
 
     else if (entryType === 'email') {

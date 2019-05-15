@@ -62,3 +62,18 @@ const BodyDiv = ({ slug, children }) => {
 };
 
 export default BodyDiv;
+
+
+/* TODO
+- Improve Helmet
+- Add video
+- Update content
+- Deploy
+- Blog sorting
+- Blog tags
+- gatsby-plugin-sharp
+- Custom line-breaks
+- Review alt texts
+- Blog next/previous buttons
+- Color variables
+*/

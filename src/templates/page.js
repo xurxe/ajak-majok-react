@@ -137,7 +137,6 @@ query($slug: String!){
 
             ... on ContentfulEmail {
                 id
-                message
                 email
             }
 
@@ -178,6 +177,10 @@ query($slug: String!){
                     }
                 }
                 alt
+            }
+            ... on ContentfulSingleLine {
+                id
+                line
             }
         }
     }

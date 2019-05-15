@@ -5,7 +5,6 @@ import './Footer.css';
 
 import FooterA from '../components/FooterA';
 import ClickableLogo from '../components/ClickableLogo';
-
 class Footer extends React.Component {
 
     render() {
