@@ -1,4 +1,8 @@
 /* Block: ClickableLogo + modifiers ********************* */
+.ClickableLogo:focus {
+    outline: none;
+}
+
 
 .ClickableLogo___footer {
     margin: 0 1rem 0 0;

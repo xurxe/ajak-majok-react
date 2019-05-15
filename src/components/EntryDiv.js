@@ -149,12 +149,13 @@ const EntryDiv = ({ entry }) => {
     }
 
     else if (entryType === 'clickableLogo'){
-        const { url, logo, alt } = entry;
+        const { url, logo, logoHover, alt } = entry;
     
         jsx = (
             <ClickableLogo
             url={url}
             logo={logo}
+            logoHover={logoHover}
             alt={alt}
             modifier='main'
             ></ClickableLogo>

@@ -8,14 +8,6 @@ import ClickableLogo from '../components/ClickableLogo';
 
 class Footer extends Component {
 
-    constructor() {
-        super();
-
-        this.state = {
-            desktop: true,
-        };
-    };
-
     render() {
         return (
             <StaticQuery 
@@ -65,7 +57,7 @@ class Footer extends Component {
             }
             render={data => {
                 const { contentfulFooter } = data;
-                const { logo, /* logoHover, */ logoAlt, logoLink, ajakCredit, webCredit, photoCredit, socialMediaLinks } = contentfulFooter;
+                const { logo, logoHover, logoAlt, logoLink, ajakCredit, webCredit, photoCredit, socialMediaLinks } = contentfulFooter;
 
                 const jsx = (
                     
@@ -79,6 +71,7 @@ class Footer extends Component {
                             <ClickableLogo
                             url={logoLink}
                             logo={logo}
+                            logoHover={logoHover}
                             alt={logoAlt}
                             modifier='footer'
                             ></ClickableLogo>
