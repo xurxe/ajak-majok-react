@@ -1,12 +1,8 @@
-/* Block: header ****************************************** */
+/* Block: header + modifiers ************************************* */
 
 .Header {
     padding: 9rem 8vw 5rem;
     text-align: center;
-}
-
-.Header___index {
-    padding: 5rem 8vw 2.5rem;
 }
 
 @media only screen and (min-width: 500px) and (max-width: 800px) {
@@ -21,6 +17,14 @@
         padding-left: 25px;
         padding-right: 25px;
     }
+}
+
+.Header___index {
+    padding: 5rem 8vw 2.5rem;
+}
+
+.Header___404 {
+    padding: 9rem 8vw 0;
 }
 
 
@@ -109,10 +113,4 @@
     color: hsl(275, 60%, 40%);
     outline: none;
     text-decoration: underline;
-}
-
-
-
-.Header___404 {
-    padding: 9rem 8vw 0;
 }

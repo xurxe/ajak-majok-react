@@ -14,7 +14,9 @@ import SocialMediaLink from './SocialMediaLink';
 const EntryDiv = ({ entry }) => {
 
     const { __typename } = entry;
+
     const sliceIndex = ('Contentful').length;
+
     const entryType = (
         (__typename)
         .slice(sliceIndex, sliceIndex + 1)
@@ -24,7 +26,21 @@ const EntryDiv = ({ entry }) => {
 
     let jsx;
 
-    if (entryType === 'text') {
+    const renderClickableLogo = () => {
+        const { url, logo, logoHover, alt } = entry;
+    
+        jsx = (
+            <ClickableLogo
+            url={url}
+            logo={logo}
+            logoHover={logoHover}
+            alt={alt}
+            modifier='main'
+            ></ClickableLogo>
+        );
+    };
+
+    const renderText = () => {
         const { text } = entry;
     
         jsx = (
@@ -36,9 +52,28 @@ const EntryDiv = ({ entry }) => {
 
             </div>
         );
-    }
+    };
 
-    else if (entryType === 'image'){
+    const renderImageGrid = () => {
+        const { photographers,
+            image1, image2, image3, image4, image5, image6, 
+            alt1, alt2, alt3, alt4, alt5, alt6
+        } = entry;
+
+        const images = [image1, image2, image3, image4, image5, image6];
+        const alts = [alt1, alt2, alt3, alt4, alt5, alt6];
+    
+        jsx = (
+            <ImageGrid
+            photographers={photographers}
+            images={images}
+            alts={alts}
+            className={`EntryDiv EntryDiv___${entryType}`}
+            ></ImageGrid>
+        );
+    };
+
+    const renderImage = () => {
         const { image, alt, photographer, shadow } = entry;
         const color = (shadow.toLowerCase());
     
@@ -59,9 +94,9 @@ const EntryDiv = ({ entry }) => {
 
             </div>
         );
-    }
+    };
 
-    else if (entryType === 'testimonial') {
+    const renderTestimonial = () => {
         const { name, occupation, quote, image, alt } = entry;
     
         jsx = (
@@ -116,9 +151,9 @@ const EntryDiv = ({ entry }) => {
     
             </div>
         );
-    }
+    };
 
-    else if (entryType === 'blogPost'){
+    const renderBlogPost = () => {
         const { slug, title, image, alt } = entry;
     
         jsx = (
@@ -148,42 +183,9 @@ const EntryDiv = ({ entry }) => {
 
             </div>
         );
-    }
+    };
 
-    else if (entryType === 'clickableLogo'){
-        const { url, logo, logoHover, alt } = entry;
-    
-        jsx = (
-            <ClickableLogo
-            url={url}
-            logo={logo}
-            logoHover={logoHover}
-            alt={alt}
-            modifier='main'
-            ></ClickableLogo>
-        );
-    }
-
-    else if (entryType === 'imageGrid'){
-        const { photographers,
-            image1, image2, image3, image4, image5, image6, 
-            alt1, alt2, alt3, alt4, alt5, alt6
-        } = entry;
-
-        const images = [image1, image2, image3, image4, image5, image6];
-        const alts = [alt1, alt2, alt3, alt4, alt5, alt6];
-    
-        jsx = (
-            <ImageGrid
-            photographers={photographers}
-            images={images}
-            alts={alts}
-            className={`EntryDiv EntryDiv___${entryType}`}
-            ></ImageGrid>
-        );
-    }
-
-    else if (entryType === 'email') {
+    const renderEmail = () => {
         const { message, email } = entry;
 
         jsx = (
@@ -214,9 +216,9 @@ const EntryDiv = ({ entry }) => {
             </div>
 
         );
-    }
+    };
 
-    else if (entryType === 'socialMediaLinks') {
+    const renderSocialMediaLinks = () => {
         const { links } = entry;
 
         jsx = (
@@ -237,6 +239,38 @@ const EntryDiv = ({ entry }) => {
     
             </div>
         );
+    }
+
+    if (entryType === 'clickableLogo'){
+        renderClickableLogo();
+    }
+
+    else if (entryType === 'text') {
+        renderText();
+    }
+
+    else if (entryType === 'imageGrid'){
+        renderImageGrid();
+    }
+
+    else if (entryType === 'image'){
+        renderImage();
+    }
+
+    else if (entryType === 'testimonial') {
+        renderTestimonial();
+    }
+
+    else if (entryType === 'blogPost'){
+        renderBlogPost();
+    }
+
+    else if (entryType === 'email') {
+        renderEmail();
+    }
+
+    else if (entryType === 'socialMediaLinks') {
+        renderSocialMediaLinks();
     }
 
     else {

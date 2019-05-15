@@ -6,7 +6,7 @@ const Header = ({ title, subtitle, modifier, children }) => {
     
     let jsx;
 
-    if (subtitle) {
+    const renderWithSubtitle = () => {
         jsx = (
             <header 
             className={`Header Header___${modifier}`}
@@ -30,9 +30,9 @@ const Header = ({ title, subtitle, modifier, children }) => {
     
             </header>
         );
-    }
+    };
 
-    else {
+    const renderWithoutSubtitle = () => {
         jsx = (
             <header 
             className={`Header Header___${modifier}`}
@@ -50,6 +50,14 @@ const Header = ({ title, subtitle, modifier, children }) => {
     
             </header>
         );
+    }
+
+    if (subtitle) {
+        renderWithSubtitle();
+    }
+
+    else {
+        renderWithoutSubtitle();
     };
 
     return jsx;

@@ -1,3 +1,5 @@
+/* Block: ClickableLogo + Element: div + Modifiers ***** */
+
 .ClickableLogo {
     display: block;
     height: auto;
@@ -11,6 +13,10 @@
 .ClickableLogo_div___footer {
     height: 70px;
 }
+
+
+
+/* Block: ClickableLogo + Element: img + Modifiers ***** */
 
 .ClickableLogo_img {
     left: 0;

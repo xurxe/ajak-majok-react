@@ -70,6 +70,8 @@
     transition-property: background-color, color;
 }
 
+
+
 /* Block: EntryDiv + Modifier: email + Elements ************* */
 
 .EntryDiv___email {
@@ -104,7 +106,7 @@
 
 
 
-/* Block: EntryDiv + other elements ************************* */
+/* Block: EntryDiv + Modifier: testimonial + Elements ************ */
 
 .EntryDiv_nameP {
     color: hsl(275, 60%, 40%);

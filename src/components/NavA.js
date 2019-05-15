@@ -6,17 +6,20 @@ import './NavA.css';
 
 const NavA = ({ link }) => {
 
+    const {__typename} = link;
+
     const sliceIndex = ('Contentful').length;
+
     const linkType = (
-        (link.__typename)
+        (__typename)
         .slice(sliceIndex, sliceIndex + 1)
         .toLowerCase()
-        .concat((link.__typename).slice(sliceIndex + 1))
+        .concat((__typename).slice(sliceIndex + 1))
     );
 
     let jsx;
 
-    if (link.__typename === 'ContentfulIndex'){
+    const renderIndexLink = () => {
 
         jsx = (
 
@@ -30,9 +33,9 @@ const NavA = ({ link }) => {
             </Link>
 
         );
-    }
+    };
 
-    else if (link.__typename === 'ContentfulPage'){
+    const renderPageLink = () => {
 
         jsx = (
 
@@ -48,10 +51,9 @@ const NavA = ({ link }) => {
             </Link>
 
         );
-    }
+    };
 
-    else if (link.__typename === 'ContentfulElectionLink'){
-
+    const renderElectionLink = () => {
         jsx = (
 
             <a 
@@ -66,9 +68,9 @@ const NavA = ({ link }) => {
             </a>
 
         );
-    }
+    };
 
-    else if (link.__typename === 'ContentfulSocialMediaLink'){
+    const renderSocialMediaLink = () => {
 
         jsx = (
 
@@ -84,6 +86,22 @@ const NavA = ({ link }) => {
             </a>
 
         );
+    }
+
+    if (linkType === 'index'){
+        renderIndexLink();
+    }
+
+    else if (linkType === 'page'){
+        renderPageLink();
+    }
+
+    else if (linkType === 'electionLink'){
+        renderElectionLink();
+    }
+
+    else if (linkType === 'socialMediaLink'){
+        renderSocialMediaLink();
     }
 
     return jsx;

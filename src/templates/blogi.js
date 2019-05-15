@@ -18,7 +18,6 @@ const BlogPage = ({ data })=> {
  
     return (
         <BodyDiv
-        shortTitle=''
         >
 
             <Nav></Nav>

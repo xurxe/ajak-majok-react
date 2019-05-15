@@ -1,4 +1,4 @@
-/* Block: Main + modifiers ****************************** */
+/* Block: Main + Modifier: column ****************************** */
 
 .Main___column {
     padding: 0 15vw 10vw;
@@ -19,6 +19,8 @@
 }
 
 
+
+/* Block: Main + Modifier: grid ****************************** */
 
 .Main___grid {
     display: grid;

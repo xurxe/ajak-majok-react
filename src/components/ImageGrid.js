@@ -5,7 +5,7 @@ import './ImageGrid.css'
 import Image from './Image'
 import PhotographerP from './PhotographerP';
 
-const ImageGrid = ({ photographers, images/* , alts  */, className}) => {
+const ImageGrid = ({ photographers, images, alts, className}) => {
 
     const jsx = (
         <div 
@@ -14,10 +14,10 @@ const ImageGrid = ({ photographers, images/* , alts  */, className}) => {
             <div
             className='ImageGrid'
             >
-                {images.map(image => 
+                {images.map((image, i) => 
                     <Image 
                     key={image.id}
-                    alt='' 
+                    alt={alts[i]} 
                     image={image}
                     color='yellow'
                     ></Image>

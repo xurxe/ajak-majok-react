@@ -12,6 +12,7 @@ import EntryDiv from '../components/EntryDiv';
 
 const IndexPage = ({ data }) => {
     const { contentfulIndex } = data;
+
     const { longTitle, subtitle, coverPhoto, layout, entries } = contentfulIndex;
 
     const jsx = (
@@ -22,7 +23,6 @@ const IndexPage = ({ data }) => {
 
             <CoverPhoto
                 alt='Ajak Majok seisoo graffittiseinän edessä ja hymyilee'
-                // fix
                 coverPhoto={coverPhoto}
             ></CoverPhoto>
 

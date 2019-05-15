@@ -11,7 +11,7 @@ const PhotographerP = ({ photographer }) => {
             {photographer}
 
         </p>
-    )
+    );
 
     return jsx;
 };
