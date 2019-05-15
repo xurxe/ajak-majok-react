@@ -1,0 +1,36 @@
+/* Block: SocialMediaLink___footer ***************************************** */
+
+.SocialMediaLink {
+    color: hsl(275, 60%, 55%);
+    font-size: 3rem;
+    padding: 0 1rem;
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+}
+
+.SocialMediaLink:hover {
+    color: #F087B5;
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.SocialMediaLink:focus {
+    color: #F087B5;
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    outline: none;
+}

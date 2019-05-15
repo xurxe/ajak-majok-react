@@ -21,12 +21,12 @@ class Nav extends Component {
             classNameNavP: `
             Nav_p 
             Nav_p___desktop 
-            Nav_p___visible
+            Nav_p___invisible
             `,
             classNameNavButton: `
             Nav_button 
             Nav_button___desktop 
-            Nav_button___visible
+            Nav_button___invisible
             `,
             classNameNavDiv: `
             Nav_div 
@@ -162,7 +162,7 @@ class Nav extends Component {
                 classNameNavDiv: `
                 Nav_div 
                 Nav_div___untucked 
-                Nav_div___untucked
+                Nav_div___visible
                 `,
             }));
         }, 300);

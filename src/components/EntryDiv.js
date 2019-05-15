@@ -8,6 +8,8 @@ import Image from './Image';
 import PhotographerP from './PhotographerP';
 import ClickableLogo from './ClickableLogo';
 import ImageGrid from './ImageGrid';
+import SocialMediaLink from './SocialMediaLink';
+
 
 const EntryDiv = ({ entry }) => {
 
@@ -178,6 +180,62 @@ const EntryDiv = ({ entry }) => {
             alts={alts}
             className={`EntryDiv EntryDiv___${entryType}`}
             ></ImageGrid>
+        );
+    }
+
+    else if (entryType === 'email') {
+        const { message, email } = entry;
+
+        jsx = (
+            <div
+            className={`EntryDiv EntryDiv___${entryType}`}
+            >
+                <p
+                className='EntryDiv_contactMessage'
+                >
+
+                    {message}
+                
+                </p>
+                <address
+                className='EntryDiv_address' 
+                >
+                    <a
+                    className='EntryDiv_contactEmail' 
+                    href='mailto:info@ajakmajok.com'
+                    >
+
+                        {email}
+
+                    </a>
+
+                </address>
+
+            </div>
+
+        );
+    }
+
+    else if (entryType === 'socialMediaLinks') {
+        const { links } = entry;
+
+        jsx = (
+            <div 
+            className={`EntryDiv EntryDiv___${entryType}`}
+            >
+    
+                {links.map(
+                    (link) => (
+    
+                        <SocialMediaLink 
+                        key={link.id}
+                        link={link}
+                        ></SocialMediaLink>
+    
+                    )
+                )}
+    
+            </div>
         );
     }
 

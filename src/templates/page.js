@@ -132,6 +132,22 @@ query($slug: String!){
                 }
                 alt
             }
+
+            ... on ContentfulEmail {
+                id
+                message
+                email
+            }
+
+            ... on ContentfulSocialMediaLinks {
+                id
+                links {
+                    id
+                    name
+                    url
+                    iconFontAwesome
+                }
+            }
         }
     }
 }

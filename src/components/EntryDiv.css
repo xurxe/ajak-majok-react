@@ -6,7 +6,7 @@
 
 
 
-/* Block: EntryDiv + Modifier: text ************************* */
+/* Block: EntryDiv + Modifier: text + Elements ************* */
 
 /* Exceptional use of type selectors due to the technical limitations of html-react-parser */
 
@@ -26,7 +26,7 @@
 
 
 
-/* Block: EntryDiv + Modifier: blogPost ************************* */
+/* Block: EntryDiv + Modifier: blogPost + Elements ************* */
 
 .EntryDiv___blogPost:hover .EntryDiv_blogTitle {
     background-color: hsl(50, 100%, 75%);
@@ -68,6 +68,39 @@
     -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     transition-property: background-color, color;
+}
+
+/* Block: EntryDiv + Modifier: email + Elements ************* */
+
+.EntryDiv___email {
+    text-align: center;
+}
+
+.EntryDiv_contactMessage {
+    padding-bottom: 2rem;
+}
+
+.EntryDiv_address {
+    font-style: normal;
+    padding-bottom: 1rem;
+}
+
+.EntryDiv_contactEmail {
+    color: hsl(275, 60%, 55%);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.EntryDiv_contactEmail_hover {
+    text-decoration: underline;
+}
+
+
+
+/* Block: EntryDiv + Modifier: socialMediaLinks ********** */
+
+.EntryDiv___socialMediaLinks {
+    text-align: center;
 }
 
 
