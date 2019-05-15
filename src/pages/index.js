@@ -16,7 +16,6 @@ const IndexPage = ({ data }) => {
 
     const jsx = (
         <BodyDiv
-        shortTitle=''
         >
 
             <Nav></Nav>
@@ -45,7 +44,9 @@ const IndexPage = ({ data }) => {
 
             </Main>
 
-            <Footer></Footer>
+            <Footer
+            className='Footer'
+            ></Footer>
 
         </BodyDiv>
     );

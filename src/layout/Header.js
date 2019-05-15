@@ -4,29 +4,53 @@ import './Header.css'
 
 const Header = ({ title, subtitle, modifier, children }) => {
     
-    const jsx = (
-        <header 
-        className={`Header Header___${modifier}`}
-        >
+    let jsx;
 
-            <h1 
-            className={`Header_h1 Header_h1___${modifier}`}
+    if (subtitle) {
+        jsx = (
+            <header 
+            className={`Header Header___${modifier}`}
             >
+    
+                <h1 
+                className={`Header_h1 Header_h1___${modifier}`}
+                >
+    
+                    {title}
+    
+                </h1>
+    
+                <h2
+                className={`Header_h2 Header_h2___${modifier}`}
+                >
+                    {subtitle}
+                </h2>
+    
+                {children || null}
+    
+            </header>
+        );
+    }
 
-                {title}
-
-            </h1>
-
-            <h2
-            className={`Header_h2 Header_h2___${modifier}`}
+    else {
+        jsx = (
+            <header 
+            className={`Header Header___${modifier}`}
             >
-                {subtitle}
-            </h2>
-
-            {children || null}
-
-        </header>
-    );
+    
+                <h1 
+                className={`Header_h1 Header_h1___${modifier}`}
+                >
+    
+                    {title}
+    
+                </h1>
+    
+                {children || null}
+    
+            </header>
+        );
+    };
 
     return jsx;
 };

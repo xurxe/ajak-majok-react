@@ -26,7 +26,7 @@ const BodyDiv = ({ slug, children }) => {
 
     const jsx = (
         <div 
-        className='BodyDiv'
+        className={`BodyDiv BodyDiv___${slug}`}
         >
 
             <Helmet>

@@ -24,7 +24,7 @@ const EntryDiv = ({ entry }) => {
 
     let jsx;
 
-    if (entryType === 'text'){
+    if (entryType === 'text') {
         const { text } = entry;
     
         jsx = (

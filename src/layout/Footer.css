@@ -123,3 +123,8 @@
         padding-bottom: 2rem;
     }
 }
+
+.Footer___404 {
+    position: absolute;
+    bottom: 0;
+}

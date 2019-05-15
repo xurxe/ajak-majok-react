@@ -39,7 +39,9 @@ const Page = ({ data }) => {
 
             </Main>
 
-            <Footer></Footer>
+            <Footer
+            className='Footer'
+            ></Footer>
             
         </BodyDiv>
     );
@@ -147,6 +149,35 @@ query($slug: String!){
                     url
                     iconFontAwesome
                 }
+            }
+            ... on ContentfulClickableLogo {
+                id
+                url
+                logo {
+                    id
+                    fluid {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                logoHover {
+                    id
+                    fluid {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                alt
             }
         }
     }

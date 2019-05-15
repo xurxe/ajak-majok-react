@@ -67,7 +67,9 @@ const BlogPage = ({ data })=> {
 
             </Main>     
 
-            <Footer></Footer>
+            <Footer
+            className='Footer'
+            ></Footer>
 
         </BodyDiv>
     )

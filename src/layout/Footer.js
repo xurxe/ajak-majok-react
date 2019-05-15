@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import './Footer.css';
@@ -6,7 +6,7 @@ import './Footer.css';
 import FooterA from '../components/FooterA';
 import ClickableLogo from '../components/ClickableLogo';
 
-class Footer extends Component {
+class Footer extends React.Component {
 
     render() {
         return (
@@ -72,7 +72,7 @@ class Footer extends Component {
                 const jsx = (
                     
                     <footer 
-                    className='Footer'
+                    className={this.props.className}
                     >
                         <div
                         className='Footer_leftDiv'

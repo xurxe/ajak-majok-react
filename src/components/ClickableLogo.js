@@ -2,63 +2,36 @@ import React from 'react';
 
 import './ClickableLogo.css'
 
-class ClickableLogo extends React.Component {
+const ClickableLogo = ({ url, logo, logoHover, modifier, alt }) => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            fluid: props.logo.fluid,
-        };
-    };
+    const jsx = (
+        <a 
+        href={url}
+        className={`ClickableLogo ClickableLogo___${modifier}`}
+        >
 
-    handleMouseOver = () => {
-        this.setState(() => ({
-            fluid: this.props.logoHover.fluid,
-        }));
-    };
+        <div
+        className={`ClickableLogo_div ClickableLogo_div___${modifier}`}
+        >
+            <img
+            alt={alt} 
+            src={logo.fluid.src}
+            className={'ClickableLogo_img'}
+            />
 
-    handleMouseOut = () => {
-        this.setState(() => ({
-            fluid: this.props.logo.fluid,
-        }));
-    };
+            <img
+            alt={alt} 
+            src={logoHover.fluid.src}
+            className={'ClickableLogo_img ClickableLogo_img___hover'}
+            />
 
-    render () {
-        const { url, logo, logoHover, modifier, alt } = this.props;
-
-        const jsx = (
-            <a 
-            href={url}
-            onMouseOver={this.handleMouseOver}
-            onFocus={this.handleMouseOver}
-            onMouseOut={this.handleMouseOut}
-            onBlur={this.handleMouseOut}
-            className={`ClickableLogo ClickableLogo___${modifier}`}
-            >
-
-            <div
-            className={`ClickableLogo_div ClickableLogo_div___${modifier}`}
-            >
-                <img
-                alt={alt} 
-                src={logo.fluid.src}
-                className={'ClickableLogo_img'}
-                />
-
-                <img
-                alt={alt} 
-                src={logoHover.fluid.src}
-                className={'ClickableLogo_img ClickableLogo_img___hover'}
-                />
-
+        
+        </div>
             
-            </div>
-                
-            </a>
-        );
-    
-        return jsx;
-    };
+        </a>
+    );
+
+    return jsx;
 
 };
 

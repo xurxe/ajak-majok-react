@@ -42,6 +42,11 @@
     -o-font-smoothing: antialiased;
 }
 
+.Header_h1___404 {
+    font-family: 'Bungee', sans-serif;
+    font-size: 6vw;
+}
+
 .Header_h1___page {
     font-family: 'Bungee', sans-serif;
     font-size: 6vw;
@@ -104,4 +109,10 @@
     color: hsl(275, 60%, 40%);
     outline: none;
     text-decoration: underline;
+}
+
+
+
+.Header___404 {
+    padding: 9rem 8vw 0;
 }
