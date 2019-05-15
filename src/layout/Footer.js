@@ -18,26 +18,36 @@ class Footer extends Component {
                         id
                         logo {
                             id
+                            file {
+                                url
+                                fileName
+                                contentType
+                            }
                             fluid {
-                            base64
-                            aspectRatio
-                            src
-                            srcSet
-                            srcWebp
-                            srcSetWebp
-                            sizes
+                                base64
+                                aspectRatio
+                                src
+                                srcSet
+                                srcWebp
+                                srcSetWebp
+                                sizes
                             }
                         }
                         logoHover {
                             id
+                            file {
+                                url
+                                fileName
+                                contentType
+                            }
                             fluid {
-                            base64
-                            aspectRatio
-                            src
-                            srcSet
-                            srcWebp
-                            srcSetWebp
-                            sizes
+                                base64
+                                aspectRatio
+                                src
+                                srcSet
+                                srcWebp
+                                srcSetWebp
+                                sizes
                             }
                         }
                         logoAlt

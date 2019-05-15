@@ -4,7 +4,6 @@
     display: grid;
     grid-auto-flow: row;
     grid-column-gap: 4vw;
-    grid-row-gap: 3vw;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     width: 100%;

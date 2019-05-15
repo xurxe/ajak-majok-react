@@ -1,5 +1,4 @@
 import React from 'react';
-import Img from 'gatsby-image';
 
 import './ClickableLogo.css'
 
@@ -25,7 +24,7 @@ class ClickableLogo extends React.Component {
     };
 
     render () {
-        const { url, modifier, alt } = this.props;
+        const { url, logo, logoHover, modifier, alt } = this.props;
 
         const jsx = (
             <a 
@@ -34,13 +33,26 @@ class ClickableLogo extends React.Component {
             onFocus={this.handleMouseOver}
             onMouseOut={this.handleMouseOut}
             onBlur={this.handleMouseOut}
+            className={`ClickableLogo ClickableLogo___${modifier}`}
             >
-                <Img 
+
+            <div
+            className={`ClickableLogo_div ClickableLogo_div___${modifier}`}
+            >
+                <img
                 alt={alt} 
-                fluid={this.state.fluid}
-                fadeIn={false}
-                className={`ClickableLogo ClickableLogo___${modifier}`}
-                ></Img>
+                src={logo.fluid.src}
+                className={'ClickableLogo_img'}
+                />
+
+                <img
+                alt={alt} 
+                src={logoHover.fluid.src}
+                className={'ClickableLogo_img ClickableLogo_img___hover'}
+                />
+
+            
+            </div>
                 
             </a>
         );
