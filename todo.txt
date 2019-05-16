@@ -9,7 +9,6 @@ NEW CONTENT TYPES:
 CODE:
 - improve Helmet
 - webhook?
-- gatsby-plugin-sharp
 - custom line-breaks in some fields
 
 CONTENTFUL:
