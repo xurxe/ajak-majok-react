@@ -87,11 +87,7 @@ query($slug: String!){
         alsoPostedInUrl
         image {
             id
-          	file {
-                url
-                fileName
-          	}
-            fluid {
+            fluid (quality: 100) {
                 base64
                 aspectRatio
                 src

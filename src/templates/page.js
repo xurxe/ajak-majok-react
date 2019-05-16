@@ -75,7 +75,7 @@ query($slug: String!){
                 id
                 image {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -96,7 +96,7 @@ query($slug: String!){
                 occupation
                 image {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -122,7 +122,7 @@ query($slug: String!){
                 slug
                 image {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -154,7 +154,7 @@ query($slug: String!){
                 url
                 logo {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -166,7 +166,7 @@ query($slug: String!){
                 }
                 logoHover {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src

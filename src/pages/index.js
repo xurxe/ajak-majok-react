@@ -65,7 +65,7 @@ query {
         subtitle
         coverPhoto {
             id
-            fluid {
+            fluid (quality: 100) {
                 base64
                 aspectRatio
                 src
@@ -82,7 +82,7 @@ query {
                 url
                 logo {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -94,7 +94,7 @@ query {
                 }
                 logoHover {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -120,7 +120,7 @@ query {
                 photographers
                 image1 {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -132,7 +132,7 @@ query {
                 }
                 image2 {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -144,7 +144,7 @@ query {
                 }
                 image3 {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -156,7 +156,7 @@ query {
                 }
                 image4 {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -168,7 +168,7 @@ query {
                 }
                 image5 {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -180,7 +180,7 @@ query {
                 }
                 image6 {
                     id
-                    fluid {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src

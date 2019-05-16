@@ -22,7 +22,7 @@ class Footer extends React.Component {
                                 fileName
                                 contentType
                             }
-                            fluid {
+                            fluid (quality: 100) {
                                 base64
                                 aspectRatio
                                 src
@@ -39,7 +39,7 @@ class Footer extends React.Component {
                                 fileName
                                 contentType
                             }
-                            fluid {
+                            fluid (quality: 100) {
                                 base64
                                 aspectRatio
                                 src
