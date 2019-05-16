@@ -3,13 +3,13 @@ BLOG:
 - tags
 - next/prev buttons
 
-NEW CONTENT TYPES:
-- video
+NEW ENTRY TYPES:
+- embedded video
 
 CODE:
 - improve Helmet
-- webhook?
 - custom line-breaks in some fields
+- sticky footer on all pages
 
 CONTENTFUL:
 - update content

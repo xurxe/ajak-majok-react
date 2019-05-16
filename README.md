@@ -1,10 +1,18 @@
 # Ajak Majok's website
 
-Coming soon
+Activist and politician Ajak Majok was my first client! I made version 1.0 of her website in a week with only HTML and CSS, back when I had only been learning coding for less than a month. You can find the old repository here: https://github.com/xurxe/Ajak-Majok
+
+I'm making her a new site with React, as well as a headless CMS with Contentful.
 
 ## Demo
 
-Coming soon
+https://ajak-majok.netlify.com/
+
+## Tech stack
+- CSS
+- React
+- Contentful
+- Netlify
 
 ## Authors
 
