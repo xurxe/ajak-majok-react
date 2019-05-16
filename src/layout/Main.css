@@ -64,7 +64,7 @@
 }
 
 .Main_blogDiv b, strong {
-    color: hsl(275, 60%, 40%);
+    color: var(--purple);
     font-weight: normal;
 }
 

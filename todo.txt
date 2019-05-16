@@ -1,0 +1,23 @@
+BLOG:
+- sorting
+- tags
+- next/prev buttons
+
+NEW CONTENT TYPES:
+- video
+
+CODE:
+- improve Helmet
+- webhook?
+- gatsby-plugin-sharp
+- custom line-breaks in some fields
+
+CONTENTFUL:
+- update content
+- review alt texts
+- review validations
+- add missing descriptions, error messages, etc
+
+TESTING:
+- accessibility
+- cross-browser

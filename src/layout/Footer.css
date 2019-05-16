@@ -1,7 +1,7 @@
 /* Block: footer + Elements + Modifiers */
 
 .Footer {
-    background-color: hsl(275, 60%, 55%);
+    background-color: var(--purple);
     color: white;
     display: grid;
     grid-template-columns: 30vw 1fr auto;
@@ -81,7 +81,7 @@
 }
 
 .Footer_backToTop:hover {
-    color: hsl(50, 100%, 75%);
+    color: var(--yellow);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -90,7 +90,7 @@
 }
 
 .Footer_backToTop:focus {
-    color: hsl(50, 100%, 75%);
+    color: var(--yellow);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);

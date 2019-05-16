@@ -7,10 +7,10 @@
 }
 
 .CoverPhoto::after {
-    background: #FFE964;
+    background: var(--yellow);
     border-radius: 50%;
     bottom: 30px;
-    color: #8f44cc;
+    color: var(--purple);
     content: "173";
     height: 10rem;
     line-height: 10rem;

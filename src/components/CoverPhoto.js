@@ -9,7 +9,7 @@ const CoverPhoto = ({ alt, coverPhoto }) => {
         <Img 
         alt={alt} 
         fluid={coverPhoto.fluid}
-        className='CoverPhoto'
+        className={`CoverPhoto`}
         fadeIn={true}
         ></Img>
     );

@@ -1,7 +1,7 @@
 /* Block: nav + modifiers ******************************* */
 
 .Nav {
-    background-color: hsl(275, 60%, 55%);
+    background-color: var(--purple);
     padding: 1.5rem;
     position: fixed;
     width: 100%;
@@ -87,11 +87,11 @@
 }
 
 .Nav_button:hover {
-    color: hsl(50, 100%, 75%);
+    color: var(--yellow);
 }
 
 .Nav_button:focus {
-    color: hsl(50, 100%, 75%);
+    color: var(--yellow);
     outline: none;
 }
 

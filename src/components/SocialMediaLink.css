@@ -1,7 +1,7 @@
 /* Block: SocialMediaLink ******************************* */
 
 .SocialMediaLink {
-    color: hsl(275, 60%, 55%);
+    color: var(--purple);
     font-size: 3rem;
     padding: 0 1rem;
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -17,7 +17,7 @@
 }
 
 .SocialMediaLink:hover {
-    color: #F087B5;
+    color: var(--pink);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -26,7 +26,7 @@
 }
 
 .SocialMediaLink:focus {
-    color: #F087B5;
+    color: var(--pink);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);

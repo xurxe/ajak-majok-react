@@ -97,7 +97,7 @@ const EntryDiv = ({ entry }) => {
     };
 
     const renderTestimonial = () => {
-        const { name, occupation, quote, image, alt } = entry;
+        const { name, occupation, quote, image, alt, photographer } = entry;
     
         jsx = (
             <div 
@@ -148,6 +148,10 @@ const EntryDiv = ({ entry }) => {
                         }
                     )}
                 </div>
+
+                <PhotographerP
+                photographer={photographer}
+                ></PhotographerP>
     
             </div>
         );
@@ -163,18 +167,18 @@ const EntryDiv = ({ entry }) => {
 
                 <Link 
                 to={'/blogit/'+ slug}
-                className='EntryDiv_blogLink'
+                className={`EntryDiv_blogLink`}
                 >
 
                 <Image 
                 alt={alt} 
                 image={image}
                 color='purple'
-                className='EntryDiv_blogImage'
+                className={`EntryDiv_blogImage`}
                 ></Image>
 
                     <p
-                    className='EntryDiv_blogTitle'
+                    className={`EntryDiv_blogTitle`}
                     >
                         {title}
                     </p>
@@ -194,7 +198,7 @@ const EntryDiv = ({ entry }) => {
             >
 
             <p
-            className='EntryDiv_singleLineP'
+            className={`EntryDiv_singleLineP`}
             >
             
                 {line}
@@ -214,10 +218,10 @@ const EntryDiv = ({ entry }) => {
             >
 
                 <address
-                className='EntryDiv_address' 
+                className={`EntryDiv_address`} 
                 >
                     <a
-                    className='EntryDiv_contactEmail' 
+                    className={`EntryDiv_contactEmail`}
                     href='mailto:info@ajakmajok.com'
                     >
 

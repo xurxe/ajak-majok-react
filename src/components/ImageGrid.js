@@ -12,7 +12,7 @@ const ImageGrid = ({ photographers, images, alts, className}) => {
         className={className}
         >
             <div
-            className='ImageGrid'
+            className={`ImageGrid`}
             >
                 {images.map((image, i) => 
                     <Image 

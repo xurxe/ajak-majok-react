@@ -32,7 +32,7 @@
 /* Element: h1 + modifiers ********************************* */
 
 .Header_h1 {
-    color: hsl(275, 60%, 55%);
+    color: var(--purple);
     font-weight: normal;
 }
 
@@ -79,7 +79,7 @@
 /* Element: h2 + modifiers ********************************* */
 
 .Header_h2 {
-    color: #8f44cc;
+    color: var(--purple);
     font-family: 'Unna', serif;
     font-size: 4vw;
     font-style: normal;
@@ -104,13 +104,13 @@
 /* Element: a + modifiers ********************************* */
 
 .Header_a___blogi {
-    color: hsl(275, 60%, 10%);
+    color: var(--darkerPurple);
     text-decoration: none;
     padding-left: 1rem;
 }
 
 .Header_a___blogi:hover, .Header_a___blogi:focus {
-    color: hsl(275, 60%, 40%);
+    color: var(--purple);
     outline: none;
     text-decoration: underline;
 }

@@ -16,13 +16,13 @@ const ClickableLogo = ({ url, logo, logoHover, modifier, alt }) => {
             <img
             alt={alt} 
             src={logo.fluid.src}
-            className={'ClickableLogo_img'}
+            className={`ClickableLogo_img`}
             />
 
             <img
             alt={alt} 
             src={logoHover.fluid.src}
-            className={'ClickableLogo_img ClickableLogo_img___hover'}
+            className={`ClickableLogo_img ClickableLogo_img___hover`}
             />
 
         
