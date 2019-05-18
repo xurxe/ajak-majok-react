@@ -2,21 +2,14 @@ import React from 'react';
 
 import './Main.css'
 
-import EntryDiv from '../components/EntryDiv';
-
-const Main = ({ layout, entries }) => {
+const Main = ({ layout, children }) => {
 
     const jsx = (
         <main 
         className={`Main Main___${(layout.toLowerCase())}`}
         >
 
-            {entries && entries.map(entry => 
-                <EntryDiv 
-                entry={entry} 
-                key={entry.id}
-                ></EntryDiv>
-            )}
+            {children || null}
             
         </main>
     );

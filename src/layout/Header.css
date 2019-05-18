@@ -105,12 +105,16 @@
 
 .Header_a___blogi {
     color: var(--darkerPurple);
-    text-decoration: none;
     padding-left: 1rem;
 }
 
-.Header_a___blogi:hover, .Header_a___blogi:focus {
+.Header_a___blogi:hover {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+.Header_a___blogi:focus {
     color: var(--purple);
     outline: none;
-    text-decoration: underline;
+    text-decoration: none;
 }

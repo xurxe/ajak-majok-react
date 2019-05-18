@@ -40,11 +40,11 @@ const BlogPage = ({ data }) => {
                     </time>
     
                     <a 
-                    href={alsoPostedInUrl || null}
+                    href={alsoPostedInUrl}
                     className='Header_a___blogi'
                     >
     
-                        {alsoPostedIn || null}
+                        {alsoPostedIn}
     
                     </a>
     
@@ -113,7 +113,7 @@ const BlogPage = ({ data }) => {
                     ></Image>
     
                     <PhotographerP
-                    photographer={photographer}
+                    data={photographer}
                     ></PhotographerP>
     
                     <div

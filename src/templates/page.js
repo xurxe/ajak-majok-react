@@ -1,11 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import BodyDiv from '../layout/BodyDiv'
+import BodyDiv from '../layout/BodyDiv';
 import Nav from '../layout/Nav';
 import Header from '../layout/Header';
 import Main from '../layout/Main';
-import Footer from '../layout/Footer'
+import Footer from '../layout/Footer';
+
+import EntryDiv from '../components/EntryDiv';
 
 const Page = ({ data }) => {
     const { contentfulPage } = data;
@@ -26,8 +28,16 @@ const Page = ({ data }) => {
 
             <Main 
             layout={layout}
-            entries={entries}
-            ></Main>
+            >
+            
+                {entries && entries.map(entry => 
+                    <EntryDiv 
+                    entry={entry} 
+                    key={entry.id}
+                    ></EntryDiv>
+                )}
+            
+            </Main>
 
             <Footer
             className='Footer'
