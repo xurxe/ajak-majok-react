@@ -18,7 +18,7 @@
     -o-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
     .NavA {
         padding: 0 0 1.5rem 0;
     }
@@ -48,7 +48,7 @@
     color: var(--yellow);
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
     .NavA_page___active {
         border-bottom: none;
     }
@@ -75,7 +75,7 @@
     margin-left: 1rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
     .NavA___electionLink {
         padding: 0 0 1rem 0;
     }

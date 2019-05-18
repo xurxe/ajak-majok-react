@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Parser from 'html-react-parser';
 
-import BodyDiv from '../components/Helmet';
+import BodyDiv from '../layout/BodyDiv';
 import Nav from '../layout/Nav';
 import Header from '../layout/Header';
 import Main from '../layout/Main';
@@ -30,7 +30,7 @@ const BlogPage = ({ data }) => {
             description={title}
             keywords={contentfulSeo.keywords}
             image={image.fixed.src}
-            url={contentfulSeo.baseUrl + '/blogi/' + slug}
+            url={contentfulSeo.baseUrl + '/blogit/' + slug}
             slug={slug}
             ></Helmet>
     
@@ -97,6 +97,14 @@ const BlogPage = ({ data }) => {
             <BodyDiv
             slug='blogi'
             >
+                <Helmet
+                title={contentfulSeo.title}
+                description={title}
+                keywords={contentfulSeo.keywords}
+                image={image.fixed.src}
+                url={contentfulSeo.baseUrl + '/blogit/' + slug}
+                slug={slug}
+                ></Helmet>
     
                 <Nav></Nav>
     
