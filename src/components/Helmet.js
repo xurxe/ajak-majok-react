@@ -60,8 +60,23 @@ const HelmetComponent = ({ title, description, keywords, image, url, slug }) => 
             />
 
             <meta 
+            property='og:image:width' 
+            content='1200'
+            />
+
+            <meta 
+            property='og:image:height' 
+            content='630'
+            />
+
+            <meta 
             property='og:url' 
             content={url}
+            />
+
+            <meta 
+            property='og:type'
+            content='website'
             />
 
             <meta name='twitter:card' 

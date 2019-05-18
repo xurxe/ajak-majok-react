@@ -4,7 +4,7 @@
     background-color: var(--purple);
     color: white;
     display: grid;
-    grid-template-columns: 30vw 1fr auto;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 3rem 8vw;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -32,7 +32,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: center;
 }
 
 .Footer_centerDiv {
@@ -124,9 +123,4 @@
     .Footer_socialMediaLinks {
         padding-bottom: 2rem;
     }
-}
-
-.Footer___404 {
-    position: absolute;
-    bottom: 0;
 }

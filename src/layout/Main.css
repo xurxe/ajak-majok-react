@@ -1,3 +1,7 @@
+.Main {
+    min-height: calc(100vh - 35rem);
+}
+
 /* Block: Main + Modifier: column ****************************** */
 
 .Main___column {

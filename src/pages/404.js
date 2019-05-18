@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from 'gatsby';
 
 import BodyDiv from '../layout/BodyDiv'
 import Nav from '../layout/Nav';
@@ -15,7 +16,7 @@ const NotFoundPage = ({ data }) => {
     const jsx = (
 
         <BodyDiv
-        slug='404'
+        pageType='404'
         >
     
             <Helmet

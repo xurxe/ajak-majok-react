@@ -6,7 +6,7 @@
 }
 
 .ClickableLogo_div {
-    height: 25vw;
+    height: 20vw;
     position: relative;
 }
 
@@ -14,9 +14,6 @@
     height: 70px;
 }
 
-
-
-/* Block: ClickableLogo + Element: img + Modifiers ***** */
 
 .ClickableLogo_img {
     left: 0;
@@ -32,7 +29,15 @@
     width: 70%;
 }
 
-.ClickableLogo .ClickableLogo_img___hover {
+.ClickableLogo_img {
+    margin: 0 auto;
+}
+
+.ClickableLogo_img___footer {
+    margin: 0;
+}
+
+.ClickableLogo_img___hover {
     opacity: 0;
 }
 

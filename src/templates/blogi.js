@@ -95,14 +95,14 @@ const BlogPage = ({ data }) => {
     else {
         jsx = (
             <BodyDiv
-            slug='blogi'
+            pageType='blogi'
             >
                 <Helmet
                 title={contentfulSeo.title}
                 description={title}
                 keywords={contentfulSeo.keywords}
                 image={image.fixed.src}
-                url={contentfulSeo.baseUrl + '/blogit/' + slug}
+                url={contentfulSeo.baseUrl + 'blogit/' + slug}
                 slug={slug}
                 ></Helmet>
     
@@ -173,10 +173,10 @@ query($slug: String!){
         alsoPostedInUrl
         image {
             id
-            fixed (width: 1200, height: 630, quality: 100) {
+            fixed (width: 1200, height: 630, quality: 90) {
                 src
             }
-            fluid (quality: 100) {
+            fluid (quality: 90) {
                 base64
                 aspectRatio
                 src
