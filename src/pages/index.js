@@ -8,7 +8,6 @@ import Main from '../layout/Main';
 import Footer from '../layout/Footer';
 
 import CoverPhoto from '../components/CoverPhoto';
-import EntryDiv from '../components/EntryDiv';
 
 const IndexPage = ({ data }) => {
     const { contentfulIndex } = data;
@@ -34,15 +33,9 @@ const IndexPage = ({ data }) => {
             ></Header>
 
             <Main 
-            layout={layout}>
-
-                {entries && entries.map(entry => 
-                    <EntryDiv 
-                    entry={entry} 
-                    key={entry.id}
-                    ></EntryDiv>
-                )}
-
+            layout={layout}
+            entries={entries}
+            >
             </Main>
 
             <Footer
@@ -107,6 +100,7 @@ query {
                     }
                 }
                 alt
+                url
             }
             ... on ContentfulText {
                 id

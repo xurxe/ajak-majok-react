@@ -1,0 +1,21 @@
+.Email {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.Email_address {
+    font-style: normal;
+}
+
+.Email_a {
+    color: var(--purple);
+    font-size: 1.75rem;
+}
+
+.Email_a:hover {
+    text-decoration: none;
+}
+
+.Email_a:focus {
+    text-decoration: none;
+}

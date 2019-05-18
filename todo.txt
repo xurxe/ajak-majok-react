@@ -3,10 +3,6 @@ BLOG:
 - tags
 - next/prev buttons
 
-NEW ENTRY TYPES:
-- embedded video
-- badge
-
 CODE:
 - improve Helmet
 - custom line-breaks in some fields

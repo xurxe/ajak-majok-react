@@ -11,7 +11,6 @@ const Image = ({ alt, image, color }) => {
         fluid={image.fluid}
         className={`Image Image___${color}Shadow`}
         fadeIn={true}
-        backgroundColor={color}
         ></Img>
     );
 

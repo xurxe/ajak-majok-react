@@ -1,0 +1,24 @@
+.Testimonial {
+    margin-bottom: 2.5rem;
+}
+
+.Testimonial_nameP {
+    color: var(--darkPurple);
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.Testimonial_occupationP {
+    color: var(--darkPurple);
+    font-weight: bold;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.Testimonial_quoteP {
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+}

@@ -5,14 +5,22 @@ import './ImageGrid.css'
 import Image from './Image'
 import PhotographerP from './PhotographerP';
 
-const ImageGrid = ({ photographers, images, alts, className}) => {
+const ImageGrid = ({ data }) => {
+
+    const { photographers,
+    image1, image2, image3, image4, image5, image6, 
+    alt1, alt2, alt3, alt4, alt5, alt6
+    } = data;
+
+    const images = [image1, image2, image3, image4, image5, image6];
+    const alts = [alt1, alt2, alt3, alt4, alt5, alt6];
 
     const jsx = (
         <div 
-        className={className}
+        className='ImageGrid'
         >
             <div
-            className={`ImageGrid`}
+            className={`ImageGrid_div`}
             >
                 {images.map((image, i) => 
                     <Image 

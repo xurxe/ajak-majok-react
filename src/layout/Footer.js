@@ -17,40 +17,34 @@ class Footer extends React.Component {
                         id
                         logo {
                             id
-                            file {
-                                url
-                                fileName
-                                contentType
+                            url
+                            logo {
+                                id
+                                fluid (quality: 100) {
+                                    base64
+                                    aspectRatio
+                                    src
+                                    srcSet
+                                    srcWebp
+                                    srcSetWebp
+                                    sizes
+                                }
                             }
-                            fluid (quality: 100) {
-                                base64
-                                aspectRatio
-                                src
-                                srcSet
-                                srcWebp
-                                srcSetWebp
-                                sizes
+                            logoHover {
+                                id
+                                fluid (quality: 100) {
+                                    base64
+                                    aspectRatio
+                                    src
+                                    srcSet
+                                    srcWebp
+                                    srcSetWebp
+                                    sizes
+                                }
                             }
+                            alt
+                            url
                         }
-                        logoHover {
-                            id
-                            file {
-                                url
-                                fileName
-                                contentType
-                            }
-                            fluid (quality: 100) {
-                                base64
-                                aspectRatio
-                                src
-                                srcSet
-                                srcWebp
-                                srcSetWebp
-                                sizes
-                            }
-                        }
-                        logoAlt
-                        logoLink
                         ajakCredit
                         webCredit
                         photoCredit
@@ -66,7 +60,7 @@ class Footer extends React.Component {
             }
             render={data => {
                 const { contentfulFooter } = data;
-                const { logo, logoHover, logoAlt, logoLink, ajakCredit, webCredit, photoCredit, socialMediaLinks } = contentfulFooter;
+                const { logo, ajakCredit, webCredit, photoCredit, socialMediaLinks } = contentfulFooter;
 
                 const jsx = (
                     
@@ -78,10 +72,7 @@ class Footer extends React.Component {
                         >
                                
                             <ClickableLogo
-                            url={logoLink}
-                            logo={logo}
-                            logoHover={logoHover}
-                            alt={logoAlt}
+                            data={logo}
                             modifier='footer'
                             ></ClickableLogo>
 

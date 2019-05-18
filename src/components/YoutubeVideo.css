@@ -10,9 +10,9 @@
 
 .YoutubeVideo_iframe {
     border-radius: 4px;
-    height: 102%;
-    left: -1%;
+    height: 101%;
+    left: 0;
     position: absolute;
-    top: -1%;
-    width: 102%;
+    top: -0.5%;
+    width: 101%;
 }

@@ -7,9 +7,6 @@ import Header from '../layout/Header';
 import Main from '../layout/Main';
 import Footer from '../layout/Footer'
 
-import EntryDiv from '../components/EntryDiv';
-
-
 const Page = ({ data }) => {
     const { contentfulPage } = data;
     const { slug, longTitle, layout, entries } = contentfulPage;
@@ -29,16 +26,8 @@ const Page = ({ data }) => {
 
             <Main 
             layout={layout}
-            >
-
-                {entries && entries.map(entry => 
-                    <EntryDiv 
-                    entry={entry} 
-                    key={entry.id}
-                    ></EntryDiv>
-                )}
-
-            </Main>
+            entries={entries}
+            ></Main>
 
             <Footer
             className='Footer'
