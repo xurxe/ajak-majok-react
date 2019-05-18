@@ -13,6 +13,18 @@
     padding: 0.5em 0;
 }
 
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .Text h2{
+        font-size: calc(29px + 7 * (100vw - 600px) / 300);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Text h2 {
+        font-size: 29px;
+    }
+}
+
 .Text p {
     line-height: 1.5rem;
     margin-bottom: 1rem;

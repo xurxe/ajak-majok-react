@@ -1,4 +1,5 @@
 import React from 'react';
+import Parser from 'html-react-parser';
 
 import './SingleLine.css'
 
@@ -11,13 +12,13 @@ const singleLine = ({ data }) => {
         className={`SingleLine`}
         >
 
-        <p
-        className={`SingleLine_p`}
-        >
-        
-            {line}
-        
-        </p>
+            <p
+            className={`SingleLine_p`}
+            >
+            
+                {Parser(line)}
+            
+            </p>
 
         </div>
     );

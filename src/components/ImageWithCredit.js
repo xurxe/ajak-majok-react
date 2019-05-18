@@ -8,25 +8,50 @@ import PhotographerP from './PhotographerP';
 const ImageWithCredit = ({ data }) => {
     const { image, alt, photographer, shadow } = data;
     const color = (shadow.toLowerCase());
-    
-    const jsx = (
-        <div 
-        className='ImageWithCredit'
-        >
 
-            <Image 
-            alt={alt} 
-            image={image}
-            color={color}
-            ></Image>
+    let jsx;
 
-            <PhotographerP
-            photographer={photographer}
-            ></PhotographerP>
+    if (photographer) {
+        jsx = (
+            <div 
+            className='ImageWithCredit'
+            >
 
-        </div>
+                <Image 
+                alt={alt} 
+                image={image}
+                color={color}
+                ></Image>
 
-    );
+                <PhotographerP
+                photographer={photographer}
+                ></PhotographerP>
+
+            </div>
+
+        );
+    }
+
+    else {
+        jsx = (
+            <div 
+            className='ImageWithCredit'
+            >
+
+                <Image 
+                alt={alt} 
+                image={image}
+                color={color}
+                ></Image>
+
+                <PhotographerP
+                photographer={photographer}
+                ></PhotographerP>
+
+            </div>
+
+        );
+    }
 
     return jsx;
 };
