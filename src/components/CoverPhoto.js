@@ -3,17 +3,44 @@ import Img from 'gatsby-image';
 
 import './CoverPhoto.css'
 
-const CoverPhoto = ({ alt, coverPhoto }) => {
-    
-    const jsx = (
-        <Img 
-        alt={alt} 
-        fluid={coverPhoto.fluid}
-        className={`CoverPhoto`}
-        fadeIn={true}
-        ></Img>
-    );
+import Badge from './Badge'
 
+const CoverPhoto = ({ alt, coverPhoto, badge }) => {
+
+    let jsx;
+
+    if (badge) {
+        jsx = (
+            <div>
+                <Img 
+                alt={alt} 
+                fluid={coverPhoto.fluid}
+                className={`CoverPhoto`}
+                fadeIn={true}
+                ></Img>
+    
+                <Badge
+                badge={badge}
+                className={`Badge Badge___${badge.length}character`}
+                ></Badge>
+            </div>
+    
+        );
+    }
+
+    else {
+        jsx = (
+            <div>
+                <Img 
+                alt={alt} 
+                fluid={coverPhoto.fluid}
+                className={`CoverPhoto`}
+                fadeIn={true}
+                ></Img>
+            </div>
+        );
+    };
+    
     return jsx;
 };
 

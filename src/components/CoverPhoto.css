@@ -6,23 +6,6 @@
     overflow: hidden;
 }
 
-.CoverPhoto::after {
-    background: var(--yellow);
-    border-radius: 50%;
-    bottom: 30px;
-    color: var(--purple);
-    content: "173";
-    height: 10rem;
-    line-height: 10rem;
-    font-size: 4rem;
-    font-family: 'Bungee', sans-serif;
-    position: absolute;
-    right: 35px;
-    text-align: center;
-    width: 10rem;
-    z-index: 10;
-}
-
 
 /* Exceptional use of type selector due to technical limitations of gatsby-image */
 

@@ -1,0 +1,26 @@
+.Badge {
+    background: var(--yellow);
+    border-radius: 50%;
+    bottom: 30px;
+    color: var(--purple);
+    height: 10rem;
+    line-height: 10rem;
+    font-family: 'Bungee', sans-serif;
+    position: absolute;
+    right: 35px;
+    text-align: center;
+    width: 10rem;
+    z-index: 10;
+}
+
+.Badge___1character {
+    font-size: 800%;
+}
+
+.Badge___2character {
+    font-size: 520%;
+}
+
+.Badge___3character {
+    font-size: 390%;
+}

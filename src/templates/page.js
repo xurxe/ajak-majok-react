@@ -28,7 +28,8 @@ const Page = ({ data }) => {
             ></Header>
 
             <Main 
-            layout={layout}>
+            layout={layout}
+            >
 
                 {entries && entries.map(entry => 
                     <EntryDiv 

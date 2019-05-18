@@ -9,6 +9,7 @@ import PhotographerP from './PhotographerP';
 import ClickableLogo from './ClickableLogo';
 import ImageGrid from './ImageGrid';
 import SocialMediaLink from './SocialMediaLink';
+import YoutubeVideo from './YoutubeVideo';
 
 
 const EntryDiv = ({ entry }) => {
@@ -236,6 +237,17 @@ const EntryDiv = ({ entry }) => {
         );
     };
 
+    const renderYoutubeVideo = () => {
+        const { url, alt } = entry;
+
+        jsx = (
+            <YoutubeVideo
+            url={url}
+            alt={alt}
+            ></YoutubeVideo>
+        )
+    }
+
     const renderSocialMediaLinks = () => {
         const { links } = entry;
 
@@ -293,6 +305,10 @@ const EntryDiv = ({ entry }) => {
 
     else if (entryType === 'socialMediaLinks') {
         renderSocialMediaLinks();
+    }
+
+    else if (entryType === 'youtubeVideo') {
+        renderYoutubeVideo();
     }
 
     else {

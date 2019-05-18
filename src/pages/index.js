@@ -13,7 +13,7 @@ import EntryDiv from '../components/EntryDiv';
 const IndexPage = ({ data }) => {
     const { contentfulIndex } = data;
 
-    const { longTitle, subtitle, coverPhoto, layout, entries } = contentfulIndex;
+    const { longTitle, subtitle, coverPhoto, badge, layout, entries } = contentfulIndex;
 
     const jsx = (
         <BodyDiv
@@ -24,6 +24,7 @@ const IndexPage = ({ data }) => {
             <CoverPhoto
                 alt='Ajak Majok seisoo graffittiseinän edessä ja hymyilee'
                 coverPhoto={coverPhoto}
+                badge={badge}
             ></CoverPhoto>
 
             <Header 
@@ -75,6 +76,7 @@ query {
                 sizes
             }
         }
+        badge
         entries {
             __typename
             ... on ContentfulClickableLogo {
@@ -114,6 +116,11 @@ query {
                         html
                     }
                 }
+            }
+            ... on ContentfulYoutubeVideo {
+                id
+                url
+                alt
             }
             ... on ContentfulImageGrid {
                 id

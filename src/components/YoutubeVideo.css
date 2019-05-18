@@ -1,0 +1,18 @@
+.YoutubeVideo_div {
+    border-radius: 4px;
+    box-shadow: -1.4rem 1.4rem #8f44cc;
+    margin: 0 0 4.4rem 1.4rem;
+    overflow: hidden;
+    padding-top: 55%;
+    position: relative;
+    z-index: 10;
+}
+
+.YoutubeVideo_iframe {
+    border-radius: 4px;
+    height: 102%;
+    left: -1%;
+    position: absolute;
+    top: -1%;
+    width: 102%;
+}

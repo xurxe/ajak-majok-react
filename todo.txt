@@ -5,6 +5,7 @@ BLOG:
 
 NEW ENTRY TYPES:
 - embedded video
+- badge
 
 CODE:
 - improve Helmet
