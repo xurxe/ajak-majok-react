@@ -22,6 +22,7 @@ const BlogPage = ({ data }) => {
     if (alsoPostedIn) {
         jsx = (
             <BodyDiv
+            slug='blogi'
             >
     
                 <Nav></Nav>
@@ -85,6 +86,7 @@ const BlogPage = ({ data }) => {
     else {
         jsx = (
             <BodyDiv
+            slug='blogi'
             >
     
                 <Nav></Nav>

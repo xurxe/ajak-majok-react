@@ -8,6 +8,7 @@ import Main from '../layout/Main';
 import Footer from '../layout/Footer';
 
 import CoverPhoto from '../components/CoverPhoto';
+import EntryDiv from '../components/EntryDiv';
 
 const IndexPage = ({ data }) => {
     const { contentfulIndex } = data;
@@ -16,6 +17,7 @@ const IndexPage = ({ data }) => {
 
     const jsx = (
         <BodyDiv
+        slug='index'
         >
 
             <Nav></Nav>
@@ -34,8 +36,15 @@ const IndexPage = ({ data }) => {
 
             <Main 
             layout={layout}
-            entries={entries}
             >
+
+                {entries && entries.map(entry => 
+                    <EntryDiv 
+                    entry={entry} 
+                    key={entry.id}
+                    ></EntryDiv>
+                )}
+
             </Main>
 
             <Footer

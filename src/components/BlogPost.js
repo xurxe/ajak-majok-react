@@ -10,7 +10,7 @@ const blogPost = ({ data }) => {
 
     const jsx = (
         <div 
-        className='BlogPost'
+        className="BlogPost"
         >
 
             <Link 
