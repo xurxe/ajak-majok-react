@@ -7,18 +7,28 @@ import Header from '../layout/Header';
 import Main from '../layout/Main';
 import Footer from '../layout/Footer';
 
+import Helmet from '../components/Helmet';
 import CoverPhoto from '../components/CoverPhoto';
 import EntryDiv from '../components/EntryDiv';
 
 const IndexPage = ({ data }) => {
-    const { contentfulIndex } = data;
+    const { contentfulSeo, contentfulIndex } = data;
 
     const { longTitle, subtitle, coverPhoto, badge, layout, entries } = contentfulIndex;
 
     const jsx = (
         <BodyDiv
-        slug='index'
+        pageType='index'
         >
+
+            <Helmet
+            title={contentfulSeo.title}
+            description={contentfulSeo.description}
+            keywords={contentfulSeo.keywords}
+            image={coverPhoto.fixed.src}
+            url={contentfulSeo.baseUrl}
+            slug=''
+            ></Helmet>
 
             <Nav></Nav>
 
@@ -61,6 +71,14 @@ export default IndexPage;
 
 export const query = graphql`
 query {
+    contentfulSeo {
+        id
+        title
+        description
+        keywords
+        baseUrl
+    }
+    
     contentfulIndex {
         id
         layout
@@ -68,6 +86,9 @@ query {
         subtitle
         coverPhoto {
             id
+            fixed (width: 1200, height: 630, quality: 100) {
+                src
+            }
             fluid (quality: 100) {
                 base64
                 aspectRatio

@@ -6,30 +6,61 @@ import Header from '../layout/Header';
 import Main from '../layout/Main';
 import Footer from '../layout/Footer'
 
-const NotFoundPage = () => (
-    <BodyDiv
-    slug='404'
-    >
+import Helmet from '../components/Helmet';
 
-        <Nav></Nav>
+const NotFoundPage = ({ data }) => {
 
-        <Header 
-        title='Oho!'
-        subtitle='404: Sivua ei löytynyt.'
-        modifier='404'
-        ></Header>
+    const { contentfulSeo } = data;
 
-        <Main 
-        layout='404'>
+    const jsx = (
 
-        </Main>
+        <BodyDiv
+        slug='404'
+        >
+    
+            <Helmet
+            title={contentfulSeo.title}
+            description={contentfulSeo.description}
+            keywords={contentfulSeo.keywords}
+            url={contentfulSeo.baseUrl}
+            slug=''
+            ></Helmet>
+    
+            <Nav></Nav>
+    
+            <Header 
+            title='Oho!'
+            subtitle='404: Sivua ei löytynyt.'
+            modifier='404'
+            ></Header>
+    
+            <Main 
+            layout='404'>
+    
+            </Main>
+    
+            <Footer
+            className='Footer Footer___404'
+            ></Footer>
+    
+        </BodyDiv>
 
-        <Footer
-        className='Footer Footer___404'
-        ></Footer>
+    )
 
-    </BodyDiv>
+    return jsx;
 
-)
+}
 
 export default NotFoundPage
+
+export const query = graphql`
+query {
+    contentfulSeo {
+        id
+        title
+        description
+        keywords
+        baseUrl
+    }
+}
+`;

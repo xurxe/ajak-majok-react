@@ -197,7 +197,7 @@ class Nav extends Component {
     handleWindowResize = () => {
         if (
             this.state.desktop
-            && window.matchMedia('(max-width: 800px)').matches
+            && window.matchMedia('(max-width: 850px)').matches
         ) {
             this.changeDesktopToTucked();
         }
@@ -205,7 +205,7 @@ class Nav extends Component {
         else if (
             !this.state.desktop 
             && this.state.tucked
-            && !window.matchMedia('(max-width: 800px)').matches
+            && !window.matchMedia('(max-width: 850px)').matches
         ) {
             this.changeTuckedToDesktop();
         }
@@ -213,7 +213,7 @@ class Nav extends Component {
         else if (
             !this.state.desktop 
             && !this.state.tucked
-            && !window.matchMedia('(max-width: 800px)').matches
+            && !window.matchMedia('(max-width: 850px)').matches
         ) {
             this.tuck();
 

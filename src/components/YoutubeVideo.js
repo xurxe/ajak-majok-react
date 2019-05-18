@@ -26,8 +26,8 @@ const YoutubeVideo = ({ data }) => {
             <iframe 
             className='YoutubeVideo_iframe' 
             src={`https://www.youtube.com/embed/${urlId}`}
-            frameborder='0' 
-            allowfullscreen='allowfullscreen'
+            frameBorder='0' 
+            allowFullScreen='allowfullscreen'
             title={alt}
             ></iframe>
         </div>
