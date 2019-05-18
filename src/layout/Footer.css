@@ -101,6 +101,10 @@
     .Footer {
         grid-template-columns: auto;
     }
+
+    .Footer_leftDiv {
+        text-align: center;
+    }
     
     .Footer_centerDiv {
         margin: 0 auto;

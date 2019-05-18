@@ -72,7 +72,7 @@ query($slug: String!){
     }
     contentfulIndex {
         coverPhoto {
-            fixed (width: 1200, height: 630, quality: 0) {
+            fixed (width: 1200, height: 630, quality: 100) {
                 src
             }
         }
@@ -99,7 +99,7 @@ query($slug: String!){
                 id
                 image {
                     id
-                    fluid (quality: 0) {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -120,7 +120,7 @@ query($slug: String!){
                 occupation
                 image {
                     id
-                    fluid (quality: 0) {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -146,7 +146,7 @@ query($slug: String!){
                 slug
                 image {
                     id
-                    fluid (quality: 0) {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -178,7 +178,7 @@ query($slug: String!){
                 url
                 logo {
                     id
-                    fluid (quality: 0) {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -190,7 +190,7 @@ query($slug: String!){
                 }
                 logoHover {
                     id
-                    fluid (quality: 0) {
+                    fluid (quality: 100) {
                         base64
                         aspectRatio
                         src

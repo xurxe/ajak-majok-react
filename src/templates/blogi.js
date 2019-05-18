@@ -173,10 +173,10 @@ query($slug: String!){
         alsoPostedInUrl
         image {
             id
-            fixed (width: 1200, height: 630, quality: 90) {
+            fixed (width: 1200, height: 630, quality: 100) {
                 src
             }
-            fluid (quality: 90) {
+            fluid (quality: 100) {
                 base64
                 aspectRatio
                 src
