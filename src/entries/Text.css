@@ -3,6 +3,24 @@
 }
 
 /* Exceptional use of type selectors due to the technical limitations of html-react-parser */
+.Text p {
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.Text a {
+    color: var(--purple);
+}
+
+.Text a:hover {
+    text-decoration: none;
+}
+
+.Text a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
 .Text h2 {
     color: var(--purple);
     font-family: 'Unna', serif;
@@ -22,9 +40,4 @@
     .Text h2 {
         font-size: 29px;
     }
-}
-
-.Text p {
-    line-height: 1.5rem;
-    margin-bottom: 1rem;
 }
