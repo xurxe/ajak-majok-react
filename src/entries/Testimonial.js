@@ -4,7 +4,7 @@ import Parser, { domToReact } from 'html-react-parser';
 import './Testimonial.css'
 
 import Image from '../components/Image';
-import PhotographerP from '../components/SocialMediaLink';
+import PhotographerP from '../components/PhotographerP';
 
 const Testimonial = ({ data }) => {
     
