@@ -2,11 +2,13 @@ import React from 'react';
 
 import './ImageWithCredit.css';
 
-import Image from './Image';
-import PhotographerP from './PhotographerP';
+import Image from '../components/Image';
+import PhotographerP from '../components/PhotographerP';
 
 const ImageWithCredit = ({ data }) => {
+
     const { image, alt, photographer, shadow } = data;
+    
     const color = (shadow.toLowerCase());
 
     let jsx;
@@ -51,7 +53,7 @@ const ImageWithCredit = ({ data }) => {
             </div>
 
         );
-    }
+    };
 
     return jsx;
 };

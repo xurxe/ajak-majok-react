@@ -6,14 +6,14 @@ import Nav from '../layout/Nav';
 import Header from '../layout/Header';
 import Main from '../layout/Main';
 import Footer from '../layout/Footer';
-
 import Helmet from '../components/Helmet';
 import CoverPhoto from '../components/CoverPhoto';
-import EntryDiv from '../components/EntryDiv';
+import EntryDiv from '../entries/EntryDiv';
 
 const IndexPage = ({ data }) => {
-    const { contentfulSeo, contentfulIndex } = data;
 
+    const { contentfulSeo, contentfulIndex } = data;
+    
     const { longTitle, subtitle, coverPhoto, badge, layout, entries } = contentfulIndex;
 
     const jsx = (

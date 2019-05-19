@@ -6,7 +6,6 @@ import Nav from '../layout/Nav';
 import Header from '../layout/Header';
 import Main from '../layout/Main';
 import Footer from '../layout/Footer'
-
 import Helmet from '../components/Helmet';
 
 const NotFoundPage = ({ data }) => {
@@ -14,7 +13,6 @@ const NotFoundPage = ({ data }) => {
     const { contentfulSeo } = data;
 
     const jsx = (
-
         <BodyDiv
         pageType='404'
         >
@@ -45,14 +43,13 @@ const NotFoundPage = ({ data }) => {
             ></Footer>
     
         </BodyDiv>
-
-    )
+    );
 
     return jsx;
 
-}
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
 export const query = graphql`
 query {

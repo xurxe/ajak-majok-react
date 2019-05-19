@@ -1,24 +1,33 @@
 import React from 'react';
 
-import './EntryDiv.css'
+import './EntryDiv.css';
 
-import ClickableLogo from './ClickableLogo';
-import ImageGrid from './ImageGrid';
-import SocialMediaLinks from './SocialMediaLinks';
-import YoutubeVideo from './YoutubeVideo';
-import Text from './Text';
-import Testimonial from './Testimonial';
 import BlogPost from './BlogPost';
-import SingleLine from './SingleLine'
-import Email from './Email'
+import ClickableLogo from './ClickableLogo';
+import Email from './Email';
+import ImageGrid from './ImageGrid';
 import ImageWithCredit from './ImageWithCredit';
-
+import SingleLine from './SingleLine';
+import SocialMediaLinks from './SocialMediaLinks';
+import Testimonial from './Testimonial';
+import Text from './Text';
+import YoutubeVideo from './YoutubeVideo';
 
 const EntryDiv = ({ entry }) => {
+
     const { __typename } = entry;
+
     let jsx;
 
-    if (__typename === 'ContentfulClickableLogo'){
+    if (__typename === 'ContentfulBlogPost'){
+        jsx = (
+            <BlogPost
+            data={entry}
+            ></BlogPost>
+        );
+    }
+
+    else if (__typename === 'ContentfulClickableLogo'){
         jsx = (
             <ClickableLogo
             data={entry}
@@ -27,11 +36,11 @@ const EntryDiv = ({ entry }) => {
         );
     }
 
-    else if (__typename === 'ContentfulText') {
+    else if (__typename === 'ContentfulEmail') {
         jsx = (
-            <Text
+            <Email
             data={entry}
-            ></Text>
+            ></Email>
         );
     }
 
@@ -51,22 +60,6 @@ const EntryDiv = ({ entry }) => {
         );
     }
 
-    else if (__typename === 'ContentfulTestimonial') {
-        jsx = (
-            <Testimonial
-            data={entry}
-            ></Testimonial>
-        );
-    }
-
-    else if (__typename === 'ContentfulBlogPost'){
-        jsx = (
-            <BlogPost
-            data={entry}
-            ></BlogPost>
-        );
-    }
-
     else if (__typename === 'ContentfulSingleLine') {
         jsx = (
             <SingleLine
@@ -75,18 +68,26 @@ const EntryDiv = ({ entry }) => {
         );
     }
 
-    else if (__typename === 'ContentfulEmail') {
-        jsx = (
-            <Email
-            data={entry}
-            ></Email>
-        );
-    }
-
     else if (__typename === 'ContentfulSocialMediaLinks') {
         jsx = (
             <SocialMediaLinks
             data={entry}></SocialMediaLinks>
+        );
+    }
+
+    else if (__typename === 'ContentfulTestimonial') {
+        jsx = (
+            <Testimonial
+            data={entry}
+            ></Testimonial>
+        );
+    }
+
+    else if (__typename === 'ContentfulText') {
+        jsx = (
+            <Text
+            data={entry}
+            ></Text>
         );
     }
 

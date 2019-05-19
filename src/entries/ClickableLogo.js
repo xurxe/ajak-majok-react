@@ -1,8 +1,9 @@
 import React from 'react';
 
-import './ClickableLogo.css'
+import './ClickableLogo.css';
 
 const ClickableLogo = ({ data, modifier }) => {
+    
     const { url, logo, logoHover, alt } = data;
 
     const jsx = (

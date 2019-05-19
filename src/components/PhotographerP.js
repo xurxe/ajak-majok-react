@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './PhotographerP.css'
+import './PhotographerP.css';
 
 const PhotographerP = ({ photographer }) => {
     

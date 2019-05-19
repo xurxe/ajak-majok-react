@@ -1,5 +1,3 @@
-/* Block: header + modifiers ************************************* */
-
 .Header {
     padding: 9rem 8vw 5rem;
     text-align: center;
@@ -26,10 +24,6 @@
 .Header___404 {
     padding: 9rem 8vw 0;
 }
-
-
-
-/* Element: h1 + modifiers ********************************* */
 
 .Header_h1 {
     color: var(--purple);
@@ -74,10 +68,6 @@
     }
 }
 
-
-
-/* Element: h2 + modifiers ********************************* */
-
 .Header_h2 {
     color: var(--purple);
     font-family: 'Unna', serif;
@@ -98,10 +88,6 @@
         font-size: 29px;
     }
 }
-
-
-
-/* Element: a + modifiers ********************************* */
 
 .Header_a___blogi {
     color: var(--darkerPurple);

@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
-import './Image.css'
+import './Image.css';
 
 const Image = ({ alt, image, color }) => {
     

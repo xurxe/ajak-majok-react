@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import './Footer.css';
 
 import FooterA from '../components/FooterA';
-import ClickableLogo from '../components/ClickableLogo';
+import ClickableLogo from '../entries/ClickableLogo';
 class Footer extends React.Component {
 
     render() {
@@ -60,10 +60,10 @@ class Footer extends React.Component {
             }
             render={data => {
                 const { contentfulFooter } = data;
+
                 const { logo, ajakCredit, webCredit, photoCredit, socialMediaLinks } = contentfulFooter;
 
                 const jsx = (
-                    
                     <footer 
                     className={this.props.className}
                     >
@@ -173,7 +173,6 @@ class Footer extends React.Component {
                         </div>
         
                     </footer>
-
                 );
         
                 return jsx;

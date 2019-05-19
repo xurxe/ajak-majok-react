@@ -1,9 +1,10 @@
 import React from 'react';
 import Parser from 'html-react-parser';
 
-import './Text.css'
+import './Text.css';
 
 const Text = ({ data }) => {
+
     const { text } = data;
     
     const jsx = (
@@ -14,7 +15,6 @@ const Text = ({ data }) => {
             {Parser(text.childMarkdownRemark.html)}
 
         </div>
-
     );
 
     return jsx;

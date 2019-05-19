@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import './BlogPost.css'
+import './BlogPost.css';
 
-import Image from './Image'
+import Image from '../components/Image';
 
 const blogPost = ({ data }) => {
+    
     const { slug, title, image, alt } = data;
 
     const jsx = (

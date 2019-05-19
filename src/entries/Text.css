@@ -3,7 +3,6 @@
 }
 
 /* Exceptional use of type selectors due to the technical limitations of html-react-parser */
-
 .Text h2 {
     color: var(--purple);
     font-family: 'Unna', serif;

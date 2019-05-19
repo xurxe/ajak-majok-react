@@ -3,6 +3,7 @@ import React from 'react';
 import './Email.css';
 
 const Email = ({ data }) => {
+    
     const { email } = data;
 
     const jsx = (
@@ -25,7 +26,6 @@ const Email = ({ data }) => {
             </address>
 
         </div>
-
     );
 
     return jsx;

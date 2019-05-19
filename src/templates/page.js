@@ -6,12 +6,13 @@ import Nav from '../layout/Nav';
 import Header from '../layout/Header';
 import Main from '../layout/Main';
 import Footer from '../layout/Footer';
-
 import Helmet from '../components/Helmet';
-import EntryDiv from '../components/EntryDiv';
+import EntryDiv from '../entries/EntryDiv';
 
 const Page = ({ data }) => {
+
     const { contentfulSeo, contentfulIndex, contentfulPage } = data;
+
     const { slug, longTitle, layout, entries } = contentfulPage;
 
     const jsx = (
@@ -70,6 +71,7 @@ query($slug: String!){
         keywords
         baseUrl
     }
+
     contentfulIndex {
         coverPhoto {
             fixed (width: 1200, height: 630, quality: 100) {
@@ -77,6 +79,7 @@ query($slug: String!){
             }
         }
     }
+    
 	contentfulPage (id: { eq: $slug }){
         id
         shortTitle

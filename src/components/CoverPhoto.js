@@ -1,9 +1,9 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
-import './CoverPhoto.css'
+import './CoverPhoto.css';
 
-import Badge from './Badge'
+import Badge from './Badge';
 
 const CoverPhoto = ({ alt, coverPhoto, badge }) => {
 
@@ -11,17 +11,18 @@ const CoverPhoto = ({ alt, coverPhoto, badge }) => {
 
     if (badge) {
         jsx = (
-            <div>
+            <div
+            className='CoverPhoto'
+            >
                 <Img 
                 alt={alt} 
                 fluid={coverPhoto.fluid}
-                className={`CoverPhoto`}
+                className={`CoverPhoto_img`}
                 fadeIn={true}
                 ></Img>
     
                 <Badge
                 badge={badge}
-                className={`Badge Badge___${badge.length}character`}
                 ></Badge>
             </div>
     

@@ -7,14 +7,16 @@ import Nav from '../layout/Nav';
 import Header from '../layout/Header';
 import Main from '../layout/Main';
 import Footer from '../layout/Footer';
-
 import Helmet from '../components/Helmet';
 import Image from '../components/Image';
 import PhotographerP from '../components/PhotographerP';
 
 const BlogPage = ({ data }) => {
+
     const { contentfulSeo, contentfulBlogPost } = data;
+
     const { title, slug, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer } = contentfulBlogPost;
+
     const formattedDate = new Date(date).toLocaleDateString('fi-FI', {day: '2-digit', month: '2-digit', year: 'numeric'});
     
     let jsx;
@@ -89,7 +91,7 @@ const BlogPage = ({ data }) => {
                 ></Footer>
     
             </BodyDiv>
-        )
+        );
     }
 
     else {
@@ -148,7 +150,7 @@ const BlogPage = ({ data }) => {
                 ></Footer>
     
             </BodyDiv>
-        )
+        );
     };
  
     return jsx;
@@ -164,6 +166,7 @@ query($slug: String!){
         keywords
         baseUrl
     }
+    
 	contentfulBlogPost (id: { eq: $slug }){
         id
         title

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './SocialMediaLinks.css';
 
-import SocialMediaLink from './SocialMediaLink';
+import SocialMediaLink from '../components/SocialMediaLink';
 
 const SocialMediaLinks = ({ data }) => {
 

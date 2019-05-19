@@ -23,7 +23,6 @@ const HelmetComponent = ({ title, description, keywords, image, url, slug }) => 
     };
 
     const jsx = (
-
         <Helmet>
 
             <html 
@@ -99,7 +98,6 @@ const HelmetComponent = ({ title, description, keywords, image, url, slug }) => 
             crossorigin='anonymous' />
         
         </Helmet>
-
     );
 
     return jsx;

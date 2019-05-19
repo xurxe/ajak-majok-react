@@ -2,8 +2,6 @@
     min-height: calc(100vh - 35rem);
 }
 
-/* Block: Main + Modifier: column ****************************** */
-
 .Main___column {
     padding: 0 15vw 3rem;
 }
@@ -21,10 +19,6 @@
         padding-right: 25px;
     }
 }
-
-
-
-/* Block: Main + Modifier: grid ****************************** */
 
 .Main___grid {
     display: grid;
@@ -54,10 +48,9 @@
     }
 }
 
-/* Element: blogDiv ********************************************* */
+
 
 /* Exceptional use of type selectors due to the technical limitations of html-react-parser */
-
 .Main_blogDiv {
     margin: 1rem 0;
 }

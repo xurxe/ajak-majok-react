@@ -3,10 +3,11 @@ import Parser, { domToReact } from 'html-react-parser';
 
 import './Testimonial.css'
 
-import Image from './Image';
-import PhotographerP from './PhotographerP';
+import Image from '../components/Image';
+import PhotographerP from '../components/SocialMediaLink';
 
 const Testimonial = ({ data }) => {
+    
     const { name, occupation, quote, image, alt, photographer } = data;
     
     const jsx = (

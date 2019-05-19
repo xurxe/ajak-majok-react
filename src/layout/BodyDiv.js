@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './BodyDiv.css'
+import './BodyDiv.css';
 
 const BodyDiv = ({ pageType, children }) => {
 
@@ -9,12 +9,12 @@ const BodyDiv = ({ pageType, children }) => {
         className={`BodyDiv BodyDiv___${pageType}`}
         >
 
-            <p id='top'></p>
+            <p id='top'
+            ></p>
 
             {children}
 
         </div>
-
     );
 
     return jsx;

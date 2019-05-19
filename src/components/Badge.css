@@ -1,4 +1,4 @@
-.Badge {
+.CoverPhoto_badge {
     background: var(--yellow);
     border-radius: 50%;
     bottom: 30px;
@@ -13,14 +13,14 @@
     z-index: 10;
 }
 
-.Badge___1character {
+.CoverPhoto_badge___1character {
     font-size: 800%;
 }
 
-.Badge___2character {
+.CoverPhoto_badge___2character {
     font-size: 520%;
 }
 
-.Badge___3character {
+.CoverPhoto_badge___3character {
     font-size: 390%;
 }

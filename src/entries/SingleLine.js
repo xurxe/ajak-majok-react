@@ -1,10 +1,10 @@
 import React from 'react';
 import Parser from 'html-react-parser';
 
-import './SingleLine.css'
+import './SingleLine.css';
 
 const singleLine = ({ data }) => {
-
+    
     const { line } = data;
 
     const jsx = (

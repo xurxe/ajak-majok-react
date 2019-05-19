@@ -1,18 +1,17 @@
 import React from 'react';
 
-import './Badge.css'
+import './Badge.css';
 
 const Badge = ({ badge }) => {
     
     const jsx = (
-        <div>
-            <div
-            className={`Badge Badge___${badge.length}character`}
-            >
-                {badge}
-            </div>
-        </div>
+        <div
+        className={`CoverPhoto_badge CoverPhoto_badge___${badge.length}character`}
+        >
 
+            {badge}
+
+        </div>
     );
 
     return jsx;
