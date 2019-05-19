@@ -8,32 +8,28 @@ import NavA from '../components/NavA';
 
 class Nav extends Component {
 
-    constructor() {
-        super();
-
-        this.state = {
-            desktop: true,
-            tucked: true,
-            classNameNav: `
-            Nav
-            Nav___desktop
-            `,
-            classNameNavP: `
-            Nav_p 
-            Nav_p___desktop 
-            Nav_p___invisible
-            `,
-            classNameNavButton: `
-            Nav_button 
-            Nav_button___desktop 
-            Nav_button___invisible
-            `,
-            classNameNavDiv: `
-            Nav_div 
-            Nav_div___desktop
-            Nav_div___visible
-            `,
-        };
+    state = {
+        desktop: true,
+        tucked: true,
+        classNameNav: `
+        Nav
+        Nav___desktop
+        `,
+        classNameNavP: `
+        Nav_p 
+        Nav_p___desktop 
+        Nav_p___invisible
+        `,
+        classNameNavButton: `
+        Nav_button 
+        Nav_button___desktop 
+        Nav_button___invisible
+        `,
+        classNameNavDiv: `
+        Nav_div 
+        Nav_div___desktop
+        Nav_div___visible
+        `,
     };
 
     changeDesktopToTucked = () => {
@@ -201,7 +197,7 @@ class Nav extends Component {
     handleWindowResize = () => {
         if (
             this.state.desktop
-            && window.matchMedia('(max-width: 800px)').matches
+            && window.matchMedia('(max-width: 850px)').matches
         ) {
             this.changeDesktopToTucked();
         }
@@ -209,7 +205,7 @@ class Nav extends Component {
         else if (
             !this.state.desktop 
             && this.state.tucked
-            && !window.matchMedia('(max-width: 800px)').matches
+            && !window.matchMedia('(max-width: 850px)').matches
         ) {
             this.changeTuckedToDesktop();
         }
@@ -217,7 +213,7 @@ class Nav extends Component {
         else if (
             !this.state.desktop 
             && !this.state.tucked
-            && !window.matchMedia('(max-width: 800px)').matches
+            && !window.matchMedia('(max-width: 850px)').matches
         ) {
             this.tuck();
 

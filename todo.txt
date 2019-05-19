@@ -3,16 +3,11 @@ BLOG:
 - tags
 - next/prev buttons
 
-NEW ENTRY TYPES:
-- embedded video
-
 CODE:
-- improve Helmet
 - custom line-breaks in some fields
 - sticky footer on all pages
 
 CONTENTFUL:
-- update content
 - review alt texts
 - review validations
 - add missing descriptions, error messages, etc

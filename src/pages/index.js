@@ -6,24 +6,36 @@ import Nav from '../layout/Nav';
 import Header from '../layout/Header';
 import Main from '../layout/Main';
 import Footer from '../layout/Footer';
-
+import Helmet from '../components/Helmet';
 import CoverPhoto from '../components/CoverPhoto';
-import EntryDiv from '../components/EntryDiv';
+import EntryDiv from '../entries/EntryDiv';
 
 const IndexPage = ({ data }) => {
-    const { contentfulIndex } = data;
 
-    const { longTitle, subtitle, coverPhoto, layout, entries } = contentfulIndex;
+    const { contentfulSeo, contentfulIndex } = data;
+    
+    const { longTitle, subtitle, coverPhoto, badge, layout, entries } = contentfulIndex;
 
     const jsx = (
         <BodyDiv
+        pageType='index'
         >
+
+            <Helmet
+            title={contentfulSeo.title}
+            description={contentfulSeo.description}
+            keywords={contentfulSeo.keywords}
+            image={coverPhoto.fixed.src}
+            url={contentfulSeo.baseUrl}
+            slug=''
+            ></Helmet>
 
             <Nav></Nav>
 
             <CoverPhoto
                 alt='Ajak Majok seisoo graffittiseinän edessä ja hymyilee'
                 coverPhoto={coverPhoto}
+                badge={badge}
             ></CoverPhoto>
 
             <Header 
@@ -33,7 +45,8 @@ const IndexPage = ({ data }) => {
             ></Header>
 
             <Main 
-            layout={layout}>
+            layout={layout}
+            >
 
                 {entries && entries.map(entry => 
                     <EntryDiv 
@@ -58,6 +71,14 @@ export default IndexPage;
 
 export const query = graphql`
 query {
+    contentfulSeo {
+        id
+        title
+        description
+        keywords
+        baseUrl
+    }
+    
     contentfulIndex {
         id
         layout
@@ -65,6 +86,9 @@ query {
         subtitle
         coverPhoto {
             id
+            fixed (width: 1200, height: 630, quality: 100) {
+                src
+            }
             fluid (quality: 100) {
                 base64
                 aspectRatio
@@ -75,6 +99,7 @@ query {
                 sizes
             }
         }
+        badge
         entries {
             __typename
             ... on ContentfulClickableLogo {
@@ -105,6 +130,7 @@ query {
                     }
                 }
                 alt
+                url
             }
             ... on ContentfulText {
                 id
@@ -114,6 +140,11 @@ query {
                         html
                     }
                 }
+            }
+            ... on ContentfulYoutubeVideo {
+                id
+                url
+                alt
             }
             ... on ContentfulImageGrid {
                 id

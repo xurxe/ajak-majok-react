@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
-import './Image.css'
+import './Image.css';
 
 const Image = ({ alt, image, color }) => {
     
@@ -11,7 +11,6 @@ const Image = ({ alt, image, color }) => {
         fluid={image.fluid}
         className={`Image Image___${color}Shadow`}
         fadeIn={true}
-        backgroundColor={color}
         ></Img>
     );
 

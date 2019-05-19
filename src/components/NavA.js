@@ -22,7 +22,6 @@ const NavA = ({ link }) => {
     const renderIndexLink = () => {
 
         jsx = (
-
             <Link 
             to={'/'}
             className={`NavA NavA___${linkType}`}
@@ -31,14 +30,12 @@ const NavA = ({ link }) => {
                 {Parser(link.iconFontAwesome)}
 
             </Link>
-
         );
     };
 
     const renderPageLink = () => {
 
         jsx = (
-
             <Link 
             to={'/' + link.slug}
             className={`NavA NavA___${linkType}`}
@@ -49,13 +46,11 @@ const NavA = ({ link }) => {
                 {link.shortTitle}
 
             </Link>
-
         );
     };
 
     const renderElectionLink = () => {
         jsx = (
-
             <a 
             href={link.url}
             target='_blank'
@@ -66,14 +61,12 @@ const NavA = ({ link }) => {
                 {link.name}
 
             </a>
-
         );
     };
 
     const renderSocialMediaLink = () => {
 
         jsx = (
-
             <a 
             href={link.url}
             target='_blank'
@@ -84,9 +77,8 @@ const NavA = ({ link }) => {
                 {Parser(link.iconFontAwesome)}
 
             </a>
-
         );
-    }
+    };
 
     if (linkType === 'index'){
         renderIndexLink();
@@ -103,6 +95,17 @@ const NavA = ({ link }) => {
     else if (linkType === 'socialMediaLink'){
         renderSocialMediaLink();
     }
+
+    else {
+
+        jsx = (
+            <p
+            className={`NavA`}
+            >
+                ??
+            </p>
+        );
+    };
 
     return jsx;
 };

@@ -6,8 +6,8 @@ import './SocialMediaLink.css';
 const SocialMediaLink = ({ link }) => {
 
     const { url, iconFontAwesome } = link;
-    const jsx = (
 
+    const jsx = (
         <a 
         href={url}
         target='_blank'
@@ -18,7 +18,6 @@ const SocialMediaLink = ({ link }) => {
             {Parser(iconFontAwesome)}
 
         </a>
-
     );
 
     return jsx;

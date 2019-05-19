@@ -1,22 +1,16 @@
-/* Block: ClickableLogo + Element: div + Modifiers ***** */
-
 .ClickableLogo {
     display: block;
     height: auto;
 }
 
 .ClickableLogo_div {
-    height: 200px;
+    height: 30vw;
     position: relative;
 }
 
 .ClickableLogo_div___footer {
     height: 70px;
 }
-
-
-
-/* Block: ClickableLogo + Element: img + Modifiers ***** */
 
 .ClickableLogo_img {
     left: 0;
@@ -32,7 +26,22 @@
     width: 70%;
 }
 
-.ClickableLogo .ClickableLogo_img___hover {
+.ClickableLogo_img {
+    margin: 0 auto;
+}
+
+.ClickableLogo_img___footer {
+    margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .ClickableLogo_img___footer {
+        margin: 0 auto;
+    }  
+}
+
+.ClickableLogo_img___hover {
     opacity: 0;
 }
 

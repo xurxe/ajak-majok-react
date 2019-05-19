@@ -1,4 +1,6 @@
-/* Block: Image + Modifiers ***************************** */
+.Image___noneShadow {
+    margin: 0 0 2rem 0;
+}
 
 .Image___yellowShadow {
     border-radius: 4px;

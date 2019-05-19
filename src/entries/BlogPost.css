@@ -1,0 +1,45 @@
+.BlogPost {
+    margin-bottom: 2.5rem;
+}
+
+.BlogPost:hover .BlogPost_title {
+    background-color: var(--yellow);
+    color: black;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-property: background-color, color;
+}
+
+.BlogPost_link:focus .BlogPost_title {
+    background-color: var(--yellow);
+    color: black;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-property: background-color, color;
+}
+
+.BlogPost_link {
+    outline: none;
+    text-decoration: none;
+}
+
+.BlogPost_title {
+    background-color: none;
+    border-radius: 4px;
+    color: var(--darkerPurple);
+    line-height: 1.5rem;
+    margin: -3rem -0.75rem 0 0.75rem;
+    padding: 4rem 1.5rem 1.25rem;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-property: background-color, color;
+}

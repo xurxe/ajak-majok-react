@@ -1,0 +1,12 @@
+.SingleLine {
+    margin-bottom: 2.5rem;
+}
+
+.SingleLine_p {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.SingleLine_p i {
+    color: var(--pink);
+}

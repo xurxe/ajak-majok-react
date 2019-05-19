@@ -1,24 +1,34 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import BodyDiv from '../layout/BodyDiv'
+import BodyDiv from '../layout/BodyDiv';
 import Nav from '../layout/Nav';
 import Header from '../layout/Header';
 import Main from '../layout/Main';
-import Footer from '../layout/Footer'
-
-import EntryDiv from '../components/EntryDiv';
-
+import Footer from '../layout/Footer';
+import Helmet from '../components/Helmet';
+import EntryDiv from '../entries/EntryDiv';
 
 const Page = ({ data }) => {
-    const { contentfulPage } = data;
+
+    const { contentfulSeo, contentfulIndex, contentfulPage } = data;
+
     const { slug, longTitle, layout, entries } = contentfulPage;
 
     const jsx = (
 
         <BodyDiv
-        slug={slug}
+        pageType='page'
         >
+
+            <Helmet
+            title={contentfulSeo.title}
+            description={longTitle}
+            keywords={contentfulSeo.keywords}
+            image={contentfulIndex.coverPhoto.fixed.src}
+            url={contentfulSeo.baseUrl + slug}
+            slug={slug}
+            ></Helmet>
 
             <Nav></Nav>
 
@@ -28,15 +38,16 @@ const Page = ({ data }) => {
             ></Header>
 
             <Main 
-            layout={layout}>
-
+            layout={layout}
+            >
+            
                 {entries && entries.map(entry => 
                     <EntryDiv 
                     entry={entry} 
                     key={entry.id}
                     ></EntryDiv>
                 )}
-
+            
             </Main>
 
             <Footer
@@ -53,6 +64,22 @@ export default Page;
 
 export const query = graphql`
 query($slug: String!){ 
+    contentfulSeo {
+        id
+        title
+        description
+        keywords
+        baseUrl
+    }
+
+    contentfulIndex {
+        coverPhoto {
+            fixed (width: 1200, height: 630, quality: 100) {
+                src
+            }
+        }
+    }
+    
 	contentfulPage (id: { eq: $slug }){
         id
         shortTitle
