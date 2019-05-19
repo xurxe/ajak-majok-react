@@ -1,9 +1,9 @@
 :root {
-    --yellow: hsl(50, 100%, 75%);
     --purple: hsl(275, 60%, 55%);
     --darkPurple: hsl(275, 60%, 40%);
     --darkerPurple: hsl(275, 60%, 10%);
     --pink: hsl(334, 78%, 74%);
+    --yellow: hsl(50, 100%, 75%);
 }
 
 * {
