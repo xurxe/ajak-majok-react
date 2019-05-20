@@ -19,47 +19,49 @@
     position: absolute;
     right: 0;
     transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
     width: 70%;
 }
 
 .ClickableLogo_img {
     margin: 0 auto;
+    opacity: 1;
+    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.ClickableLogo:hover .ClickableLogo_img___hover {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.ClickableLogo:focus .ClickableLogo_img___hover {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+    outline: none;
+}
+
+.ClickableLogo_img___hover {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.ClickableLogo:hover .ClickableLogo_img___hover {
+    opacity: 1;
+    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.ClickableLogo:focus .ClickableLogo_img___hover {
+    opacity: 1;
+    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+    outline: none;
 }
 
 .ClickableLogo_img___footer {
     margin: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
 
     .ClickableLogo_img___footer {
         margin: 0 auto;
     }  
-}
-
-.ClickableLogo_img___hover {
-    opacity: 0;
-}
-
-.ClickableLogo:hover .ClickableLogo_img___hover {
-    opacity: 1;
-    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.ClickableLogo:focus .ClickableLogo_img___hover {
-    opacity: 1;
-    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    outline: none;
 }

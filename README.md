@@ -6,7 +6,7 @@ I'm making her a new site with React, as well as a headless CMS with Contentful.
 
 ## Demo
 
-https://ajak-majok.netlify.com/
+https://ajakmajok.com/
 
 ## Tech stack
 - CSS

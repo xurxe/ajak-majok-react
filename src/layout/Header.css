@@ -1,12 +1,12 @@
 .Header {
-    padding: 9rem 8vw 5rem;
+    padding: 9rem 15vw 5rem;
     text-align: center;
 }
 
 @media only screen and (min-width: 500px) and (max-width: 800px) {
     .Header {
-        padding-left: calc(25px + (72 - 25) * (100vw - 500px) / (800 - 500));
-        padding-right: calc(25px + (72 - 25) * (100vw - 500px) / (800 - 500));        
+        padding-left: calc(25px + (135 - 25) * (100vw - 500px) / (800 - 500));
+        padding-right: calc(25px + (135 - 25) * (100vw - 500px) / (800 - 500));        
     }
 }
 
@@ -27,6 +27,7 @@
 
 .Header_h1 {
     color: var(--purple);
+    font-style: normal;
     font-weight: normal;
 }
 
@@ -52,55 +53,43 @@
 
 .Header_h1___blogi {
     font-family: 'Unna', serif;
-    font-size: 4vw;
+    font-size: 5vw;
     margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 500px) and (max-width: 800px) {
     .Header_h1___blogi {
-        font-size: calc(29px + 7 * (100vw - 500px) / 300);
+        font-size: calc(32px + (40 - 32) * (100vw - 500px) / (800 - 500));
     }
 }
 
 @media only screen and (max-width: 500px) {
     .Header_h1___blogi {
-        font-size: 29px;
+        font-size: 32px;
     }
 }
 
 .Header_h2 {
     color: var(--purple);
     font-family: 'Unna', serif;
-    font-size: 4vw;
+    font-size: 5vw;
     font-style: normal;
     font-weight: normal;
     padding: 0.5em 0;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+@media only screen and (min-width: 500px) and (max-width: 800px) {
     .Header_h2 {
-        font-size: calc(29px + 7 * (100vw - 600px) / 300);
+        font-size: calc(32px + (40 - 32) * (100vw - 500px) / (800 - 500));
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .Header_h2 {
-        font-size: 29px;
+        font-size: 32px;
     }
 }
 
-.Header_a___blogi {
-    color: var(--darkerPurple);
-    padding-left: 1rem;
-}
-
-.Header_a___blogi:hover {
-    color: var(--purple);
-    text-decoration: none;
-}
-
-.Header_a___blogi:focus {
-    color: var(--purple);
-    outline: none;
-    text-decoration: none;
+.Header_time___blogi {    
+    padding-right: 1rem;
 }

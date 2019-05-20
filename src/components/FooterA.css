@@ -3,10 +3,6 @@
     font-size: 1.5rem;
     padding: 0 0 0 1rem;
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
@@ -17,18 +13,10 @@
 .FooterA:hover {
     color: var(--yellow);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .FooterA:focus {
     color: var(--yellow);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     outline: none;
 }

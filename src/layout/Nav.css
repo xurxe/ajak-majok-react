@@ -7,14 +7,15 @@
 }
 
 .Nav___desktop {
-    align-items: baseline;
     display: flex;
     flex-direction: row;
-    height: 5rem;
     justify-content: space-between;
+    line-height: 2rem;
+    height: 5rem;
 }
 
 .Nav___mobile {
+    align-items: center;
     display: grid;
     grid-auto-flow: row;
     grid-row-gap: 1.5rem;
@@ -24,14 +25,46 @@
 .Nav___tucked {
     height: 5rem;
     transition: height 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    -webkit-transition: height 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .Nav___untucked {
     height: 100vh;
     transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
+
+
+.Nav_div {
+    display: flex;
+}
+
+.Nav_div___desktop {
+    flex-direction: row;
+}
+
+.Nav_div___tucked {
+    display: none;
+}
+
+.Nav_div___untucked {
+    flex-direction: column;
+}
+
+.Nav_div___right {
+    align-items: flex-end;
+}
+
+.Nav_div___visible {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Nav_div___invisible {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
 
 .Nav_p {
     color: white;
@@ -50,20 +83,14 @@
 .Nav_p___visible {
     opacity: 1;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .Nav_p___invisible {
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
+
 
 .Nav_button {
     align-self: start;
@@ -96,56 +123,9 @@
 .Nav_button___visible {
     opacity: 1;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .Nav_button___invisible {
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.Nav_div {
-    align-items: baseline;
-    display: flex;
-}
-
-.Nav_div___desktop {
-    flex-direction: row;
-}
-
-.Nav_div___tucked {
-    display: none;
-}
-
-.Nav_div___untucked {
-    flex-direction: column;
-}
-
-.Nav_div___right {
-    align-items: flex-end;
-}
-
-.Nav_div___visible {
-    opacity: 1;
-    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.Nav_div___invisible {
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }

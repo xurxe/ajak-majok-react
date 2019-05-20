@@ -1,13 +1,7 @@
 .NavA {
     color: white;
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    border-top: 1px solid hsla(50, 100%, 75%, 0);
     border-bottom: 1px solid hsla(50, 100%, 75%, 0);
-    padding: 0 0.1rem 0.3rem 0.1rem;
     text-decoration: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -25,19 +19,11 @@
 .NavA:hover {
     color: var(--yellow);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .NavA:focus {
     color: var(--yellow);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     outline: none;
 }
 

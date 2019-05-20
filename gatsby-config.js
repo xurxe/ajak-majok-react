@@ -9,11 +9,9 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
-
         {
         resolve: `gatsby-source-contentful`,
             options: {
-                // refer to .env file
                 spaceId: process.env.spaceId,
                 accessToken: process.env.accessToken,
             },
@@ -29,9 +27,11 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-transformer-remark`,
-        
-        // this (optional) plugin enables Progressive Web App + Offline functionality
-        // To learn more, visit: https://gatsby.dev/offline
-        // `gatsby-plugin-offline`,
+        {
+            resolve: `gatsby-plugin-postcss`,
+            options: {
+                postCssPlugins: [require(`autoprefixer`)],
+            },
+          },
     ],
 }
