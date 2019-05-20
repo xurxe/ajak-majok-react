@@ -12,14 +12,14 @@
     width: 100%;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+@media only screen and (min-width: 500px) and (max-width: 800px) {
     .ImageGrid_div {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto; 
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .ImageGrid_div {
         grid-template-columns: 1fr;
         grid-template-rows: auto;

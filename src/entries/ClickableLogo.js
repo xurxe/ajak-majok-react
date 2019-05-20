@@ -24,7 +24,7 @@ const ClickableLogo = ({ data, modifier }) => {
                 <img
                 alt={alt} 
                 src={logoHover.fluid.src}
-                className={`ClickableLogo_img ClickableLogo_img___hover`}
+                className={`ClickableLogo_img ClickableLogo_img___hover ClickableLogo_img___${modifier}`}
                 />
 
             
