@@ -9,6 +9,8 @@ const BodyDiv = ({ pageType, children }) => {
         className={`BodyDiv BodyDiv___${pageType}`}
         >
 
+            <span id='top'></span>
+
             {children}
 
         </div>

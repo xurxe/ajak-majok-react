@@ -5,7 +5,6 @@ BLOG:
 
 CODE:
 - custom line-breaks in some fields
-- sticky footer on all pages
 
 CONTENTFUL:
 - review alt texts

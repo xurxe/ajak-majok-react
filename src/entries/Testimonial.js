@@ -1,5 +1,5 @@
 import React from 'react';
-import Parser, { domToReact } from 'html-react-parser';
+import Parser from 'html-react-parser';
 
 import './Testimonial.css'
 
@@ -38,26 +38,9 @@ const Testimonial = ({ data }) => {
 
             <div
             className='Testimonial_quoteDiv'>
-                {Parser(
-                    quote.childMarkdownRemark.html, { 
-                        replace: (domNode) => {
-                            if (domNode.name === 'p') {
 
-                                const jsx1 = (
-                                    <p 
-                                    className='Testimonial_quoteP'
-                                    >
-
-                                        {domToReact(domNode.children)}
-
-                                    </p>
-                                );
-
-                                return jsx1;
-                            }
-                        }
-                    }
-                )}
+                {Parser(quote.childMarkdownRemark.html)}
+                
             </div>
 
             <PhotographerP
