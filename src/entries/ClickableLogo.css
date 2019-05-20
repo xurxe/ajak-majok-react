@@ -31,10 +31,6 @@
 .ClickableLogo:hover .ClickableLogo_img___hover {
     opacity: 0;
     transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .ClickableLogo:focus .ClickableLogo_img___hover {

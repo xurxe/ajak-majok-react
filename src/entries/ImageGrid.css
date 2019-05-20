@@ -1,10 +1,8 @@
 .ImageGrid {
     margin-bottom: 0.6rem;
-
 }
 
 .ImageGrid_div {
-    display: -ms-grid; /* IE 10 */
     display: grid;
     grid-auto-flow: row;
     grid-column-gap: 4vw;

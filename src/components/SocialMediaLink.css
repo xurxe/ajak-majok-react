@@ -3,10 +3,6 @@
     font-size: 3rem;
     padding: 0 1rem;
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
@@ -17,18 +13,10 @@
 .SocialMediaLink:hover {
     color: var(--pink);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .SocialMediaLink:focus {
     color: var(--pink);
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
     outline: none;
 }

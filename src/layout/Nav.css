@@ -8,13 +8,14 @@
 
 .Nav___desktop {
     display: flex;
-    align-items: baseline;
     flex-direction: row;
     justify-content: space-between;
+    line-height: 2rem;
     height: 5rem;
 }
 
 .Nav___mobile {
+    align-items: center;
     display: grid;
     grid-auto-flow: row;
     grid-row-gap: 1.5rem;
@@ -34,7 +35,6 @@
 
 
 .Nav_div {
-    align-items: baseline;
     display: flex;
 }
 

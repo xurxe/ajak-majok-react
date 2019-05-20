@@ -50,7 +50,6 @@
 
 .Footer_ul {
     font-size: 0.8rem;
-    line-height: 1.2rem;
     list-style: none;
 }
 
@@ -59,7 +58,8 @@
 }
 
 .Footer_li {
-    padding-left: 0.8rem;
+    line-height: 1.2rem;
+    padding: 0 0 0 0.8rem;
 }
 
 .Footer_backToTop {
