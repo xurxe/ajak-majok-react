@@ -8,14 +8,14 @@ const Email = ({ data }) => {
 
     const jsx = (
         <div
-        className={`Email`}
+        className='Email'
         >
 
             <address
-            className={`Email_address`} 
+            className='Email_address' 
             >
                 <a
-                className={`Email_a`}
+                className='Email_a'
                 href='mailto:info@ajakmajok.com'
                 >
 

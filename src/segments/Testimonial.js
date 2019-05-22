@@ -3,8 +3,8 @@ import Parser from 'html-react-parser';
 
 import './Testimonial.css'
 
-import Image from '../components/Image';
-import PhotographerP from '../components/PhotographerP';
+import Image from '../Image';
+import PhotographerP from '../PhotographerP';
 
 const Testimonial = ({ data }) => {
     
@@ -12,7 +12,7 @@ const Testimonial = ({ data }) => {
     
     const jsx = (
         <div 
-        className={`Testimonial`}>
+        className='Testimonial'>
 
             <Image 
             alt={alt} 

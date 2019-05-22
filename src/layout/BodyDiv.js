@@ -2,6 +2,9 @@ import React from 'react';
 
 import './BodyDiv.css';
 
+import Nav from './Nav';
+import Footer from './Footer';
+
 const BodyDiv = ({ pageType, children }) => {
 
     const jsx = (
@@ -11,7 +14,13 @@ const BodyDiv = ({ pageType, children }) => {
 
             <span id='top'></span>
 
+            <Nav></Nav>
+
             {children}
+
+            <Footer
+            className='Footer'
+            ></Footer>
 
         </div>
     );

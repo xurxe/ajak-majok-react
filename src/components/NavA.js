@@ -100,7 +100,7 @@ const NavA = ({ link }) => {
 
         jsx = (
             <p
-            className={`NavA`}
+            className='NavA'
             >
                 ??
             </p>

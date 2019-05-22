@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import './Footer.css';
 
 import FooterA from '../components/FooterA';
-import ClickableLogo from '../entries/ClickableLogo';
+import ClickableLogo from '../components/segments/ClickableLogo';
 class Footer extends React.Component {
 
     render() {
@@ -68,7 +68,7 @@ class Footer extends React.Component {
                     className={this.props.className}
                     >
                         <div
-                        className={`Footer_leftDiv`}
+                        className='Footer_leftDiv'
                         >
                                
                             <ClickableLogo
@@ -77,7 +77,7 @@ class Footer extends React.Component {
                             ></ClickableLogo>
 
                             <p 
-                            className={`Footer_ajakCredit`}
+                            className='Footer_ajakCredit'
                             >
                             
                                 {ajakCredit}
@@ -87,11 +87,11 @@ class Footer extends React.Component {
                         </div>
 
                         <div
-                        className={`Footer_centerDiv`}
+                        className='Footer_centerDiv'
                         >
 
                             <h1 
-                            className={`Footer_h1 Footer_h1___webCredit`}
+                            className='Footer_h1 Footer_h1___webCredit'
                             >
 
                                 Sivusto:
@@ -99,10 +99,10 @@ class Footer extends React.Component {
                             </h1>
 
                             <ul
-                            className={`Footer_ul Footer_ul___webCredit`}
+                            className='Footer_ul Footer_ul___webCredit'
                             >
                                 <li
-                                className={`Footer_li Footer_li___webCredit`}
+                                className='Footer_li Footer_li___webCredit'
                                 >
                                     {webCredit}
                                 </li>
@@ -110,11 +110,11 @@ class Footer extends React.Component {
                             </ul>
 
                             <div
-                            className={`Footer_photoCredit`}
+                            className='Footer_photoCredit'
                             >
 
                                 <h1 
-                                className={`Footer_h1 Footer_h1___photoCredit`}
+                                className='Footer_h1 Footer_h1___photoCredit'
                                 >
 
                                     Valokuvat:
@@ -122,7 +122,7 @@ class Footer extends React.Component {
                                 </h1>
 
                                 <ul
-                                className={`Footer_ul Footer_ul___photoCredit`}
+                                className='Footer_ul Footer_ul___photoCredit'
                                 >
 
                                     {photoCredit.map(
@@ -130,7 +130,7 @@ class Footer extends React.Component {
                 
                                             <li 
                                             key={photographer}
-                                            className={`Footer_li Footer_li___photoCredit`}
+                                            className='Footer_li Footer_li___photoCredit'
                                             >
                                             
                                                 {photographer}
@@ -145,9 +145,9 @@ class Footer extends React.Component {
                         </div>
 
                         <div
-                        className={`Footer_rightDiv`}>
+                        className='Footer_rightDiv'>
                             <div 
-                            className={`Footer_socialMediaLinks`}
+                            className='Footer_socialMediaLinks'
                             >
             
                                 {socialMediaLinks.map(
@@ -164,7 +164,7 @@ class Footer extends React.Component {
                             </div>
 
                             <a
-                            className={`Footer_backToTop`}
+                            className='Footer_backToTop'
                             href='#top'
                             aria-label='Takaisin ylös'
                             >

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './SocialMediaLinks.css';
 
-import SocialMediaLink from '../components/SocialMediaLink';
+import SocialMediaLink from '../SocialMediaLink';
 
 const SocialMediaLinks = ({ data }) => {
 
@@ -10,7 +10,7 @@ const SocialMediaLinks = ({ data }) => {
 
     const jsx = (
         <div 
-        className={`SocialMediaLinks`}
+        className='SocialMediaLinks'
         >
 
             {links.map(

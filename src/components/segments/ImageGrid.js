@@ -2,8 +2,8 @@ import React from 'react';
 
 import './ImageGrid.css';
 
-import Image from '../components/Image';
-import PhotographerP from '../components/PhotographerP';
+import Image from '../Image';
+import PhotographerP from '../PhotographerP';
 
 const ImageGrid = ({ data }) => {
     const { photographers, image1, image2, image3, image4, image5, image6, alt1, alt2, alt3, alt4, alt5, alt6 } = data;
@@ -17,7 +17,7 @@ const ImageGrid = ({ data }) => {
         className='ImageGrid'
         >
             <div
-            className={`ImageGrid_div`}
+            className='ImageGrid_div'
             >
                 {images.map((image, i) => 
                     <Image 

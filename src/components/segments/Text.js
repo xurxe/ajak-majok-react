@@ -9,7 +9,7 @@ const Text = ({ data }) => {
     
     const jsx = (
         <div 
-        className={`Text`}
+        className='Text'
         >
 
             {Parser(text.childMarkdownRemark.html)}

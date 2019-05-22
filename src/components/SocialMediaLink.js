@@ -12,7 +12,7 @@ const SocialMediaLink = ({ link }) => {
         href={url}
         target='_blank'
         rel='noopener noreferrer'
-        className={`SocialMediaLink`}
+        className='SocialMediaLink'
         >
 
             {Parser(iconFontAwesome)}

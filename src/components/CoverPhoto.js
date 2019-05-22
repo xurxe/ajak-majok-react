@@ -7,40 +7,25 @@ import Badge from './Badge';
 
 const CoverPhoto = ({ alt, coverPhoto, badge }) => {
 
-    let jsx;
+    const jsx = (
+        <div
+        className='CoverPhoto'
+        >
+            <Img 
+            alt={alt} 
+            fluid={coverPhoto.fluid}
+            className='CoverPhoto_img'
+            fadeIn={true}
+            ></Img>
 
-    if (badge) {
-        jsx = (
-            <div
-            className='CoverPhoto'
-            >
-                <Img 
-                alt={alt} 
-                fluid={coverPhoto.fluid}
-                className={`CoverPhoto_img`}
-                fadeIn={true}
-                ></Img>
-    
+            {badge && 
                 <Badge
                 badge={badge}
                 ></Badge>
-            </div>
-    
-        );
-    }
+            }
+        </div>
 
-    else {
-        jsx = (
-            <div>
-                <Img 
-                alt={alt} 
-                fluid={coverPhoto.fluid}
-                className={`CoverPhoto`}
-                fadeIn={true}
-                ></Img>
-            </div>
-        );
-    };
+    );
     
     return jsx;
 };

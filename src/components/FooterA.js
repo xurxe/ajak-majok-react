@@ -13,7 +13,7 @@ const FooterA = ({ link }) => {
         href={url}
         target='_blank'
         rel='noopener noreferrer'
-        className={`FooterA`}
+        className='FooterA'
         >
 
             {Parser(iconFontAwesome)}

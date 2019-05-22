@@ -9,11 +9,11 @@ const singleLine = ({ data }) => {
 
     const jsx = (
         <div 
-        className={`SingleLine`}
+        className='SingleLine'
         >
 
             <p
-            className={`SingleLine_p`}
+            className='SingleLine_p'
             >
             
                 {Parser(line)}

@@ -1,28 +1,28 @@
 import React from 'react';
 
-import './EntryDiv.css';
+import './SegmentDiv.css';
 
-import BlogPost from './BlogPost';
-import ClickableLogo from './ClickableLogo';
-import Email from './Email';
-import ImageGrid from './ImageGrid';
-import ImageWithCredit from './ImageWithCredit';
-import SingleLine from './SingleLine';
-import SocialMediaLinks from './SocialMediaLinks';
-import Testimonial from './Testimonial';
-import Text from './Text';
-import YoutubeVideo from './YoutubeVideo';
+import BlogPost from './segments/BlogPost';
+import ClickableLogo from './segments/ClickableLogo';
+import Email from './segments/Email';
+import ImageGrid from './segments/ImageGrid';
+import ImageWithCredit from './segments/ImageWithCredit';
+import SingleLine from './segments/SingleLine';
+import SocialMediaLinks from './segments/SocialMediaLinks';
+import Testimonial from './segments/Testimonial';
+import Text from './segments/Text';
+import YoutubeVideo from './segments/YoutubeVideo';
 
-const EntryDiv = ({ entry }) => {
+const SegmentDiv = ({ segment }) => {
 
-    const { __typename } = entry;
+    const { __typename } = segment;
 
     let jsx;
 
     if (__typename === 'ContentfulBlogPost'){
         jsx = (
             <BlogPost
-            data={entry}
+            data={segment}
             ></BlogPost>
         );
     }
@@ -30,7 +30,7 @@ const EntryDiv = ({ entry }) => {
     else if (__typename === 'ContentfulClickableLogo'){
         jsx = (
             <ClickableLogo
-            data={entry}
+            data={segment}
             modifier='main'
             ></ClickableLogo>
         );
@@ -39,7 +39,7 @@ const EntryDiv = ({ entry }) => {
     else if (__typename === 'ContentfulEmail') {
         jsx = (
             <Email
-            data={entry}
+            data={segment}
             ></Email>
         );
     }
@@ -47,7 +47,7 @@ const EntryDiv = ({ entry }) => {
     else if (__typename === 'ContentfulImageGrid'){
         jsx = (
             <ImageGrid
-            data={entry}
+            data={segment}
             ></ImageGrid>
         );
     }
@@ -55,7 +55,7 @@ const EntryDiv = ({ entry }) => {
     else if (__typename === 'ContentfulImage'){
         jsx = (
             <ImageWithCredit
-            data={entry}
+            data={segment}
             ></ImageWithCredit>
         );
     }
@@ -63,7 +63,7 @@ const EntryDiv = ({ entry }) => {
     else if (__typename === 'ContentfulSingleLine') {
         jsx = (
             <SingleLine
-            data={entry}
+            data={segment}
             ></SingleLine>
         );
     }
@@ -71,14 +71,14 @@ const EntryDiv = ({ entry }) => {
     else if (__typename === 'ContentfulSocialMediaLinks') {
         jsx = (
             <SocialMediaLinks
-            data={entry}></SocialMediaLinks>
+            data={segment}></SocialMediaLinks>
         );
     }
 
     else if (__typename === 'ContentfulTestimonial') {
         jsx = (
             <Testimonial
-            data={entry}
+            data={segment}
             ></Testimonial>
         );
     }
@@ -86,7 +86,7 @@ const EntryDiv = ({ entry }) => {
     else if (__typename === 'ContentfulText') {
         jsx = (
             <Text
-            data={entry}
+            data={segment}
             ></Text>
         );
     }
@@ -94,7 +94,7 @@ const EntryDiv = ({ entry }) => {
     else if (__typename === 'ContentfulYoutubeVideo') {
         jsx = (
             <YoutubeVideo
-            data={entry}
+            data={segment}
             ></YoutubeVideo>
         );
     }
@@ -103,7 +103,7 @@ const EntryDiv = ({ entry }) => {
 
         jsx = (
             <div
-            className='EntryDiv_missingType'>
+            className='SegmentDiv_missingType'>
                 <p>[{__typename}]</p> <br />
             </div>
         );
@@ -112,4 +112,4 @@ const EntryDiv = ({ entry }) => {
     return jsx;
 };
 
-export default EntryDiv;
+export default SegmentDiv;

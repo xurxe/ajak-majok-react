@@ -2,18 +2,16 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import BodyDiv from '../layout/BodyDiv';
-import Nav from '../layout/Nav';
+import Helmet from '../components/Helmet';
 import Header from '../layout/Header';
 import Main from '../layout/Main';
-import Footer from '../layout/Footer';
-import Helmet from '../components/Helmet';
-import EntryDiv from '../entries/EntryDiv';
+import SegmentDiv from '../components/SegmentDiv';
 
 const Page = ({ data }) => {
 
     const { contentfulSeo, contentfulIndex, contentfulPage } = data;
 
-    const { slug, longTitle, layout, entries } = contentfulPage;
+    const { slug, longTitle, layout, segments } = contentfulPage;
 
     const jsx = (
 
@@ -30,8 +28,6 @@ const Page = ({ data }) => {
             slug={slug}
             ></Helmet>
 
-            <Nav></Nav>
-
             <Header 
             title={longTitle} 
             modifier='page'
@@ -41,18 +37,22 @@ const Page = ({ data }) => {
             layout={layout}
             >
             
-                {entries && entries.map(entry => 
-                    <EntryDiv 
-                    entry={entry} 
-                    key={entry.id}
-                    ></EntryDiv>
-                )}
+                {segments.length > 1 
+                    ? 
+                    segments.map(segment => 
+                        <SegmentDiv 
+                        segment={segment} 
+                        key={segment.id}
+                        ></SegmentDiv>
+                    )
+                    :
+                    <SegmentDiv 
+                    segment={segments} 
+                    key={segments.id}
+                    ></SegmentDiv>
+                }
             
             </Main>
-
-            <Footer
-            className='Footer'
-            ></Footer>
             
         </BodyDiv>
     );
@@ -86,63 +86,8 @@ query($slug: String!){
         slug
         longTitle
         layout
-        entries {
+        segments {
             __typename
-            ... on ContentfulText {
-                id
-                text {
-                    id
-                    childMarkdownRemark {
-                        html
-                    }
-                }
-            }
-          
-            ... on ContentfulImage {
-                id
-                image {
-                    id
-                    fluid (quality: 100) {
-                        base64
-                        aspectRatio
-                        src
-                        srcSet
-                        srcWebp
-                        srcSetWebp
-                        sizes
-                    }
-                }
-                alt
-                photographer
-                shadow
-            }
-            
-            ... on ContentfulTestimonial {
-                id
-                name
-                occupation
-                image {
-                    id
-                    fluid (quality: 100) {
-                        base64
-                        aspectRatio
-                        src
-                        srcSet
-                        srcWebp
-                        srcSetWebp
-                        sizes
-                    }
-                }
-                alt
-                quote {
-                    id
-                    childMarkdownRemark {
-                        html
-                    }
-                }
-                photographer
-            }
-          
             ... on ContentfulBlogPost {
                 id
                 title
@@ -160,21 +105,6 @@ query($slug: String!){
                     }
                 }
                 alt
-            }
-
-            ... on ContentfulEmail {
-                id
-                email
-            }
-
-            ... on ContentfulSocialMediaLinks {
-                id
-                links {
-                    id
-                    name
-                    url
-                    iconFontAwesome
-                }
             }
             ... on ContentfulClickableLogo {
                 id
@@ -205,9 +135,74 @@ query($slug: String!){
                 }
                 alt
             }
+            ... on ContentfulEmail {
+                id
+                email
+            }
+            ... on ContentfulImage {
+                id
+                image {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                alt
+                photographer
+                shadow
+            }
             ... on ContentfulSingleLine {
                 id
                 line
+            }
+            ... on ContentfulSocialMediaLinks {
+                id
+                links {
+                    id
+                    name
+                    url
+                    iconFontAwesome
+                }
+            }
+            ... on ContentfulTestimonial {
+                id
+                name
+                occupation
+                image {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                alt
+                quote {
+                    id
+                    childMarkdownRemark {
+                        html
+                    }
+                }
+                photographer
+            }
+            ... on ContentfulText {
+                id
+                text {
+                    id
+                    childMarkdownRemark {
+                        html
+                    }
+                }
             }
         }
     }

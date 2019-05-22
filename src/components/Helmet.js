@@ -88,7 +88,7 @@ const HelmetComponent = ({ title, description, keywords, image, url, slug }) => 
 
             <link
             rel='stylesheet'
-            href='https://fonts.googleapis.com/css?family=Arvo|Bungee+Shade|Bungee|Unna|Bungee+Inline|Bungee+Outline'
+            href='https://fonts.googleapis.com/css?family=Arvo|Bungee|Unna|Bungee+Inline'
             />
 
             <link 

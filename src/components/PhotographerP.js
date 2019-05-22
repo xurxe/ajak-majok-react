@@ -6,7 +6,7 @@ const PhotographerP = ({ photographer }) => {
     
     const jsx = (
         <p 
-        className={`PhotographerP`}>
+        className='PhotographerP'>
 
             {photographer}
 

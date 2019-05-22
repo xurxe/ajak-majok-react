@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import './BlogPost.css';
 
-import Image from '../components/Image';
+import Image from '../Image';
 
 const blogPost = ({ data }) => {
     
@@ -16,18 +16,18 @@ const blogPost = ({ data }) => {
 
             <Link 
             to={'/blogit/'+ slug}
-            className={`BlogPost_link`}
+            className='BlogPost_link'
             >
 
                 <Image 
                 image={image}
                 alt={alt} 
                 color='purple'
-                className={`BlogPost_image`}
+                className='BlogPost_image'
                 ></Image>
 
                 <p
-                className={`BlogPost_title`}
+                className='BlogPost_title'
                 >
                     {title}
                 </p>
