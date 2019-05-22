@@ -1,0 +1,43 @@
+import React from 'react';
+import { Link } from 'gatsby';
+
+import './styles.css';
+
+import Image from '../../general/Image';
+
+const BlogLink = ({ data }) => {
+    
+    const { slug, title, image, alt } = data;
+
+    const jsx = (
+        <div 
+        className="BlogPost"
+        >
+
+            <Link 
+            to={'/blogit/'+ slug}
+            className='BlogPost_link'
+            >
+
+                <Image 
+                image={image}
+                alt={alt} 
+                color='purple'
+                className='BlogPost_image'
+                ></Image>
+
+                <p
+                className='BlogPost_title'
+                >
+                    {title}
+                </p>
+
+            </Link>
+
+        </div>
+    );
+
+    return jsx;
+};
+
+export default BlogLink;

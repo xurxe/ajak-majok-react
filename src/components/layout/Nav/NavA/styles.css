@@ -1,0 +1,70 @@
+.NavA {
+    color: white;
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    border-bottom: 1px solid hsla(50, 100%, 75%, 0);
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 850px) {
+    .NavA {
+        padding: 0 0 1.5rem 0;
+    }
+}
+
+.NavA:hover {
+    color: var(--yellow);
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.NavA:focus {
+    color: var(--yellow);
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    outline: none;
+}
+
+.NavA___page___active {
+    border-bottom: 1px solid hsla(50, 100%, 75%, 1);
+    color: var(--yellow);
+}
+
+@media only screen and (max-width: 850px) {
+    .NavA___page___active {
+        border-bottom: none;
+    }
+}
+
+.NavA___index {
+    font-size: 1.5em;
+    margin-right: 1rem;
+}
+
+.NavA___page {
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.NavA___election {
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.NavA___socialMedia {
+    font-size: 1.5em;
+    margin-left: 1rem;
+}
+
+@media only screen and (max-width: 850px) {
+    .NavA___election {
+        padding: 0 0 1rem 0;
+    }
+
+    .NavA___socialMedia {
+        padding: 0 0 1rem 0;
+    }
+}

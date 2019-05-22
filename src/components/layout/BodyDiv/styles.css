@@ -1,0 +1,99 @@
+:root {
+    --purple: hsl(275, 60%, 55%);
+    --darkPurple: hsl(275, 60%, 40%);
+    --darkerPurple: hsl(275, 60%, 10%);
+    --pink: hsl(334, 78%, 74%);
+    --yellow: hsl(50, 100%, 75%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    color: var(--darkerPurple);
+    font-family: 'Arvo', serif;
+    font-size: 16px;
+}
+
+.BodyDiv {
+    background: white;
+    min-height: 100vh;
+}
+
+h2 {
+    color: var(--purple);
+    font-family: 'Unna', serif;
+    font-size: 5vw;
+    font-style: normal; 
+    font-weight: normal;
+    padding: 0.5em 0;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+    h2{
+        font-size: calc(32px + (40 - 32) * (100vw - 500px) / (800 - 500));
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    h2 {
+        font-size: 32px;
+    }
+}
+
+h3 {
+    color: var(--darkPurple);
+    font-size: 1rem;
+    padding: 0.25em 0;
+}
+
+p {
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--darkPurple);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+b, strong {
+    color: var(--purple);
+    font-weight: normal;
+}
+
+i, em {
+    font-style: italic;
+    font-weight: normal;
+}
+
+li {
+    line-height: 2rem;
+    list-style-position: inside;
+}
+
+ul, ol {
+    margin-bottom: 1.5rem;
+}
+
+hr {
+    color: var(--purple)
+}
+
+#top{
+    height: 0;
+    margin: 0;
+    padding: 0; 
+}

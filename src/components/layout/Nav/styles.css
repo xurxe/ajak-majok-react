@@ -1,0 +1,128 @@
+.Nav {
+    background-color: var(--purple);
+    padding: 1.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.Nav___desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 2rem;
+    height: 5rem;
+}
+
+.Nav___mobile {
+    align-items: center;
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 1.5rem;
+    grid-template-columns: auto auto;
+}
+
+.Nav___tucked {
+    height: 5rem;
+    transition: height 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.Nav___untucked {
+    height: 100vh;
+    transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Nav_div {
+    display: flex;
+}
+
+.Nav_div___desktop {
+    flex-direction: row;
+}
+
+.Nav_div___tucked {
+    display: none;
+}
+
+.Nav_div___untucked {
+    flex-direction: column;
+}
+
+.Nav_div___visible {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Nav_div___invisible {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Nav_div___untucked.Nav_div___right {
+    align-items: flex-end;
+}
+
+.Nav_p {
+    color: white;
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.5rem; 
+    line-height: 2rem;
+}
+
+.Nav_p___desktop {
+    display: none;
+}
+
+.Nav_p___mobile {
+    display: block;
+}
+
+.Nav_p___visible {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Nav_p___invisible {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+
+.Nav_button {
+    align-self: start;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 2px;
+    text-align: right;
+}
+
+.Nav_button:hover {
+    color: var(--yellow);
+}
+
+.Nav_button:focus {
+    color: var(--yellow);
+    outline: none;
+}
+
+.Nav_button___desktop {
+    display: none;
+}
+
+.Nav_button___mobile {
+    display: block;
+}
+
+.Nav_button___visible {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Nav_button___invisible {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}

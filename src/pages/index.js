@@ -1,20 +1,20 @@
 import React from "react";
 import { graphql } from 'gatsby';
 
-import BodyDiv from '../layout/BodyDiv'
-import Nav from '../layout/Nav';
-import Header from '../layout/Header';
-import Main from '../layout/Main';
-import Footer from '../layout/Footer';
 import Helmet from '../components/Helmet';
-import CoverPhoto from '../components/CoverPhoto';
-import EntryDiv from '../entries/EntryDiv';
+
+import BodyDiv from '../components/layout/BodyDiv';
+import Header from '../components/layout/Header';
+import Main from '../components/layout/Main';
+
+import CoverPhoto from '../components/general/CoverPhoto';
+import SegmentDiv from '../components/general/SegmentDiv';
 
 const IndexPage = ({ data }) => {
 
     const { contentfulSeo, contentfulIndex } = data;
     
-    const { longTitle, subtitle, coverPhoto, badge, layout, entries } = contentfulIndex;
+    const { longTitle, subtitle, coverPhoto, badge, layout, segments } = contentfulIndex;
 
     const jsx = (
         <BodyDiv
@@ -29,8 +29,6 @@ const IndexPage = ({ data }) => {
             url={contentfulSeo.baseUrl}
             slug=''
             ></Helmet>
-
-            <Nav></Nav>
 
             <CoverPhoto
                 alt='Ajak Majok seisoo graffittiseinän edessä ja hymyilee'
@@ -48,18 +46,22 @@ const IndexPage = ({ data }) => {
             layout={layout}
             >
 
-                {entries && entries.map(entry => 
-                    <EntryDiv 
-                    entry={entry} 
-                    key={entry.id}
-                    ></EntryDiv>
-                )}
+                {segments.length > 1 
+                    ? 
+                    segments.map(segment => 
+                        <SegmentDiv 
+                        segment={segment} 
+                        key={segment.id}
+                        ></SegmentDiv>
+                    )
+                    :
+                    <SegmentDiv 
+                    segment={segments} 
+                    key={segments.id}
+                    ></SegmentDiv>
+                }
 
             </Main>
-
-            <Footer
-            className='Footer'
-            ></Footer>
 
         </BodyDiv>
     );
@@ -100,7 +102,7 @@ query {
             }
         }
         badge
-        entries {
+        segments {
             __typename
             ... on ContentfulClickableLogo {
                 id
@@ -131,20 +133,6 @@ query {
                 }
                 alt
                 url
-            }
-            ... on ContentfulText {
-                id
-                text {
-                    id
-                    childMarkdownRemark {
-                        html
-                    }
-                }
-            }
-            ... on ContentfulYoutubeVideo {
-                id
-                url
-                alt
             }
             ... on ContentfulImageGrid {
                 id
@@ -228,6 +216,21 @@ query {
                 alt5
                 alt6
             }
+            ... on ContentfulText {
+                id
+                text {
+                    id
+                    childMarkdownRemark {
+                        html
+                    }
+                }
+            }
+            ... on ContentfulYoutubeVideo {
+                id
+                url
+                alt
+            }
+
         }
     }
 }

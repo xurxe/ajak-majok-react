@@ -1,12 +1,11 @@
 import React from "react";
 import { graphql } from 'gatsby';
 
-import BodyDiv from '../layout/BodyDiv'
-import Nav from '../layout/Nav';
-import Header from '../layout/Header';
-import Main from '../layout/Main';
-import Footer from '../layout/Footer'
 import Helmet from '../components/Helmet';
+
+import BodyDiv from '../components/layout/BodyDiv';
+import Header from '../components/layout/Header';
+import Main from '../components/layout/Main';
 
 const NotFoundPage = ({ data }) => {
 
@@ -24,9 +23,7 @@ const NotFoundPage = ({ data }) => {
             url={contentfulSeo.baseUrl}
             slug=''
             ></Helmet>
-    
-            <Nav></Nav>
-    
+
             <Header 
             title='Oho!'
             subtitle='404: Sivua ei löytynyt.'
@@ -38,15 +35,10 @@ const NotFoundPage = ({ data }) => {
     
             </Main>
     
-            <Footer
-            className='Footer Footer___404'
-            ></Footer>
-    
         </BodyDiv>
     );
 
     return jsx;
-
 };
 
 export default NotFoundPage;
