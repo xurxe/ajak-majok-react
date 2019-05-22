@@ -4,33 +4,100 @@ import ReactResizeDetector from 'react-resize-detector';
 
 import './styles.css';
 
-import NavA from '../../general/NavA';
+import NavA from './NavA';
 
 class Nav extends Component {
 
     state = {
         desktop: true,
         tucked: true,
-        classNameNav: `
-        Nav
-        Nav___desktop
-        `,
-        classNameNavP: `
-        Nav_p 
-        Nav_p___desktop 
-        Nav_p___invisible
-        `,
-        classNameNavButton: `
-        Nav_button 
-        Nav_button___desktop 
-        Nav_button___invisible
-        `,
-        classNameNavDiv: `
-        Nav_div 
-        Nav_div___desktop
-        Nav_div___visible
-        `,
+        classNameNav: 'Nav',
+        classNameNavP: 'Nav_p',
+        classNameNavButton: 'Nav_button',
+        classNameNavDiv: 'Nav_div',
     };
+
+    renderMobile = () => {
+        this.setState(() => ({
+            desktop: false,
+            classNameNav: `
+            Nav 
+            Nav___mobile 
+            Nav___tucked
+            `,
+            classNameNavP: `
+            Nav_p 
+            Nav_p___mobile 
+            Nav_p___invisible
+            `,
+            classNameNavButton: `
+            Nav_button 
+            Nav_button___mobile 
+            Nav_p___invisible
+            `,
+            classNameNavDiv: `
+            Nav_div 
+            Nav_div___tucked
+            `,
+        }));
+
+        setTimeout(() => {
+            this.setState(() => ({
+                classNameNavP: `
+                Nav_p 
+                Nav_p___mobile 
+                Nav_p___visible
+                `,
+                classNameNavButton: `
+                Nav_button 
+                Nav_button___mobile 
+                Nav_button___visible
+                `,
+            }));
+        }, 550);
+    }
+
+    renderDesktop = () => {
+        this.setState(() => ({
+            classNameNav: `
+            Nav 
+            Nav___desktop
+            `,
+            classNameNavP: `
+            Nav_p 
+            Nav_p___desktop
+            `,
+            classNameNavButton: `
+            Nav_button 
+            Nav_button___desktop
+            `,
+            classNameNavDiv: `
+            Nav_div 
+            Nav_div___desktop 
+            Nav_div___invisible
+            `,
+        }));
+
+        setTimeout(() => {
+            this.setState(() => ({
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___desktop
+                Nav_div___visible
+                `,
+            }));
+        }, 500);
+    }
+
+    componentDidMount = () => {
+        if (window.matchMedia('(max-width: 850px)').matches) {
+            this.renderMobile();
+        }
+
+        else {
+            this.renderDesktop();
+        }
+    }
 
     changeDesktopToTucked = () => {
         this.setState(() => ({
@@ -301,7 +368,7 @@ class Nav extends Component {
                             onClick={this.handleClick}
                             >
 
-                                <i className="fas fa-bars"></i>
+                                <i className="fas fa-bars "></i>
             
                             </button>
             

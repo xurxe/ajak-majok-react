@@ -4,8 +4,8 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import './styles.css';
 
-import FooterA from '../../general/FooterA';
 import ClickableLogo from '../../segments/ClickableLogo';
+import FooterA from './FooterA';
 
 class Footer extends React.Component {
 
