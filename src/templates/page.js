@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import BodyDiv from '../layout/BodyDiv';
+import BodyDiv from '../components/layout/BodyDiv';
 import Helmet from '../components/Helmet';
-import Header from '../layout/Header';
-import Main from '../layout/Main';
-import SegmentDiv from '../components/SegmentDiv';
+import Header from '../components/layout/Header';
+import Main from '../components/layout/Main';
+import SegmentDiv from '../components/general/SegmentDiv';
 
 const Page = ({ data }) => {
 

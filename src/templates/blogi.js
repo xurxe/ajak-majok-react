@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import BodyDiv from '../layout/BodyDiv';
+import BodyDiv from '../components/layout/BodyDiv';
 import Helmet from '../components/Helmet';
-import Header from '../layout/Header';
-import Main from '../layout/Main';
-import Image from '../components/Image';
-import PhotographerP from '../components/PhotographerP';
-import SegmentDiv from '../components/SegmentDiv';
+import Header from '../components/layout/Header';
+import Main from '../components/layout/Main';
+import Image from '../components/general/Image';
+import PhotographerP from '../components/general/PhotographerP';
+import SegmentDiv from '../components/general/SegmentDiv';
 
 const BlogPage = ({ data }) => {
 
@@ -82,7 +82,7 @@ const BlogPage = ({ data }) => {
                     ></SegmentDiv>
                 }
 
-            </Main>     
+            </Main>    
 
         </BodyDiv>
     );
