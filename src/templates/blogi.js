@@ -75,7 +75,7 @@ const BlogPage = ({ data }) => {
                     {formattedDate}
                 </time>
 
-                { alsoPostedIn &&             
+                {alsoPostedIn &&             
                 <a 
                 href={alsoPostedInUrl}
                 className='Header_a___blogi'
@@ -105,6 +105,7 @@ const BlogPage = ({ data }) => {
                     <SegmentDiv 
                     segment={segment} 
                     key={segment.id}
+                    modifier='blogi'
                     ></SegmentDiv>
                 )}
 
