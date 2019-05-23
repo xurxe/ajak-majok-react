@@ -10,14 +10,46 @@ import Main from '../components/layout/Main';
 import Image from '../components/general/Image';
 import PhotographerP from '../components/general/PhotographerP';
 import SegmentDiv from '../components/general/SegmentDiv';
+import BlogNavigation from '../components/general/BlogNavigation';
 
 const BlogPage = ({ data }) => {
 
-    const { contentfulSeo, contentfulBlogPost } = data;
+    const { contentfulSeo, blogPage, contentfulBlogPost } = data;
 
     const { title, slug, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer, segments } = contentfulBlogPost;
 
+
     const formattedDate = new Date(date).toLocaleDateString('fi-FI', {day: '2-digit', month: '2-digit', year: 'numeric'});
+
+    const blogArray = blogPage.edges[0].node.segments;
+
+    let nextSlug;
+
+    blogArray.forEach((blog, index) => {
+        if (blog.slug === contentfulBlogPost.slug) {
+            if (index === blogArray.length - 1) {
+                nextSlug = ''
+            }
+
+            else {
+                nextSlug = blogArray[index + 1].slug
+            }
+        }
+    })
+
+    let previousSlug;
+
+    blogArray.forEach((blog, index) => {
+        if (blog.slug === contentfulBlogPost.slug) {
+            if (index === 0) {
+                previousSlug = ''
+            }
+
+            else {
+                previousSlug = blogArray[index - 1].slug
+            }
+        }
+    })
     
     const jsx = (
         <BodyDiv
@@ -58,7 +90,7 @@ const BlogPage = ({ data }) => {
             <Main 
             layout='column'
             >
-
+                
                 <Image 
                 alt={alt} 
                 image={image}
@@ -69,12 +101,17 @@ const BlogPage = ({ data }) => {
                 data={photographer}
                 ></PhotographerP>
                 
-                {segments.map(segment => 
+                {segments.map((segment) => 
                     <SegmentDiv 
                     segment={segment} 
                     key={segment.id}
                     ></SegmentDiv>
                 )}
+
+                <BlogNavigation
+                previousSlug={previousSlug}
+                nextSlug={nextSlug}
+                ></BlogNavigation>
 
             </Main>    
 
@@ -93,6 +130,21 @@ query($slug: String!){
         title
         keywords
         baseUrl
+    }
+
+    blogPage: allContentfulPage(filter: {slug: {eq: "blogit"}}) {
+        edges {
+            node {
+                id
+                segments {
+                    __typename
+                    ... on ContentfulBlogPost {
+                        id
+                        slug
+                    }
+                }
+            }
+        }
     }
     
 	contentfulBlogPost (id: { eq: $slug }){

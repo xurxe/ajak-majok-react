@@ -1,4 +1,5 @@
 import React from 'react';
+import Parser from 'html-react-parser';
 
 import './styles.css';
 
@@ -6,9 +7,10 @@ const PhotographerP = ({ photographer }) => {
     
     const jsx = (
         <p 
-        className='PhotographerP'>
+        className='PhotographerP'
+        >
 
-            {photographer}
+            {photographer && Parser(photographer)}
 
         </p>
     );
