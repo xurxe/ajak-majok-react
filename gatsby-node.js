@@ -133,3 +133,30 @@ exports.createPages = ({ graphql, actions }) => {
         });
     });
 };
+
+/*   
+{
+    pages: allContentfulPage {
+        edges {
+            node {
+                id
+                slug
+            }
+        }
+    }
+    blogs: allContentfulPage(filter: {slug: {eq: "blogit"}}) {
+        edges {
+            node {
+                id
+                segments {
+                    __typename
+                    ... on ContentfulBlogPost {
+                        id
+                        slug
+                    }
+                }
+            }
+        }
+    }
+}
+*/

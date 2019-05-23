@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from 'gatsby';
+import Parser from 'html-react-parser';
 
 import Helmet from '../components/Helmet';
 
@@ -37,8 +38,8 @@ const IndexPage = ({ data }) => {
             ></CoverPhoto>
 
             <Header 
-            title={longTitle}
-            subtitle={subtitle}
+            title={Parser(longTitle)}
+            subtitle={Parser(subtitle)}
             modifier='index'
             ></Header>
 

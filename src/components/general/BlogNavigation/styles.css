@@ -1,0 +1,26 @@
+.BlogNavigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.BlogNavigation_a {
+    padding: 0.5rem 0;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.BlogNavigation_a:hover {
+    background-color: #FFE964;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    transition: 0.25s;
+}
+
+.BlogNavigation_a:focus {
+    background-color: #FFE964;
+    border-radius: 4px;
+    outline: none;
+    padding: 0.5rem 1rem;
+    transition: 0.25s;
+}

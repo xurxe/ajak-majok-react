@@ -15,6 +15,7 @@ const Page = ({ data }) => {
 
     const { slug, longTitle, layout, segments } = contentfulPage;
 
+
     const jsx = (
 
         <BodyDiv
@@ -38,8 +39,8 @@ const Page = ({ data }) => {
             <Main 
             layout={layout}
             >
-            
-                {segments.map(segment => 
+
+                {segments.map((segment) => 
                     <SegmentDiv 
                     segment={segment} 
                     key={segment.id}

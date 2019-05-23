@@ -5,6 +5,7 @@ BLOG:
 
 CODE:
 - custom line-breaks in some fields
+- make component for Fb videos
 
 CONTENTFUL:
 - review alt texts
