@@ -69,20 +69,12 @@ const BlogPage = ({ data }) => {
                 data={photographer}
                 ></PhotographerP>
                 
-                {segments.length > 1 
-                    ? 
-                    segments.map(segment => 
-                        <SegmentDiv 
-                        segment={segment} 
-                        key={segment.id}
-                        ></SegmentDiv>
-                    )
-                    :
+                {segments.map(segment => 
                     <SegmentDiv 
-                    segment={segments} 
-                    key={segments.id}
+                    segment={segment} 
+                    key={segment.id}
                     ></SegmentDiv>
-                }
+                )}
 
             </Main>    
 
@@ -129,6 +121,140 @@ query($slug: String!){
         photographer
         segments {
             __typename
+            ... on ContentfulClickableLogo {
+                id
+                url
+                logo {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                logoHover {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                alt
+                url
+            }
+            ... on ContentfulEmail {
+                id
+                email
+            }
+            ... on ContentfulImage {
+                id
+                image {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                alt
+                photographer
+                shadow
+            }
+            ... on ContentfulImageGrid {
+                id
+                photographers
+                image1 {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                image2 {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                image3 {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                image4 {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                image5 {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                image6 {
+                    id
+                    fluid (quality: 100) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+                alt1
+                alt2
+                alt3
+                alt4
+                alt5
+                alt6
+            }
             ... on ContentfulText {
                 id
                 text {
@@ -137,6 +263,11 @@ query($slug: String!){
                         html
                     }
                 }
+            }
+            ... on ContentfulYoutubeVideo {
+                id
+                url
+                alt
             }
         }
     }

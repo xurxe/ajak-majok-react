@@ -84,7 +84,7 @@ const NavA = ({ link }) => {
         renderIndexLink();
     }
 
-    else if (__typename === 'ContentfulPage'){
+    else if (__typename === 'ContentfulPage' && link.slug !== 'column' && link.slug !== 'grid'){
         renderPageLink();
     }
 

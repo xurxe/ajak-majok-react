@@ -28,33 +28,18 @@ class Nav extends Component {
             classNameNavP: `
             Nav_p 
             Nav_p___mobile 
-            Nav_p___invisible
+            Nav_p___visible
             `,
             classNameNavButton: `
             Nav_button 
             Nav_button___mobile 
-            Nav_p___invisible
+            Nav_p___visible
             `,
             classNameNavDiv: `
             Nav_div 
             Nav_div___tucked
             `,
         }));
-
-        setTimeout(() => {
-            this.setState(() => ({
-                classNameNavP: `
-                Nav_p 
-                Nav_p___mobile 
-                Nav_p___visible
-                `,
-                classNameNavButton: `
-                Nav_button 
-                Nav_button___mobile 
-                Nav_button___visible
-                `,
-            }));
-        }, 550);
     }
 
     renderDesktop = () => {
@@ -74,19 +59,9 @@ class Nav extends Component {
             classNameNavDiv: `
             Nav_div 
             Nav_div___desktop 
-            Nav_div___invisible
+            Nav_div___visible
             `,
         }));
-
-        setTimeout(() => {
-            this.setState(() => ({
-                classNameNavDiv: `
-                Nav_div 
-                Nav_div___desktop
-                Nav_div___visible
-                `,
-            }));
-        }, 500);
     }
 
     componentDidMount = () => {
