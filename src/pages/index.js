@@ -46,20 +46,12 @@ const IndexPage = ({ data }) => {
             layout={layout}
             >
 
-                {segments.length > 1 
-                    ? 
-                    segments.map(segment => 
-                        <SegmentDiv 
-                        segment={segment} 
-                        key={segment.id}
-                        ></SegmentDiv>
-                    )
-                    :
+                {segments.map(segment => 
                     <SegmentDiv 
-                    segment={segments} 
-                    key={segments.id}
+                    segment={segment} 
+                    key={segment.id}
                     ></SegmentDiv>
-                }
+                )}
 
             </Main>
 
@@ -230,7 +222,6 @@ query {
                 url
                 alt
             }
-
         }
     }
 }

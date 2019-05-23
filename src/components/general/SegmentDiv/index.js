@@ -15,11 +15,11 @@ import YoutubeVideo from '../../segments/YoutubeVideo';
 
 const SegmentDiv = ({ segment }) => {
 
-    const { __typename } = segment;
+    const { __typename, slug } = segment;
 
     let jsx;
 
-    if (__typename === 'ContentfulBlogPost'){
+    if (__typename === 'ContentfulBlogPost' && slug !== 'blogi'){
         jsx = (
             <BlogLink
             data={segment}
