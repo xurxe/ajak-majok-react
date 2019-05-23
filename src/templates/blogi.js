@@ -18,6 +18,7 @@ const BlogPage = ({ data }) => {
 
     const { title, slug, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer, segments } = contentfulBlogPost;
 
+
     const formattedDate = new Date(date).toLocaleDateString('fi-FI', {day: '2-digit', month: '2-digit', year: 'numeric'});
 
     const blogArray = blogPage.edges[0].node.segments;
