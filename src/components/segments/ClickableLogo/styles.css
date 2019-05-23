@@ -1,10 +1,9 @@
 .ClickableLogo {
     display: block;
-    height: auto;
 }
 
 .ClickableLogo_div {
-    height: 30vw;
+    height: 25vw;
     position: relative;
 }
 
@@ -60,7 +59,7 @@
 }
 
 @media only screen and (max-width: 500px) {
-
+    
     .ClickableLogo_img___footer {
         margin: 0 auto;
     }  

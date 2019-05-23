@@ -18,7 +18,6 @@ const BlogPage = ({ data }) => {
 
     const { title, slug, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer, segments } = contentfulBlogPost;
 
-
     const formattedDate = new Date(date).toLocaleDateString('fi-FI', {day: '2-digit', month: '2-digit', year: 'numeric'});
 
     const blogArray = blogPage.edges[0].node.segments;
@@ -75,7 +74,7 @@ const BlogPage = ({ data }) => {
                     {formattedDate}
                 </time>
 
-                { alsoPostedIn &&             
+                {alsoPostedIn &&             
                 <a 
                 href={alsoPostedInUrl}
                 className='Header_a___blogi'
@@ -105,6 +104,7 @@ const BlogPage = ({ data }) => {
                     <SegmentDiv 
                     segment={segment} 
                     key={segment.id}
+                    modifier='blogi'
                     ></SegmentDiv>
                 )}
 

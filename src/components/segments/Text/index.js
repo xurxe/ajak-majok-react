@@ -3,13 +3,13 @@ import Parser from 'html-react-parser';
 
 import './styles.css';
 
-const Text = ({ data }) => {
+const Text = ({ data, modifier }) => {
 
     const { text } = data;
     
     const jsx = (
         <div 
-        className='Text'
+        className={`Text Text___${modifier}`}
         >
 
             {Parser(text.childMarkdownRemark.html)}

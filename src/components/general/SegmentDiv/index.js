@@ -13,7 +13,7 @@ import Testimonial from '../../segments/Testimonial';
 import Text from '../../segments/Text';
 import YoutubeVideo from '../../segments/YoutubeVideo';
 
-const SegmentDiv = ({ segment }) => {
+const SegmentDiv = ({ segment, modifier }) => {
 
     const { __typename, slug } = segment;
 
@@ -71,7 +71,8 @@ const SegmentDiv = ({ segment }) => {
     else if (__typename === 'ContentfulSocialMediaLinks') {
         jsx = (
             <SocialMediaLinks
-            data={segment}></SocialMediaLinks>
+            data={segment}
+            ></SocialMediaLinks>
         );
     }
 
@@ -87,6 +88,7 @@ const SegmentDiv = ({ segment }) => {
         jsx = (
             <Text
             data={segment}
+            modifier={modifier}
             ></Text>
         );
     }

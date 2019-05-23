@@ -44,6 +44,7 @@ const Page = ({ data }) => {
                     <SegmentDiv 
                     segment={segment} 
                     key={segment.id}
+                    modifier='page'
                     ></SegmentDiv>
                 )}
             
