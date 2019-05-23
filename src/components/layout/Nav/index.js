@@ -11,10 +11,22 @@ class Nav extends Component {
     state = {
         desktop: true,
         tucked: true,
-        classNameNav: 'Nav',
-        classNameNavP: 'Nav_p',
-        classNameNavButton: 'Nav_button',
-        classNameNavDiv: 'Nav_div',
+        classNameNav: `
+        Nav 
+        Nav___desktop
+        `,
+        classNameNavP: `
+        Nav_p 
+        Nav_p___invisible
+        `,
+        classNameNavButton: `
+        Nav_button 
+        Nav_p___invisible
+        `,
+        classNameNavDiv: `
+        Nav_div 
+        Nav_div___invisible
+        `,
     };
 
     renderMobile = () => {
