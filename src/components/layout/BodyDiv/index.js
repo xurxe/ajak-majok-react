@@ -5,7 +5,9 @@ import './styles.css';
 import Nav from '../Nav';
 import Footer from '../Footer';
 
-const BodyDiv = ({ pageType, children }) => {
+const BodyDiv = (props) => { 
+    
+    const { pageType, children } = props;
 
     const jsx = (
         <div 
@@ -18,9 +20,7 @@ const BodyDiv = ({ pageType, children }) => {
 
             {children}
 
-            <Footer
-            className='Footer'
-            ></Footer>
+            <Footer></Footer>
 
         </div>
     );

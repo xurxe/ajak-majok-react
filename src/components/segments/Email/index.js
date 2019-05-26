@@ -2,8 +2,9 @@ import React from 'react';
 
 import './styles.css';
 
-const Email = ({ data }) => {
-    
+const Email = (props) => {
+
+    const { data } = props;
     const { email } = data;
 
     const jsx = (

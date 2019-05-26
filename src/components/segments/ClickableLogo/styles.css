@@ -1,45 +1,21 @@
-.ClickableLogo {
-    display: block;
-}
-
 .ClickableLogo_div {
-    height: 25vw;
     position: relative;
-}
-
-.ClickableLogo_div___footer {
-    height: 70px;
+    margin-bottom: 4rem;
 }
 
 .ClickableLogo_img {
-    left: 0;
-    margin: 0 auto;
-    opacity: 1;
-    position: absolute;
-    right: 0;
-    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    width: 70%;
-}
-
-.ClickableLogo_img {
-    margin: 0 auto;
+    margin: 0 10%;
     opacity: 1;
     transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.ClickableLogo:hover .ClickableLogo_img___hover {
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.ClickableLogo:focus .ClickableLogo_img___hover {
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    outline: none;
+    width: 80%;
 }
 
 .ClickableLogo_img___hover {
     opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
     transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -52,6 +28,11 @@
     opacity: 1;
     transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
     outline: none;
+}
+
+.ClickableLogo_div___footer {
+    position: relative;
+    margin-bottom: 1rem;
 }
 
 .ClickableLogo_img___footer {

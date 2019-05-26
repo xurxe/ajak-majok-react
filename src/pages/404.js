@@ -7,8 +7,9 @@ import BodyDiv from '../components/layout/BodyDiv';
 import Header from '../components/layout/Header';
 import Main from '../components/layout/Main';
 
-const NotFoundPage = ({ data }) => {
+const NotFoundPage = (props) => {
 
+    const { data } = props;
     const { contentfulSeo } = data;
 
     const jsx = (

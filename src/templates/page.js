@@ -7,14 +7,13 @@ import BodyDiv from '../components/layout/BodyDiv';
 import Header from '../components/layout/Header';
 import Main from '../components/layout/Main';
 
-import SegmentDiv from '../components/general/SegmentDiv';
+import SegmentDiv from '../components/common/SegmentDiv';
 
-const Page = ({ data }) => {
+const Page = (props) => {
 
+    const { data } = props;
     const { contentfulSeo, contentfulIndex, contentfulPage } = data;
-
     const { slug, longTitle, layout, segments } = contentfulPage;
-
 
     const jsx = (
 

@@ -5,7 +5,9 @@ import './styles.css';
 
 import Badge from '../Badge';
 
-const CoverPhoto = ({ alt, coverPhoto, badge }) => {
+const CoverPhoto = (props) => {
+
+    const { alt, coverPhoto, badge } = props;
 
     const jsx = (
         <div

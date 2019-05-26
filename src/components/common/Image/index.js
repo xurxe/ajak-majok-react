@@ -3,7 +3,9 @@ import Img from 'gatsby-image';
 
 import './styles.css';
 
-const Image = ({ alt, image, color }) => {
+const Image = (props) => {
+
+    const { alt, image, color } = props;
     
     const jsx = (
         <Img 

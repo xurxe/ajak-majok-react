@@ -13,8 +13,9 @@ import Testimonial from '../../segments/Testimonial';
 import Text from '../../segments/Text';
 import YoutubeVideo from '../../segments/YoutubeVideo';
 
-const SegmentDiv = ({ segment, modifier }) => {
+const SegmentDiv = (props) => {
 
+    const { segment, modifier } = props;
     const { __typename, slug } = segment;
 
     let jsx;

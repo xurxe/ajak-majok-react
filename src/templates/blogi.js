@@ -7,24 +7,21 @@ import BodyDiv from '../components/layout/BodyDiv';
 import Header from '../components/layout/Header';
 import Main from '../components/layout/Main';
 
-import Image from '../components/general/Image';
-import PhotographerP from '../components/general/PhotographerP';
-import SegmentDiv from '../components/general/SegmentDiv';
-import BlogNavigation from '../components/general/BlogNavigation';
+import Image from '../components/common/Image';
+import PhotographerP from '../components/common/PhotographerP';
+import SegmentDiv from '../components/common/SegmentDiv';
+import BlogNavigation from '../components/common/BlogNavigation';
 
-const BlogPage = ({ data }) => {
+const BlogPage = (props) => {
 
+    const { data } = props;
     const { contentfulSeo, blogPage, contentfulBlogPost } = data;
-
     const { title, slug, date, alsoPostedIn, alsoPostedInUrl, image, alt, photographer, segments } = contentfulBlogPost;
-
-
     const formattedDate = new Date(date).toLocaleDateString('fi-FI', {day: '2-digit', month: '2-digit', year: 'numeric'});
 
     const blogArray = blogPage.edges[0].node.segments;
-
+    
     let nextSlug;
-
     blogArray.forEach((blog, index) => {
         if (blog.slug === contentfulBlogPost.slug) {
             if (index === blogArray.length - 1) {
@@ -38,7 +35,6 @@ const BlogPage = ({ data }) => {
     })
 
     let previousSlug;
-
     blogArray.forEach((blog, index) => {
         if (blog.slug === contentfulBlogPost.slug) {
             if (index === 0) {

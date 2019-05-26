@@ -3,9 +3,10 @@ import Parser from 'html-react-parser';
 
 import './styles.css';
 
-const Text = ({ data, modifier }) => {
+const Text = (props) => {
 
-    const { text } = data;
+    const { data, modifier } = props;
+     const { text } = data;
     
     const jsx = (
         <div 

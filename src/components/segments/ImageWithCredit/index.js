@@ -2,13 +2,13 @@ import React from 'react';
 
 import './styles.css';
 
-import Image from '../../general/Image';
-import PhotographerP from '../../general/PhotographerP';
+import Image from '../../common/Image';
+import PhotographerP from '../../common/PhotographerP';
 
-const ImageWithCredit = ({ data }) => {
+const ImageWithCredit = (props) => {
 
+    const { data } = props;
     const { image, alt, photographer, shadow } = data;
-    
     const color = (shadow.toLowerCase());
 
     const jsx = (

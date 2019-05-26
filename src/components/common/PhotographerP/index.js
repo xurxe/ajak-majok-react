@@ -3,7 +3,9 @@ import Parser from 'html-react-parser';
 
 import './styles.css';
 
-const PhotographerP = ({ photographer }) => {
+const PhotographerP = (props) => {
+
+    const { photographer } = props;
     
     const jsx = (
         <p 

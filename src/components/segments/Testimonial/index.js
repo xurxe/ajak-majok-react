@@ -3,11 +3,12 @@ import Parser from 'html-react-parser';
 
 import './styles.css'
 
-import Image from '../../general/Image';
-import PhotographerP from '../../general/PhotographerP';
+import Image from '../../common/Image';
+import PhotographerP from '../../common/PhotographerP';
 
-const Testimonial = ({ data }) => {
+const Testimonial = (props) => {
     
+    const { data } = props;
     const { name, occupation, quote, image, alt, photographer } = data;
     
     const jsx = (
