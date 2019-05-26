@@ -2,20 +2,17 @@ import React from 'react';
 
 import './styles.css';
 
-const YoutubeVideo = ({ data }) => {
+const YoutubeVideo = (props) => {
 
+    const { data } = props;
     const { url, alt } = data;
-
-    var regex = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-
+    const regex = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+    const match = url.match(regex);
     let urlId; 
-    
-    var match = url.match(regex);
 
     if (match && match[7].length === 11) {
         urlId = match[7];
     } 
-    
     else {
         console.log('Error')
     };

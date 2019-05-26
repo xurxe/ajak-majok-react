@@ -2,8 +2,9 @@ import React from 'react';
 
 import './styles.css';
 
-const ClickableLogo = ({ data, modifier }) => {
+const ClickableLogo = (props) => {
     
+    const { data, modifier } = props;
     const { url, logo, logoHover, alt } = data;
 
     const jsx = (
@@ -27,7 +28,6 @@ const ClickableLogo = ({ data, modifier }) => {
                 className={`ClickableLogo_img ClickableLogo_img___hover ClickableLogo_img___${modifier}`}
                 />
 
-            
             </div>
             
         </a>

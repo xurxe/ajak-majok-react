@@ -3,8 +3,9 @@ import Parser from 'html-react-parser';
 
 import './styles.css';
 
-const SingleLine = ({ data }) => {
+const SingleLine = (props) => {
     
+    const { data }= props;
     const { line } = data;
 
     const jsx = (

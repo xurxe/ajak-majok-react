@@ -2,7 +2,9 @@ import React from 'react';
 
 import './styles.css';
 
-const Main = ({ layout, children }) => {
+const Main = (props) => {
+
+    const { layout, children } = props;
 
     const jsx = (
         <main 

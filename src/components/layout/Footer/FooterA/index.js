@@ -3,8 +3,9 @@ import Parser from 'html-react-parser';
 
 import './styles.css';
 
-const FooterA = ({ link }) => {
+const FooterA = (props) => {
 
+    const { link } = props;
     const { url, iconFontAwesome } = link;
 
     const jsx = (

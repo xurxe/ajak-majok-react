@@ -4,7 +4,9 @@ import Parser from 'html-react-parser';
 
 import './styles.css';
 
-const BlogNavigation = ({ previousSlug, nextSlug }) => {
+const BlogNavigation = (props) => {
+
+    const { previousSlug, nextSlug } = props;
     
     const jsx = (
         <div

@@ -8,13 +8,13 @@ import BodyDiv from '../components/layout/BodyDiv';
 import Header from '../components/layout/Header';
 import Main from '../components/layout/Main';
 
-import CoverPhoto from '../components/general/CoverPhoto';
-import SegmentDiv from '../components/general/SegmentDiv';
+import CoverPhoto from '../components/common/CoverPhoto';
+import SegmentDiv from '../components/common/SegmentDiv';
 
-const IndexPage = ({ data }) => {
+const IndexPage = (props) => {
 
+    const { data } = props;
     const { contentfulSeo, contentfulIndex } = data;
-    
     const { longTitle, subtitle, coverPhoto, badge, layout, segments } = contentfulIndex;
 
     const jsx = (

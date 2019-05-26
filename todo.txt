@@ -1,16 +1,13 @@
 BLOG:
 - sorting
 - tags
-- next/prev buttons
 
 CODE:
-- custom line-breaks in some fields
 - make component for Fb videos
+- clean up config file
 
 CONTENTFUL:
 - review alt texts
-- review validations
-- add missing descriptions, error messages, etc
 
 TESTING:
 - accessibility

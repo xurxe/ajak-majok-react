@@ -3,9 +3,11 @@ import { Link } from 'gatsby';
 
 import './styles.css';
 
-import Image from '../../general/Image';
+import Image from '../../common/Image';
 
-const BlogLink = ({ data }) => {
+const BlogLink = (props) => {
+
+    const { data } = props;
     const { slug, title, image, alt } = data;
 
     const jsx = (

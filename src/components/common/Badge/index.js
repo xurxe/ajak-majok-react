@@ -2,7 +2,9 @@ import React from 'react';
 
 import './styles.css';
 
-const Badge = ({ badge }) => {
+const Badge = (props) => {
+
+    const { badge } = props;
     
     const jsx = (
         <div

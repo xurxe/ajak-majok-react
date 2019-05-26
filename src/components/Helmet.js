@@ -1,8 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-const HelmetComponent = ({ title, description, keywords, image, url, slug }) => {
+const HelmetComponent = (props) => {
 
+    const { title, description, keywords, image, url, slug } = props;
     let lang;
 
     // this is necessary because we can't have more than 2 locales with the free version of Contentful
