@@ -30,6 +30,11 @@
     outline: none;
 }
 
+.ClickableLogo_div___footer {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
 .ClickableLogo_img___footer {
     margin: 0;
 }
