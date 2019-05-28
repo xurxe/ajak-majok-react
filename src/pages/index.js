@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from 'gatsby';
 import Parser from 'html-react-parser';
 
-import Helmet from '../components/Helmet';
+import Helmet from '../components/common/Helmet';
 
 import BodyDiv from '../components/layout/BodyDiv';
 import Header from '../components/layout/Header';
@@ -11,9 +11,8 @@ import Main from '../components/layout/Main';
 import CoverPhoto from '../components/common/CoverPhoto';
 import SegmentDiv from '../components/common/SegmentDiv';
 
-const IndexPage = (props) => {
+const IndexPage = ({ data }) => {
 
-    const { data } = props;
     const { contentfulSeo, contentfulIndex } = data;
     const { longTitle, subtitle, coverPhoto, badge, layout, segments } = contentfulIndex;
 
@@ -84,7 +83,7 @@ query {
             fixed (width: 1200, height: 630, quality: 100) {
                 src
             }
-            fluid (quality: 100) {
+            fluid (maxWidth: 3200, quality: 100) {
                 base64
                 aspectRatio
                 src
@@ -132,7 +131,7 @@ query {
                 photographers
                 image1 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -144,7 +143,7 @@ query {
                 }
                 image2 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -156,7 +155,7 @@ query {
                 }
                 image3 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -168,7 +167,7 @@ query {
                 }
                 image4 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -180,7 +179,7 @@ query {
                 }
                 image5 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -192,7 +191,7 @@ query {
                 }
                 image6 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src

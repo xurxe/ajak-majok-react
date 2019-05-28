@@ -1,15 +1,14 @@
 import React from "react";
 import { graphql } from 'gatsby';
 
-import Helmet from '../components/Helmet';
+import Helmet from '../components/common/Helmet';
 
 import BodyDiv from '../components/layout/BodyDiv';
 import Header from '../components/layout/Header';
 import Main from '../components/layout/Main';
 
-const NotFoundPage = (props) => {
+const NotFoundPage = ({ data }) => {
 
-    const { data } = props;
     const { contentfulSeo } = data;
 
     const jsx = (

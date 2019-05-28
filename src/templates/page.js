@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Helmet from '../components/Helmet';
+import Helmet from '../components/common/Helmet';
 
 import BodyDiv from '../components/layout/BodyDiv';
 import Header from '../components/layout/Header';
@@ -9,9 +9,8 @@ import Main from '../components/layout/Main';
 
 import SegmentDiv from '../components/common/SegmentDiv';
 
-const Page = (props) => {
+const Page = ({ data }) => {
 
-    const { data } = props;
     const { contentfulSeo, contentfulIndex, contentfulPage } = data;
     const { slug, longTitle, layout, segments } = contentfulPage;
 
@@ -89,7 +88,7 @@ query($slug: String!){
                 slug
                 image {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -138,7 +137,7 @@ query($slug: String!){
                 id
                 image {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 1200, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -157,7 +156,7 @@ query($slug: String!){
                 photographers
                 image1 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -169,7 +168,7 @@ query($slug: String!){
                 }
                 image2 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -181,7 +180,7 @@ query($slug: String!){
                 }
                 image3 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -193,7 +192,7 @@ query($slug: String!){
                 }
                 image4 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -205,7 +204,7 @@ query($slug: String!){
                 }
                 image5 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -217,7 +216,7 @@ query($slug: String!){
                 }
                 image6 {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src
@@ -253,7 +252,7 @@ query($slug: String!){
                 occupation
                 image {
                     id
-                    fluid (quality: 100) {
+                    fluid (maxWidth: 600, quality: 100) {
                         base64
                         aspectRatio
                         src

@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import Img from "gatsby-image/withIEPolyfill";
 
 import './styles.css';
 
@@ -18,6 +18,8 @@ const CoverPhoto = (props) => {
             fluid={coverPhoto.fluid}
             className='CoverPhoto_img'
             fadeIn={true}
+            objectFit="cover"
+            objectPosition="50% 40%"
             ></Img>
 
             {badge && 

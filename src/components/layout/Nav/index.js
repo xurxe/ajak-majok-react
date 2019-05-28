@@ -4,7 +4,7 @@ import ReactResizeDetector from 'react-resize-detector';
 
 import './styles.css';
 
-import NavA from './NavA';
+import NavA from '../../common/NavA';
 
 class Nav extends Component {
 
@@ -67,11 +67,6 @@ class Nav extends Component {
             classNameNavButton: `
             Nav_button 
             Nav_button___mobile 
-            visible
-            `,
-            classNameNavDiv: `
-            Nav_div 
-            Nav_div___tucked
             `,
         }));
     };
