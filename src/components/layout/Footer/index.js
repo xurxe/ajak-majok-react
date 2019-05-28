@@ -7,7 +7,7 @@ import './styles.css';
 import ClickableLogo from '../../segments/ClickableLogo';
 import FooterA from './FooterA';
 
-const Footer = (props) => {
+const Footer = () => {
 
     return (
         <StaticQuery 

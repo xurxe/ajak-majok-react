@@ -5,6 +5,7 @@ BLOG:
 CODE:
 - make component for Fb videos
 - clean up config file
+- cover photo polyfill
 
 CONTENTFUL:
 - review alt texts

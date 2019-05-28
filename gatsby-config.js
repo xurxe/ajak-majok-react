@@ -1,12 +1,5 @@
 // keep API keys and etc private
 require('dotenv').config()
-require(
-    'gatsby-plugin-react-helmet', 
-    'gatsby-transformer-remark', 
-    'gatsby-source-contentful', 
-    'html-react-parser',
-    
-)
 
 module.exports = {
     plugins: [
@@ -18,7 +11,6 @@ module.exports = {
                 accessToken: process.env.accessToken,
             },
         },
-        'html-react-parser',
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
         'gatsby-transformer-remark',
