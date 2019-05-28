@@ -5,9 +5,9 @@ import { StaticQuery, graphql } from 'gatsby';
 import './styles.css';
 
 import ClickableLogo from '../../segments/ClickableLogo';
-import FooterA from './FooterA';
+import FooterA from '../../common/FooterA';
 
-const Footer = (props) => {
+const Footer = () => {
 
     return (
         <StaticQuery 

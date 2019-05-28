@@ -12,12 +12,10 @@ const NavA = ({ link }) => {
 
     const renderIndexLink = () => {
 
-        const linkType = 'index'
-
         jsx = (
             <Link 
             to={'/'}
-            className={`NavA NavA___${linkType}`}
+            className='NavA NavA___index'
             >
 
                 {Parser(link.iconFontAwesome)}
@@ -28,14 +26,12 @@ const NavA = ({ link }) => {
 
     const renderPageLink = () => {
 
-        const linkType = 'page'
-
         jsx = (
             <Link 
             to={`/${link.slug}`}
-            className={`NavA NavA___${linkType}`}
+            className='NavA NavA___page'
             partiallyActive={true}
-            activeClassName={`NavA NavA___${linkType} NavA___${linkType}___active`}
+            activeClassName='NavA NavA___page NavA___page___active'
             >
 
                 {link.shortTitle}
@@ -46,14 +42,12 @@ const NavA = ({ link }) => {
 
     const renderElectionLink = () => {
 
-        const linkType = 'election'
-
         jsx = (
             <a 
             href={link.url}
             target='_blank'
             rel="noopener noreferrer"
-            className={`NavA NavA___${linkType}`}
+            className='NavA NavA___election'
             >
 
                 {link.name}
@@ -64,14 +58,12 @@ const NavA = ({ link }) => {
 
     const renderSocialMediaLink = () => {
 
-        const linkType = 'socialMedia'
-
         jsx = (
             <a 
             href={link.url}
             target='_blank'
             rel='noopener noreferrer'
-            className={`NavA NavA___${linkType}`}
+            className='NavA NavA___socialMedia'
             >
 
                 {Parser(link.iconFontAwesome)}
@@ -81,18 +73,25 @@ const NavA = ({ link }) => {
     };
 
     if (__typename === 'ContentfulIndex'){
+
         renderIndexLink();
     }
 
-    else if (__typename === 'ContentfulPage' && link.slug !== 'column' && link.slug !== 'grid'){
+    else if (__typename === 'ContentfulPage' 
+    /* pages with slugs 'column' and 'grid' are examples for the client, so they should not be rendered */
+    && link.slug !== 'column' 
+    && link.slug !== 'grid'){
+
         renderPageLink();
     }
 
     else if (__typename === 'ContentfulElectionLink'){
+
         renderElectionLink();
     }
 
     else if (__typename === 'ContentfulSocialMediaLink'){
+
         renderSocialMediaLink();
     }
 
@@ -102,7 +101,7 @@ const NavA = ({ link }) => {
             <p
             className='NavA'
             >
-                ??
+                ?
             </p>
         );
     };

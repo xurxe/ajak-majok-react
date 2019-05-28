@@ -20,7 +20,9 @@ const SegmentDiv = (props) => {
 
     let jsx;
 
-    if (__typename === 'ContentfulBlogPost' && slug !== 'blogi'){
+    if (__typename === 'ContentfulBlogPost' 
+    /* blog page with slug 'blogi' is an example for the client, so it should not be rendered */
+    && slug !== 'blogi'){
         jsx = (
             <BlogLink
             data={segment}

@@ -4,7 +4,7 @@ import ReactResizeDetector from 'react-resize-detector';
 
 import './styles.css';
 
-import NavA from './NavA';
+import NavA from '../../common/NavA';
 
 class Nav extends Component {
 
@@ -17,15 +17,15 @@ class Nav extends Component {
         `,
         classNameNavP: `
         Nav_p 
-        Nav_p___invisible
+        invisible
         `,
         classNameNavButton: `
         Nav_button 
-        Nav_p___invisible
+        invisible
         `,
         classNameNavDiv: `
         Nav_div 
-        Nav_div___invisible
+        invisible
         `,
     };
 
@@ -46,10 +46,10 @@ class Nav extends Component {
             classNameNavDiv: `
             Nav_div 
             Nav_div___desktop 
-            Nav_div___visible
+            visible
             `,
         }));
-    }
+    };
 
     renderMobile = () => {
         this.setState(() => ({
@@ -62,19 +62,14 @@ class Nav extends Component {
             classNameNavP: `
             Nav_p 
             Nav_p___mobile 
-            Nav_p___visible
+            visible
             `,
             classNameNavButton: `
             Nav_button 
             Nav_button___mobile 
-            Nav_p___visible
-            `,
-            classNameNavDiv: `
-            Nav_div 
-            Nav_div___tucked
             `,
         }));
-    }
+    };
 
     componentDidMount = () => {
         if (window.matchMedia('(max-width: 850px)').matches) {
@@ -84,7 +79,7 @@ class Nav extends Component {
         else {
             this.renderDesktop();
         }
-    }
+    };
 
     changeDesktopToTucked = () => {
         this.setState(() => ({
@@ -92,17 +87,17 @@ class Nav extends Component {
             classNameNavP: `
             Nav_p 
             Nav_p___desktop 
-            Nav_p___invisible
+            invisible
             `,
             classNameNavButton: `
             Nav_button 
             Nav_button___desktop 
-            Nav_button___invisible
+            invisible
             `,
             classNameNavDiv: `
             Nav_div 
             Nav_div___desktop 
-            Nav_div___invisible
+            invisible
             `,
         }));
 
@@ -116,12 +111,12 @@ class Nav extends Component {
                 classNameNavP: `
                 Nav_p 
                 Nav_p___mobile 
-                Nav_p___invisible
+                invisible
                 `,
                 classNameNavButton: `
                 Nav_button 
                 Nav_button___mobile 
-                Nav_p___invisible
+                invisible
                 `,
                 classNameNavDiv: `
                 Nav_div 
@@ -135,17 +130,15 @@ class Nav extends Component {
                 classNameNavP: `
                 Nav_p 
                 Nav_p___mobile 
-                Nav_p___visible
+                visible
                 `,
                 classNameNavButton: `
                 Nav_button 
                 Nav_button___mobile 
-                Nav_button___visible
+                visible
                 `,
             }));
         }, 550);
-
-        return;
     };
 
     changeTuckedToDesktop = () => {
@@ -154,16 +147,16 @@ class Nav extends Component {
             tucked: true,
             classNameNavP: `
             Nav_p 
-            Nav_p___invisible
+            invisible
             `,
             classNameNavButton: `
             Nav_button 
-            Nav_button___invisible
+            invisible
             `,
             classNameNavDiv: `
             Nav_div 
             Nav_div___untucked 
-            Nav_div___invisible
+            invisible
             `,
         }));
 
@@ -184,12 +177,10 @@ class Nav extends Component {
                 classNameNavDiv: `
                 Nav_div 
                 Nav_div___desktop
-                Nav_div___visible
+                visible
                 `,
             }));
         }, 500);
-
-        return;
     };
 
     untuck = () => {
@@ -203,7 +194,7 @@ class Nav extends Component {
             classNameNavDiv: `
             Nav_div 
             Nav_div___untucked 
-            Nav_div___invisible
+            invisible
             `,
         }));
 
@@ -212,12 +203,10 @@ class Nav extends Component {
                 classNameNavDiv: `
                 Nav_div 
                 Nav_div___untucked 
-                Nav_div___visible
+                visible
                 `,
             }));
         }, 300);
-
-        return;
     };
 
     tuck = () => {
@@ -231,7 +220,7 @@ class Nav extends Component {
             classNameNavDiv: `
             Nav_div 
             Nav_div___untucked 
-            Nav_div___invisible
+            invisible
             `,
         }));
         
@@ -244,8 +233,6 @@ class Nav extends Component {
                 `,
             }));
         }, 300);
-
-        return;
     };
 
     handleWindowResize = () => {
