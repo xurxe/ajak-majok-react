@@ -9,7 +9,8 @@ import FooterA from '../../common/FooterA';
 
 const Footer = () => {
 
-    return (
+    // to fetch from Contentful into components, you need to wrap it all in the StaticQuery component
+    const staticQuery = (
         <StaticQuery 
         query={
             graphql`
@@ -61,7 +62,6 @@ const Footer = () => {
         }
         render={data => {
             const { contentfulFooter } = data;
-
             const { logo, ajakCredit, webCredit, photoCredit, socialMediaLinks } = contentfulFooter;
 
             const jsx = (
@@ -180,6 +180,8 @@ const Footer = () => {
         }}
         />
     );
+
+    return staticQuery;
 };
 
 export default Footer;

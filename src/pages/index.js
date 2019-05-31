@@ -4,7 +4,7 @@ import Parser from 'html-react-parser';
 
 import Helmet from '../components/common/Helmet';
 
-import BodyDiv from '../components/layout/BodyDiv';
+import App from '../components/layout/App';
 import Header from '../components/layout/Header';
 import Main from '../components/layout/Main';
 
@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
     const { longTitle, subtitle, coverPhoto, badge, layout, segments } = contentfulIndex;
 
     const jsx = (
-        <BodyDiv
+        <App
         pageType='index'
         >
 
@@ -55,7 +55,7 @@ const IndexPage = ({ data }) => {
 
             </Main>
 
-        </BodyDiv>
+        </App>
     );
 
     return jsx;

@@ -1,8 +1,7 @@
 import React from 'react';
+import Parser from 'html-react-parser';
 
 import './styles.css';
-
-import SocialMediaLink from '../../common/SocialMediaLink';
 
 const SocialMediaLinks = (props) => {
 
@@ -17,10 +16,17 @@ const SocialMediaLinks = (props) => {
             {links.map(
                 (link) => (
 
-                    <SocialMediaLink 
+                    <a 
                     key={link.id}
-                    link={link}
-                    ></SocialMediaLink>
+                    href={link.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='SocialMediaLink'
+                    >
+            
+                        {Parser(link.iconFontAwesome)}
+            
+                    </a>
 
                 )
             )}

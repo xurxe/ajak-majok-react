@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+// this is how we control the contents of the head
 const HelmetComponent = (props) => {
 
     const { title, description, keywords, image, url, slug } = props;
