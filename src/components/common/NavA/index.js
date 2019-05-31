@@ -4,18 +4,17 @@ import Parser from 'html-react-parser';
 
 import './styles.css';
 
+// this is a component that decides how to render each type of link in the navigation bad
 const NavA = ({ link }) => {
 
     const { __typename } = link;
-
     let jsx;
 
     const renderIndexLink = () => {
-
         jsx = (
             <Link 
             to={'/'}
-            className='NavA NavA___index'
+            className='NavA NavA___index hvr-grow'
             >
 
                 {Parser(link.iconFontAwesome)}
@@ -25,13 +24,12 @@ const NavA = ({ link }) => {
     };
 
     const renderPageLink = () => {
-
         jsx = (
             <Link 
             to={`/${link.slug}`}
-            className='NavA NavA___page'
+            className='NavA NavA___page hvr-grow'
             partiallyActive={true}
-            activeClassName='NavA NavA___page NavA___page___active'
+            activeClassName='NavA NavA___page NavA___page___active hvr-grow'
             >
 
                 {link.shortTitle}
@@ -41,13 +39,12 @@ const NavA = ({ link }) => {
     };
 
     const renderElectionLink = () => {
-
         jsx = (
             <a 
             href={link.url}
             target='_blank'
             rel="noopener noreferrer"
-            className='NavA NavA___election'
+            className='NavA NavA___election hvr-grow'
             >
 
                 {link.name}
@@ -57,13 +54,12 @@ const NavA = ({ link }) => {
     };
 
     const renderSocialMediaLink = () => {
-
         jsx = (
             <a 
             href={link.url}
             target='_blank'
             rel='noopener noreferrer'
-            className='NavA NavA___socialMedia'
+            className='NavA NavA___socialMedia hvr-grow'
             >
 
                 {Parser(link.iconFontAwesome)}
@@ -78,7 +74,7 @@ const NavA = ({ link }) => {
     }
 
     else if (__typename === 'ContentfulPage' 
-    /* pages with slugs 'column' and 'grid' are examples for the client, so they should not be rendered */
+    // pages with slugs 'column' and 'grid' are examples for the client, so they should not be rendered
     && link.slug !== 'column' 
     && link.slug !== 'grid'){
 

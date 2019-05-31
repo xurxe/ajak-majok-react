@@ -4,6 +4,9 @@ require('dotenv').config()
 module.exports = {
     plugins: [
         'gatsby-plugin-react-helmet',
+        'gatsby-plugin-sharp',
+        'gatsby-transformer-sharp',
+        'gatsby-transformer-remark',
         {
             resolve: 'gatsby-source-contentful',
             options: {
@@ -11,9 +14,6 @@ module.exports = {
                 accessToken: process.env.accessToken,
             },
         },
-        'gatsby-plugin-sharp',
-        'gatsby-transformer-sharp',
-        'gatsby-transformer-remark',
         {
             resolve: 'gatsby-plugin-postcss',
             options: {

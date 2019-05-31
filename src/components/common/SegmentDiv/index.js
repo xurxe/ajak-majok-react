@@ -13,6 +13,10 @@ import Testimonial from '../../segments/Testimonial';
 import Text from '../../segments/Text';
 import YoutubeVideo from '../../segments/YoutubeVideo';
 
+// segments are chunks of <main> content coming from Contentful
+// this component decides how to render each segment based on its type
+// src/components/segments contains all of the different components referenced here
+
 const SegmentDiv = (props) => {
 
     const { segment, modifier } = props;
@@ -21,8 +25,7 @@ const SegmentDiv = (props) => {
     let jsx;
 
     if (__typename === 'ContentfulBlogPost' 
-    /* blog page with slug 'blogi' is an example for the client, so it should not be rendered */
-    && slug !== 'blogi'){
+    && slug !== 'blogi'){ // blog page with slug 'blogi' is an example for the client, so it should not be rendered
         jsx = (
             <BlogLink
             data={segment}
@@ -105,7 +108,6 @@ const SegmentDiv = (props) => {
     }
 
     else {
-
         jsx = (
             <div
             className='SegmentDiv_missingType'>

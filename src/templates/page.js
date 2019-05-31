@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import Helmet from '../components/common/Helmet';
 
-import BodyDiv from '../components/layout/BodyDiv';
+import App from '../components/layout/App';
 import Header from '../components/layout/Header';
 import Main from '../components/layout/Main';
 
@@ -16,7 +16,7 @@ const Page = ({ data }) => {
 
     const jsx = (
 
-        <BodyDiv
+        <App
         pageType='page'
         >
 
@@ -48,7 +48,7 @@ const Page = ({ data }) => {
             
             </Main>
             
-        </BodyDiv>
+        </App>
     );
 
     return jsx;

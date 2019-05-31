@@ -8,6 +8,7 @@ import NavA from '../../common/NavA';
 
 class Nav extends Component {
 
+    // i use the state to manage the rendering of the navigation bar
     state = {
         desktop: true,
         tucked: true,
@@ -27,6 +28,17 @@ class Nav extends Component {
         Nav_div 
         invisible
         `,
+    };
+
+    // on mount, if the screen size is under 850px, render mobile layout; otherwise, render desktop layout
+    componentDidMount = () => {
+        if (window.matchMedia('(max-width: 850px)').matches) {
+            this.renderMobile();
+        }
+
+        else {
+            this.renderDesktop();
+        }
     };
 
     renderDesktop = () => {
@@ -71,14 +83,38 @@ class Nav extends Component {
         }));
     };
 
-    componentDidMount = () => {
-        if (window.matchMedia('(max-width: 850px)').matches) {
-            this.renderMobile();
+    // when the window resizes...
+    handleWindowResize = () => {
+
+        // if currently on desktop layout, and it's a small screen, transition to mobile layout
+        if (
+            this.state.desktop
+            && window.matchMedia('(max-width: 850px)').matches
+        ) {
+            this.changeDesktopToTucked();
         }
 
-        else {
-            this.renderDesktop();
+        // otherwise, if currently on tucked mobile layout, transition from tucked to desktop
+        else if (
+            !this.state.desktop 
+            && this.state.tucked
+            && !window.matchMedia('(max-width: 850px)').matches
+        ) {
+            this.changeTuckedToDesktop();
         }
+
+        // otherwise, if currently on untucked mobile layout, first tuck and then transition from tucked to desktop
+        else if (
+            !this.state.desktop 
+            && !this.state.tucked
+            && !window.matchMedia('(max-width: 850px)').matches
+        ) {
+            this.tuck();
+
+            setTimeout(() => {
+                this.changeTuckedToDesktop();
+            }, 1000);
+        };
     };
 
     changeDesktopToTucked = () => {
@@ -183,6 +219,18 @@ class Nav extends Component {
         }, 500);
     };
 
+    // when you click on the button (which is only displayed on mobile), toggle tuck/untuck
+    handleClick = () => {
+
+        if (this.state.tucked) {
+            this.untuck();
+        }
+
+        else {
+            this.tuck();
+        };
+    };
+
     untuck = () => {
         this.setState(() => ({
             tucked: false,
@@ -235,48 +283,9 @@ class Nav extends Component {
         }, 300);
     };
 
-    handleWindowResize = () => {
-        if (
-            this.state.desktop
-            && window.matchMedia('(max-width: 850px)').matches
-        ) {
-            this.changeDesktopToTucked();
-        }
-
-        else if (
-            !this.state.desktop 
-            && this.state.tucked
-            && !window.matchMedia('(max-width: 850px)').matches
-        ) {
-            this.changeTuckedToDesktop();
-        }
-
-        else if (
-            !this.state.desktop 
-            && !this.state.tucked
-            && !window.matchMedia('(max-width: 850px)').matches
-        ) {
-            this.tuck();
-
-            setTimeout(() => {
-                this.changeTuckedToDesktop();
-            }, 1000);
-        };
-    };
-
-    handleClick = () => {
-
-        if (this.state.tucked) {
-            this.untuck();
-        }
-
-        else {
-            this.tuck();
-        };
-    };
-
     render() {
-        return (
+        // to fetch from Contentful into components, you need to wrap it all in the StaticQuery component
+        const staticQuery = (
             <StaticQuery 
             query={
                 graphql`
@@ -389,6 +398,8 @@ class Nav extends Component {
             }}
             />
         );
+
+        return staticQuery;
     };
 };
 

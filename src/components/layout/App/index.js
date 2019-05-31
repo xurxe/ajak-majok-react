@@ -5,13 +5,14 @@ import './styles.css';
 import Nav from '../Nav';
 import Footer from '../Footer';
 
-const BodyDiv = (props) => { 
+// this component contains everything else 
+const App = (props) => { 
     
     const { pageType, children } = props;
 
     const jsx = (
         <div 
-        className={`BodyDiv BodyDiv___${pageType}`}
+        className={`App App___${pageType}`}
         >
 
             <Nav></Nav>
@@ -28,4 +29,4 @@ const BodyDiv = (props) => {
     return jsx;
 };
 
-export default BodyDiv;
+export default App;

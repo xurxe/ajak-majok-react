@@ -3,97 +3,98 @@ const path = require(`path`)
 exports.createPages = ({ graphql, actions }) => {
     const { createPage, createRedirect } = actions;
 
+    // this array contains all the redirect paths (from the old site structure to the new one)
     const redirects = [
         { 
-            f: `/index.html`, 
-            t: `/` 
+            from: `/index.html`, 
+            to: `/` 
         },
         { 
-            f: `/html/ajak.html`, 
-            t: `/ajak` 
+            from: `/html/ajak.html`, 
+            to: `/ajak` 
         },
         { 
-            f: `/html/ajakista.html`, 
-            t: '/suosittelijat' 
+            from: `/html/ajakista.html`, 
+            to: '/suosittelijat' 
         },
         { 
-            f: `/html/blogi.html`, 
-            t: `/blogit` 
+            from: `/html/blogi.html`, 
+            to: `/blogit` 
         },
         { 
-            f: `/html/lahjoitus.html`, 
-            t: `/lahjoitus` 
+            from: `/html/lahjoitus.html`, 
+            to: `/lahjoitus` 
         },
         { 
-            f: `/html/yhteys.html`, 
-            t: `/yhteys` 
+            from: `/html/yhteys.html`, 
+            to: `/yhteys` 
         },
         { 
-            f: `/html/svenska.html`, 
-            t: `/svenska` 
+            from: `/html/svenska.html`, 
+            to: `/svenska` 
         },
         { 
-            f: `/html/english.html`, 
-            t: `/english` 
+            from: `/html/english.html`, 
+            to: `/english` 
         },
         { 
-            f: `/html/tehdaan.html`, 
-            t: `/blogit/tehdaan` 
+            from: `/html/tehdaan.html`, 
+            to: `/blogit/tehdaan` 
         },
         { 
-            f: `/html/pystymme.html`, 
-            t: `/blogit/pystymme` 
+            from: `/html/pystymme.html`, 
+            to: `/blogit/pystymme` 
         },
         { 
-            f: `/html/yliarvostettu.html`, 
-            t: `/blogit/yliarvostettu` 
+            from: `/html/yliarvostettu.html`, 
+            to: `/blogit/yliarvostettu` 
         },
         { 
-            f: `/html/ilmastopuheet.html`, 
-            t: `/blogit/ilmastopuheet` 
+            from: `/html/ilmastopuheet.html`, 
+            to: `/blogit/ilmastopuheet` 
         },
         { 
-            f: `/html/paatoksenteko.html`, 
-            t: `/blogit/paatoksenteko` 
+            from: `/html/paatoksenteko.html`, 
+            to: `/blogit/paatoksenteko` 
         },
         { 
-            f: `/html/pulla.html`, 
-            t: `/blogit/pulla` 
+            from: `/html/pulla.html`, 
+            to: `/blogit/pulla` 
         },
         { 
-            f: `/html/maahanmuuttokeskustelu.html`, 
-            t: `/blogit/maahanmuuttokeskustelu` 
+            from: `/html/maahanmuuttokeskustelu.html`, 
+            to: `/blogit/maahanmuuttokeskustelu` 
         },
         { 
-            f: `/html/syrjayttamiselle.html`, 
-            t: `/blogit/syrjayttamiselle` 
+            from: `/html/syrjayttamiselle.html`, 
+            to: `/blogit/syrjayttamiselle` 
         },
         { 
-            f: `/html/seksuaalirikoksia.html`, 
-            t: `/blogit/seksuaalirikoksia` 
+            from: `/html/seksuaalirikoksia.html`, 
+            to: `/blogit/seksuaalirikoksia` 
         },
         { 
-            f: `/html/nallekarkit.html`, 
-            t: `/blogit/nallekarkit` 
+            from: `/html/nallekarkit.html`, 
+            to: `/blogit/nallekarkit` 
         },
         { 
-            f: `/html/makefuturegreatagain.html`, 
-            t: `/blogit/makefuturegreatagain` 
+            from: `/html/makefuturegreatagain.html`, 
+            to: `/blogit/makefuturegreatagain` 
         },
     ];
 
-    for (var { f: f, t: t } of redirects) {
-
+    // map through redirects array and create them
+    redirects.map(({ from: f, to: t }) => {
         createRedirect({
             fromPath: f,
-            isPermanent: true,
+            isPermanento: true,
             redirectInBrowser: true,
             toPath: t,
         })
+    });
 
-    };
-
-    return graphql(`
+    // fetch pages and blog posts (blogit) from Contentul
+    const response = graphql(`
         {
             allContentfulPage {
                 edges {
@@ -113,6 +114,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
         }
     `).then(result => {
+        // generate pages from the page.js template
         result.data.allContentfulPage.edges.forEach(({ node }) => {
             createPage({
                 path: `/${node.slug}`,
@@ -122,6 +124,7 @@ exports.createPages = ({ graphql, actions }) => {
                 },
             });
         });
+        // generate blog posts (blogit) from the blogi.js template
         result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
             createPage({
                 path: `/blogit/${node.slug}`,
@@ -132,31 +135,6 @@ exports.createPages = ({ graphql, actions }) => {
             });
         });
     });
-};
 
-/*   
-{
-    pages: allContentfulPage {
-        edges {
-            node {
-                id
-                slug
-            }
-        }
-    }
-    blogs: allContentfulPage(filter: {slug: {eq: "blogit"}}) {
-        edges {
-            node {
-                id
-                segments {
-                    __typename
-                    ... on ContentfulBlogPost {
-                        id
-                        slug
-                    }
-                }
-            }
-        }
-    }
-}
-*/
+    return response;
+};

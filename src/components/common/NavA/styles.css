@@ -18,13 +18,24 @@
 
 .NavA:hover {
     color: var(--yellow);
-    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .NavA:focus {
     color: var(--yellow);
-    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     outline: none;
+}
+
+/* modified from hover.css */
+.hvr-grow {
+    transform: perspective(1px) translateZ(0);
+    transition: transform 0.2s linear;
+
+}
+.hvr-grow:hover, .hvr-grow:focus {
+    transform: scale(1.1);
+    transition: transform 0.2s linear;
 }
 
 .NavA___page___active {
