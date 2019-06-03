@@ -6,9 +6,7 @@ import Nav from '../Nav';
 import Footer from '../Footer';
 
 // this component contains everything else 
-const App = (props) => { 
-    
-    const { pageType, children } = props;
+const App = ({ pageType, children }) => { 
 
     const jsx = (
         <div 

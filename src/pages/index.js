@@ -131,7 +131,7 @@ query {
                 photographers
                 image1 {
                     id
-                    fluid (maxWidth: 600, quality: 100) {
+                    fluid (maxWidth: 800, quality: 90) {
                         base64
                         aspectRatio
                         src
@@ -143,7 +143,7 @@ query {
                 }
                 image2 {
                     id
-                    fluid (maxWidth: 600, quality: 100) {
+                    fluid (maxWidth: 800, quality: 90) {
                         base64
                         aspectRatio
                         src
@@ -155,7 +155,7 @@ query {
                 }
                 image3 {
                     id
-                    fluid (maxWidth: 600, quality: 100) {
+                    fluid (maxWidth: 800, quality: 90) {
                         base64
                         aspectRatio
                         src
@@ -167,7 +167,7 @@ query {
                 }
                 image4 {
                     id
-                    fluid (maxWidth: 600, quality: 100) {
+                    fluid (maxWidth: 800, quality: 90) {
                         base64
                         aspectRatio
                         src
@@ -179,7 +179,7 @@ query {
                 }
                 image5 {
                     id
-                    fluid (maxWidth: 600, quality: 100) {
+                    fluid (maxWidth: 800, quality: 90) {
                         base64
                         aspectRatio
                         src
@@ -191,7 +191,7 @@ query {
                 }
                 image6 {
                     id
-                    fluid (maxWidth: 600, quality: 100) {
+                    fluid (maxWidth: 800, quality: 90) {
                         base64
                         aspectRatio
                         src

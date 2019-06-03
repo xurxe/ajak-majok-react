@@ -2,9 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-const Header = (props) => {
-
-    const { title, subtitle, modifier, children } = props;
+const Header = ({ title, subtitle, modifier, children }) => {
     
     const jsx = (
         <header 

@@ -4,9 +4,7 @@ import Parser from 'html-react-parser';
 import './styles.css';
 
 // this the photo credit (if any) shown below photos 
-const PhotographerP = (props) => {
-
-    const { photographer } = props;
+const PhotographerP = ({ photographer }) => {
     
     const jsx = (
         <p 

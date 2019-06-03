@@ -5,9 +5,7 @@ import './styles.css';
 
 import Image from '../../common/Image';
 
-const BlogLink = (props) => {
-
-    const { data } = props;
+const BlogLink = ({ data }) => {
     const { slug, title, image, alt } = data;
 
     const jsx = (

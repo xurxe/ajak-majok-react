@@ -2,9 +2,8 @@ import React from 'react';
 
 import './styles.css';
 
-const YoutubeVideo = (props) => {
+const YoutubeVideo = ({ data }) => {
 
-    const { data } = props;
     const { url, alt } = data;
     const regex = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
     const match = url.match(regex);

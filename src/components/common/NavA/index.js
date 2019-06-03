@@ -10,7 +10,8 @@ const NavA = ({ link }) => {
     const { __typename } = link;
     let jsx;
 
-    const renderIndexLink = () => {
+    if (__typename === 'ContentfulIndex'){
+
         jsx = (
             <Link 
             to={'/'}
@@ -21,24 +22,29 @@ const NavA = ({ link }) => {
 
             </Link>
         );
-    };
+    }
 
-    const renderPageLink = () => {
+    else if (__typename === 'ContentfulPage' 
+    // pages with slugs 'column' and 'grid' are examples for the client, so they should not be rendered
+    && link.slug !== 'column' 
+    && link.slug !== 'grid'){
+
         jsx = (
             <Link 
             to={`/${link.slug}`}
-            className='NavA NavA___page hvr-grow'
+            className='NavA NavA___page hvr-underline-from-center'
             partiallyActive={true}
-            activeClassName='NavA NavA___page NavA___page___active hvr-grow'
+            activeClassName='NavA___page___active'
             >
 
                 {link.shortTitle}
 
             </Link>
         );
-    };
+    }
 
-    const renderElectionLink = () => {
+    else if (__typename === 'ContentfulElectionLink'){
+
         jsx = (
             <a 
             href={link.url}
@@ -51,9 +57,10 @@ const NavA = ({ link }) => {
 
             </a>
         );
-    };
+    }
 
-    const renderSocialMediaLink = () => {
+    else if (__typename === 'ContentfulSocialMediaLink'){
+
         jsx = (
             <a 
             href={link.url}
@@ -66,29 +73,6 @@ const NavA = ({ link }) => {
 
             </a>
         );
-    };
-
-    if (__typename === 'ContentfulIndex'){
-
-        renderIndexLink();
-    }
-
-    else if (__typename === 'ContentfulPage' 
-    // pages with slugs 'column' and 'grid' are examples for the client, so they should not be rendered
-    && link.slug !== 'column' 
-    && link.slug !== 'grid'){
-
-        renderPageLink();
-    }
-
-    else if (__typename === 'ContentfulElectionLink'){
-
-        renderElectionLink();
-    }
-
-    else if (__typename === 'ContentfulSocialMediaLink'){
-
-        renderSocialMediaLink();
     }
 
     else {

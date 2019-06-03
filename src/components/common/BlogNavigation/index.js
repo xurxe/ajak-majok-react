@@ -5,9 +5,7 @@ import Parser from 'html-react-parser';
 import './styles.css';
 
 // these are the previous ("edellinen") and next ("seuraava") buttons shown at the bottom of each blogi (blog post pages)
-const BlogNavigation = (props) => {
-
-    const { previousSlug, nextSlug } = props;
+const BlogNavigation = ({ previousSlug, nextSlug }) => {
     
     const jsx = (
         <div

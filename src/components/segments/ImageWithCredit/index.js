@@ -5,9 +5,7 @@ import './styles.css';
 import Image from '../../common/Image';
 import PhotographerP from '../../common/PhotographerP';
 
-const ImageWithCredit = (props) => {
-
-    const { data } = props;
+const ImageWithCredit = ({ data }) => {
     const { image, alt, photographer, shadow } = data;
     const color = (shadow.toLowerCase());
 
@@ -23,10 +21,9 @@ const ImageWithCredit = (props) => {
             ></Image>
 
             {photographer &&              
-                <PhotographerP
-                photographer={photographer}
-                ></PhotographerP>
-            }
+            <PhotographerP
+            photographer={photographer}
+            ></PhotographerP>}
 
         </div>
 

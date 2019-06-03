@@ -3,9 +3,7 @@ import React from 'react';
 import './styles.css';
 
 // this is the round badge that can be shown on the bottom right corner of the CoverPhoto
-const Badge = (props) => {
-
-    const { badge } = props;
+const Badge = ({ badge }) => {
     
     const jsx = (
         <div
@@ -16,7 +14,7 @@ const Badge = (props) => {
 
         </div>
     );
-
+    
     return jsx;
 };
 
