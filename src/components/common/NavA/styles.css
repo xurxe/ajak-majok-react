@@ -23,8 +23,21 @@
     outline: none;
 }
 
+<<<<<<< HEAD
 
 
+=======
+/* modified from hover.css */
+.hvr-grow {
+    transform: perspective(1px) translateZ(0);
+    transition: transform 0.2s linear;
+
+}
+.hvr-grow:hover, .hvr-grow:focus {
+    transform: scale(1.1);
+    transition: transform 0.2s linear;
+}
+>>>>>>> 1584a5c34bb45ccc4d3c352fdc9093511b14f8df
 
 .NavA___page___active {
     border-bottom: 1px solid hsla(50, 100%, 75%, 1);
