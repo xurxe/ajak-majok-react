@@ -2,7 +2,7 @@
 
 .Nav {
     background-color: var(--purple);
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 1rem;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -14,6 +14,7 @@
     justify-content: space-between;
     line-height: 2rem;
     height: 5rem;
+    transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .Nav___mobile {
@@ -21,6 +22,7 @@
     grid-auto-flow: row;
     grid-row-gap: 1.5rem;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5rem 1fr;
 }
 
 .Nav___tucked {
@@ -51,6 +53,7 @@
 
 .Nav_div___untucked {
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .Nav_div___untucked.Nav_div___right {

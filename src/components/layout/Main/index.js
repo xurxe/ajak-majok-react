@@ -2,15 +2,14 @@ import React from 'react';
 
 import './styles.css';
 
-const Main = (props) => {
-    const { layout, children } = props;
+const Main = ({ layout, children }) => {
     
     const jsx = (
         <main 
         className={`Main Main___${(layout.toLowerCase())}`}
         >
 
-            {children || null}
+            {children && children}
             
         </main>
     );

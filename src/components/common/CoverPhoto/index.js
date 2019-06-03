@@ -6,9 +6,7 @@ import './styles.css';
 import Badge from '../Badge';
 
 // this is the photo shown at the top of the index page
-const CoverPhoto = (props) => {
-
-    const { alt, coverPhoto, badge } = props;
+const CoverPhoto = ({ alt, coverPhoto, badge }) => {
 
     const jsx = (
         <div

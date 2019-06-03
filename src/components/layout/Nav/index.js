@@ -30,9 +30,9 @@ class Nav extends Component {
         `,
     };
 
-    // on mount, if the screen size is under 850px, render mobile layout; otherwise, render desktop layout
+    // on mount, if the screen size is under 900px, render mobile layout; otherwise, render desktop layout
     componentDidMount = () => {
-        if (window.matchMedia('(max-width: 850px)').matches) {
+        if (window.matchMedia('(max-width: 900px)').matches) {
             this.renderMobile();
         }
 
@@ -50,10 +50,12 @@ class Nav extends Component {
             classNameNavP: `
             Nav_p 
             Nav_p___desktop
+            invisible
             `,
             classNameNavButton: `
             Nav_button 
             Nav_button___desktop
+            invisible
             `,
             classNameNavDiv: `
             Nav_div 
@@ -79,6 +81,12 @@ class Nav extends Component {
             classNameNavButton: `
             Nav_button 
             Nav_button___mobile 
+            visible
+            `,
+            classNameNavDiv: `
+            Nav_div 
+            Nav_div___tucked
+            invisible
             `,
         }));
     };
@@ -89,7 +97,7 @@ class Nav extends Component {
         // if currently on desktop layout, and it's a small screen, transition to mobile layout
         if (
             this.state.desktop
-            && window.matchMedia('(max-width: 850px)').matches
+            && window.matchMedia('(max-width: 900px)').matches
         ) {
             this.changeDesktopToTucked();
         }
@@ -98,38 +106,24 @@ class Nav extends Component {
         else if (
             !this.state.desktop 
             && this.state.tucked
-            && !window.matchMedia('(max-width: 850px)').matches
+            && !window.matchMedia('(max-width: 900px)').matches
         ) {
             this.changeTuckedToDesktop();
         }
 
-        // otherwise, if currently on untucked mobile layout, first tuck and then transition from tucked to desktop
+        // otherwise, if currently on untucked mobile layout, transition from untucked to desktop
         else if (
             !this.state.desktop 
             && !this.state.tucked
-            && !window.matchMedia('(max-width: 850px)').matches
+            && !window.matchMedia('(max-width: 900px)').matches
         ) {
-            this.tuck();
-
-            setTimeout(() => {
-                this.changeTuckedToDesktop();
-            }, 1000);
+            this.changeUntuckedToDesktop();
         };
     };
 
     changeDesktopToTucked = () => {
         this.setState(() => ({
             desktop: false,
-            classNameNavP: `
-            Nav_p 
-            Nav_p___desktop 
-            invisible
-            `,
-            classNameNavButton: `
-            Nav_button 
-            Nav_button___desktop 
-            invisible
-            `,
             classNameNavDiv: `
             Nav_div 
             Nav_div___desktop 
@@ -183,15 +177,17 @@ class Nav extends Component {
             tucked: true,
             classNameNavP: `
             Nav_p 
+            Nav_p___mobile
             invisible
             `,
             classNameNavButton: `
             Nav_button 
+            Nav_button___mobile
             invisible
             `,
             classNameNavDiv: `
             Nav_div 
-            Nav_div___untucked 
+            Nav_div___desktop
             invisible
             `,
         }));
@@ -217,6 +213,65 @@ class Nav extends Component {
                 `,
             }));
         }, 500);
+    };
+
+    changeUntuckedToDesktop = () => {
+        this.setState(() => ({
+            desktop: true, 
+            tucked: true,
+            classNameNavDiv: `
+            Nav_div 
+            Nav_div___untucked 
+            invisible
+            `,
+        }));
+
+        setTimeout(() => {
+            this.setState(() => ({
+                classNameNav: `
+                Nav 
+                Nav___mobile 
+                Nav___tucked
+                `,
+                classNameNavP: `
+                Nav_p 
+                Nav_p___mobile
+                invisible
+                `,
+                classNameNavButton: `
+                Nav_button 
+                Nav_button___mobile
+                invisible
+                `,
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___desktop
+                invisible
+                `,
+            }));
+        }, 400);
+
+        setTimeout(() => {
+            this.setState(() => ({
+                classNameNav: `
+                Nav 
+                Nav___desktop
+                `,
+                classNameNavP: `
+                Nav_p 
+                Nav_p___desktop
+                `,
+                classNameNavButton: `
+                Nav_button 
+                Nav_button___desktop
+                `,
+                classNameNavDiv: `
+                Nav_div 
+                Nav_div___desktop
+                visible
+                `,
+            }));
+        }, 900);
     };
 
     // when you click on the button (which is only displayed on mobile), toggle tuck/untuck
@@ -276,8 +331,8 @@ class Nav extends Component {
             this.setState(() => ({
                 classNameNavDiv: `
                 Nav_div 
-                Nav_div___untucked 
                 Nav_div___tucked
+                invisible
                 `,
             }));
         }, 300);

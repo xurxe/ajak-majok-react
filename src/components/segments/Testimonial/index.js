@@ -6,9 +6,7 @@ import './styles.css'
 import Image from '../../common/Image';
 import PhotographerP from '../../common/PhotographerP';
 
-const Testimonial = (props) => {
-    
-    const { data } = props;
+const Testimonial = ({ data }) => {
     const { name, occupation, quote, image, alt, photographer } = data;
     
     const jsx = (

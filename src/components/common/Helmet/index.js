@@ -2,13 +2,13 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 // this is how we control the contents of the head
-const HelmetComponent = (props) => {
-
-    const { title, description, keywords, image, url, slug } = props;
-    let lang;
+const HelmetComponent = ({ title, description, keywords, image, url, slug }) => {
 
     // this is necessary because we can't have more than 2 locales with the free version of Contentful
     const determineLanguage = (slug) => {
+
+        let lang;
+
         if (slug === 'english') {
             lang = 'en'
         }

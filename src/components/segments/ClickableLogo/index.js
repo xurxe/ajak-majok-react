@@ -2,9 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-const ClickableLogo = (props) => {
-    
-    const { data, modifier } = props;
+const ClickableLogo = ({ data, modifier }) => {
     const { url, logo, logoHover, alt } = data;
 
     const jsx = (

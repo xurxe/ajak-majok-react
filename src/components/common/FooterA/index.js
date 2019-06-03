@@ -4,9 +4,7 @@ import Parser from 'html-react-parser';
 import './styles.css';
 
 // these are the social media links shown in the footer
-const FooterA = (props) => {
-
-    const { link } = props;
+const FooterA = ({ link }) => {
     const { url, iconFontAwesome } = link;
 
     const jsx = (

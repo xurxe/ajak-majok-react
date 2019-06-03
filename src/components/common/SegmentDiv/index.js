@@ -17,9 +17,7 @@ import YoutubeVideo from '../../segments/YoutubeVideo';
 // this component decides how to render each segment based on its type
 // src/components/segments contains all of the different components referenced here
 
-const SegmentDiv = (props) => {
-
-    const { segment, modifier } = props;
+const SegmentDiv = ({ segment, modifier }) => {
     const { __typename, slug } = segment;
 
     let jsx;

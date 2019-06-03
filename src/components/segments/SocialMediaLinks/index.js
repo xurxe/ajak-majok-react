@@ -3,9 +3,7 @@ import Parser from 'html-react-parser';
 
 import './styles.css';
 
-const SocialMediaLinks = (props) => {
-
-    const { data } = props;
+const SocialMediaLinks = ({ data }) => {
     const { links } = data;
 
     const jsx = (
