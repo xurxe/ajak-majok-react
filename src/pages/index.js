@@ -96,36 +96,6 @@ query {
         badge
         segments {
             __typename
-            ... on ContentfulClickableLogo {
-                id
-                url
-                logo {
-                    id
-                    fluid (quality: 100) {
-                        base64
-                        aspectRatio
-                        src
-                        srcSet
-                        srcWebp
-                        srcSetWebp
-                        sizes
-                    }
-                }
-                logoHover {
-                    id
-                    fluid (quality: 100) {
-                        base64
-                        aspectRatio
-                        src
-                        srcSet
-                        srcWebp
-                        srcSetWebp
-                        sizes
-                    }
-                }
-                alt
-                url
-            }
             ... on ContentfulImageGrid {
                 id
                 photographers
@@ -218,10 +188,14 @@ query {
                 }
             }
             ... on ContentfulYoutubeVideo {
-                id
-                url
-                alt
-            }
+              id
+              url
+              alt
+						}
+						... on ContentfulSingleLine {
+							id
+							line
+						}
         }
     }
 }
