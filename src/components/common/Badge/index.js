@@ -15,7 +15,7 @@ const Badge = ({ badge }) => {
         </div>
     );
     
-    return jsx;
+    return badge === "X" ? null : jsx;
 };
 
 export default Badge;

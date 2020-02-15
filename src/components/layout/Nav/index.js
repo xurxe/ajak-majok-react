@@ -363,7 +363,8 @@ class Nav extends Component {
                             ... on ContentfulElectionLink {
                                 id
                                 name
-                                url
+																url
+																hide
                             }
                             ... on ContentfulSocialMediaLink {
                                 id

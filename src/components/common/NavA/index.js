@@ -7,7 +7,7 @@ import './styles.css';
 // this is a component that decides how to render each type of link in the navigation bad
 const NavA = ({ link }) => {
 
-    const { __typename } = link;
+    const { __typename, hide } = link;
     let jsx;
 
     if (__typename === 'ContentfulIndex'){
@@ -43,7 +43,7 @@ const NavA = ({ link }) => {
         );
     }
 
-    else if (__typename === 'ContentfulElectionLink'){
+    else if (__typename === 'ContentfulElectionLink' && !hide ){
 
         jsx = (
             <a 
@@ -77,13 +77,7 @@ const NavA = ({ link }) => {
 
     else {
 
-        jsx = (
-            <p
-            className='NavA'
-            >
-                ?
-            </p>
-        );
+        jsx = null
     };
 
     return jsx;
